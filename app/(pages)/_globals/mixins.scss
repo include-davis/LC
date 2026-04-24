@@ -22,3 +22,68 @@
   line-height: $line-height;
   font-family: $family;
 }
+
+// Typography mixins
+@mixin heading {
+  font-family: 'Gochi Hand', cursive;
+  font-weight: 400;
+  font-size: 3rem; // 48px
+  line-height: 100%;
+  letter-spacing: 0%;
+
+  @include phone {
+    font-size: 2rem;
+  }
+}
+
+@mixin heading-2 {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem; // 28px
+  line-height: 100%;
+  letter-spacing: 0%;
+
+  @include phone {
+    font-size: 1.25rem;
+  }
+}
+
+@mixin sub-heading {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem; // 28px
+  line-height: 100%;
+  letter-spacing: 0%;
+
+  @include phone {
+    font-size: 1.25rem;
+  }
+}
+
+@mixin title {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem; // 24px
+  line-height: 100%;
+  letter-spacing: 0%;
+
+  @include phone {
+    font-size: 1.125rem;
+  }
+}
+
+@mixin body-text {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 1rem; // 16px
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+@mixin caption {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem; // 14px
+  line-height: 100%;
+  letter-spacing: 0%;
+}
