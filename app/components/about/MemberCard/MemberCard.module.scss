@@ -1,0 +1,28 @@
+.cardContainer{
+    width: fit-content;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.memberIMG{
+    aspect-ratio: 22/35;
+    height: 245px;
+    border-radius: 28px;
+}
+
+.textContainer{
+
+}
+
+.textContainer h3{
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.textContainer p{
+    font-size: 16px;
+    color: #6563DE;
+    font-weight: bold;
+}
