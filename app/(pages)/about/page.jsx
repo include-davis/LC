@@ -1,3 +1,9 @@
+import MemberCard from "../../components/about/MemberCard/MemberCard";
+
 export default function About() {
-    return <div>About Us</div>
+    return (
+        <div>
+            <MemberCard></MemberCard>
+        </div>
+    )
 }
