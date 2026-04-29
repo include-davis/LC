@@ -18,6 +18,8 @@
 
     display: flex;
     justify-content: space-between;
+
+    cursor: pointer;
 }
 
 .title {
@@ -27,12 +29,7 @@
     font-weight: 900;
 }
 
-.expandButton {
-    background-color: transparent;
-    border: none;
-
-    cursor: pointer;
-
+.headerIcon {
     padding: 0px 10px;
 }
 

@@ -13,16 +13,16 @@ export default function FAQCard({ title, description }) {
 
     return (
         <div className={styles.card}>
-            <div className={styles.header}>
+            <div className={styles.header} onClick={() => setExpanded(!isExpanded)}>
                 <h3 className={styles.title}>{title}</h3>
 
-                <button className={styles.expandButton} onClick={() => setExpanded(!isExpanded)}>
+                <div className={styles.headerIcon}>
                     {isExpanded ? (
                         <Image src={MINUS_ICON} alt="Minus Icon" />
                     ) : (
                         <Image src={PLUS_ICON} alt="Plus Icon" />
                     )}
-                </button>
+                </div>
             </div>
 
             {isExpanded && (
