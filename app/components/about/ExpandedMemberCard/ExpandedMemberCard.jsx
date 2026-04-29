@@ -7,7 +7,7 @@ export default function ExpandedMemberCard(){
         <div className={styles.container}>
             <Image className={styles.memberIMG} src={'/images/about/memberIMGs/James.png'} alt={'james'} width={174} height={316} />
             <div className={styles.memberInfo}>
-                <section>
+                <section className={styles.header}>
                     <h2>James Reid (he/him)</h2>
                     <div className={styles.socials}>
                         <a href='#' rel='linkedin'><Image src={'/images/about/icons/linkedin.svg'} width={14} height={14}/></a>
