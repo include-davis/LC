@@ -5,13 +5,13 @@ import styles from './ExpandedMemberCard.module.scss';
 export default function ExpandedMemberCard(){
     return (
         <div className={styles.container}>
-            <Image className={styles.memberIMG} src={'/images/about/James_Border.png'} alt={'james'} width={153} height={245} />
+            <Image className={styles.memberIMG} src={'/images/about/memberIMGs/James.png'} alt={'james'} width={174} height={316} />
             <div className={styles.memberInfo}>
                 <section>
                     <h2>James Reid (he/him)</h2>
                     <div className={styles.socials}>
-                        <a href='#' rel='linkedin'></a>
-                        <a href='#' rel='instagram'></a>
+                        <a href='#' rel='linkedin'><Image src={'/images/about/icons/linkedin.svg'} width={14} height={14}/></a>
+                        <a href='#' rel='instagram'><Image src={'/images/about/icons/instagram.svg'} width={22} height={22}/></a>
                     </div>
                 </section>
                 <ul className={styles.standing}>
