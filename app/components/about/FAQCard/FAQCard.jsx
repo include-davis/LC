@@ -16,8 +16,12 @@ export default function FAQCard({ title, description }) {
             <div className={styles.header}>
                 <h3 className={styles.title}>{title}</h3>
 
-                <button className={styles.expandButton}>
-                    <Image src={MINUS_ICON} alt="Minus Icon" />
+                <button className={styles.expandButton} onClick={() => setExpanded(!isExpanded)}>
+                    {isExpanded ? (
+                        <Image src={MINUS_ICON} alt="Minus Icon" />
+                    ) : (
+                        <Image src={PLUS_ICON} alt="Plus Icon" />
+                    )}
                 </button>
             </div>
 
