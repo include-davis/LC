@@ -6,18 +6,27 @@ export default function ExpandedMemberCard(){
     return (
         <div className={styles.container}>
             <Image className={styles.memberIMG} src={'/images/about/James_Border.png'} alt={'james'} width={153} height={245} />
-            <section>
-                <h2>James Reid (he/him)</h2>
-                <ul className={styles.memberInfo}>
+            <div className={styles.memberInfo}>
+                <section>
+                    <h2>James Reid (he/him)</h2>
+                    <div className={styles.socials}>
+                        <a href='#' rel='linkedin'></a>
+                        <a href='#' rel='instagram'></a>
+                    </div>
+                </section>
+                <ul className={styles.standing}>
                     <li>President</li>
                     <li>Second Year</li>
                     <li>Linguistics Major</li>
                 </ul>
-                <ul>
+                <ul className={styles.interests}>
                     <li>Main Linguistic Interests: Endangered language work, specifically Hawaiian, as well as morphology, syntax, French and Mandarin.</li>
                     <li>Outside of Linguistics: I am a fencer and a student pilot</li>
                 </ul>
-            </section>
+            </div>
+            <div className={styles.otherMembers}>
+
+            </div>
         </div>
     );
 }
