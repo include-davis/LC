@@ -1,4 +1,5 @@
 import MemberCard from "../../components/about/MemberCard/MemberCard";
+import Image from 'next/image';
 import { LCboard } from '../../../data/teamMembers';
 
 export default function About() {
