@@ -1,41 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
-
 .cardContainer{
-    width: fit-content;
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    font-family: "Hanken Grotesk", sans-serif;
-}
-
-.cardContainer:hover{
-
+    align-items: center;
+    gap: 0.7rem;
 }
 
 .memberIMG{
     aspect-ratio: 22/35;
-    height: 245px;
-    border-radius: 28px;
-
-}
-
-.memberIMG:hover{
-    // want the image to expand slighty on hover..
-}
-
-.textContainer{
-
+    height: 15.3125rem;
+    border-radius: 1.75rem;
+    object-fit: cover;
+    display: block;
 }
 
 .textContainer h3{
-    font-size: 24px;
-    margin-bottom: 8px;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
 }
 
 .textContainer p{
-    font-size: 16px;
+    font-size: 1rem;
     color: #6563DE;
     font-weight: bold;
 }
-

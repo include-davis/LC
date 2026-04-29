@@ -1,9 +1,13 @@
 import MemberCard from "../../components/about/MemberCard/MemberCard";
+import { LCboard } from '../../../data/teamMembers';
 
 export default function About() {
     return (
         <div>
-            <MemberCard></MemberCard>
+            {LCboard.map((member) => (
+                <MemberCard name={member.name} image={member.image} pronouns={member.pronouns} position={member.position}></MemberCard>
+            ))}
+            
         </div>
     )
 }
