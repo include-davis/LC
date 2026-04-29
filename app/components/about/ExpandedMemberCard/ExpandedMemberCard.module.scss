@@ -1,8 +1,11 @@
 .container{
-    background-color: rgb(255, 210, 255);
+    background-color: #E0E0F8;
     display: flex;
     gap: 1.75rem;
-    padding: 3rem 2.5rem ;
+    width: 1008px;
+    height: 410px;
+    justify-content: center;
+    align-items: center;
 }
 
 .memberIMG{
@@ -11,11 +14,19 @@
 
 .memberInfo{
     margin: 1.75rem 0rem;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.688rem;
+
 }
 
 .memberInfo .header{
     display: flex;
     justify-content: space-between;
+}
+
+.header h2{
+    font-size: 1.75rem;
 }
 
 .header .socials{
@@ -37,7 +48,8 @@
 .memberInfo .standing{
     display: flex;
     gap: 0.938rem;
-    padding: 0.688rem 0rem;
+    font-size: 0.875rem;
+    font-weight: bold;
 }
 
 .standing li{
@@ -48,5 +60,13 @@
 }
 
 .memberInfo .interests{
-    
+    margin-left: 1rem;
+    max-width: 644px;
+    height: 167px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 16px;
+    line-height: 129.993%;
+    padding: 11px 0px;
 }

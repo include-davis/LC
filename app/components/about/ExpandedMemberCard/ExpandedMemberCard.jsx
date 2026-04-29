@@ -20,8 +20,8 @@ export default function ExpandedMemberCard(){
                     <li>Linguistics Major</li>
                 </ul>
                 <ul className={styles.interests}>
-                    <li>Main Linguistic Interests: Endangered language work, specifically Hawaiian, as well as morphology, syntax, French and Mandarin.</li>
-                    <li>Outside of Linguistics: I am a fencer and a student pilot</li>
+                    <li><strong>Main Linguistic Interests:</strong> Endangered language work, specifically Hawaiian, as well as morphology, syntax, French and Mandarin.</li>
+                    <li><strong>Outside of Linguistics:</strong> I am a fencer and a student pilot</li>
                 </ul>
             </div>
             <div className={styles.otherMembers}>
