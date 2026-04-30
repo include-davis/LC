@@ -1,7 +1,11 @@
 .container{
-    background-color: #E0E0F8;
+    // background-color: #E0E0F8;
+    background-image: url('/images/about/backgrounds/James_Background.svg');
+    background-size: contain;       // shows full image
+    background-position: center;  // keeps it centered when cropped
+    background-repeat: no-repeat;
     display: flex;
-    gap: 1.75rem;
+    // gap: 1.75rem;
     width: 1008px;
     height: 410px;
     justify-content: center;
@@ -20,6 +24,7 @@
     display: inline-flex;
     flex-direction: column;
     gap: 0.688rem;
+    padding-left: 15px;
 
 }
 
@@ -63,9 +68,14 @@
     border-radius: 1.25rem;
 }
 
+.standing .position{
+    background-color: #6563DE;
+    color: white;
+}
+
 .memberInfo .interests{
     margin-left: 1rem;
-    max-width: 644px;
+    max-width: 630px;
     height: 167px;
     display: flex;
     flex-direction: column;
@@ -73,4 +83,38 @@
     font-size: 16px;
     line-height: 129.993%;
     padding: 11px 0px;
+    font-size: 16px;
+}
+
+// test
+.otherMembers {
+    display: flex;
+    flex-direction: column;
+    width: 44px;
+    height: 306px;
+}
+
+.sideBtns {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  overflow: hidden;
+  transition: opacity 0.2s ease;
+
+  &.active {
+    opacity: 1;
+  }
+
+  &.dim {
+    opacity: 0.3;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+.imgBtn{
+    object-fit: cover;
 }

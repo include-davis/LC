@@ -1,11 +1,21 @@
+//test
+'use client';
+
 import Image from 'next/image';
 import styles from './ExpandedMemberCard.module.scss';
 
+//test
+import { LCboard } from '../../../../data/teamMembers';
+import { useState } from 'react';
 
 export default function ExpandedMemberCard(){
+
+    const [activeIndex, setActiveIndex] = useState(0);
+    const current = LCboard[activeIndex];
+
     return (
         <div className={styles.container}>
-            <Image className={styles.memberIMG} src={'/images/about/memberIMGs/James.png'} alt={'james'} width={174} height={316} />
+            <Image className={styles.memberIMG} src={'/images/about/memberIMGs/James.png'} alt={'james'} width={174} height={315} />
             <div className={styles.memberInfo}>
                 <section className={styles.header}>
                     <h2>James Reid (he/him)</h2>
@@ -15,7 +25,7 @@ export default function ExpandedMemberCard(){
                     </div>
                 </section>
                 <ul className={styles.standing}>
-                    <li>President</li>
+                    <li className={styles.position}>President</li>
                     <li>Second Year</li>
                     <li>Linguistics Major</li>
                 </ul>
@@ -25,7 +35,13 @@ export default function ExpandedMemberCard(){
                 </ul>
             </div>
             <div className={styles.otherMembers}>
-
+                {LCboard.map((member, i) => (
+                    <button key={i} onClick={() => setActiveIndex(i)}
+                    className={`${styles.sideBtns} ${i === activeIndex ? styles.active : styles.dim}`}
+                    aria-label={`View ${member.name} ${member.lastName}`}>
+                    <Image src={member.noBorderImage} alt={member.name} className={styles.imgBtn} width={50} height={70}/>
+                    </button>
+                ))}
             </div>
         </div>
     );
