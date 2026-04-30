@@ -1,12 +1,11 @@
 //test
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import styles from './ExpandedMemberCard.module.scss';
-
-//test
 import { LCboard } from '../../../../data/teamMembers';
-import { useState } from 'react';
+
 
 export default function ExpandedMemberCard(){
 
