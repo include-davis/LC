@@ -10,6 +10,9 @@
 
 .memberIMG{
     border-radius: 1rem;
+    width: 174.706px;
+    height: 315.598px;
+    object-fit: cover;
 }
 
 .memberInfo{
@@ -23,6 +26,7 @@
 .memberInfo .header{
     display: flex;
     justify-content: space-between;
+    padding-right: 12px;
 }
 
 .header h2{
