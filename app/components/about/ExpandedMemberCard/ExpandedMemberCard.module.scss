@@ -1,120 +1,115 @@
-.container{
-    // background-color: #E0E0F8;
+.container {
     background-image: url('/images/about/backgrounds/James_Background.svg');
-    background-size: contain;       // shows full image
-    background-position: center;  // keeps it centered when cropped
+    background-size: contain;
+    background-position: center;
     background-repeat: no-repeat;
     display: flex;
-    // gap: 1.75rem;
-    width: 1008px;
-    height: 410px;
+    width: 63rem;        // 1008px
+    height: 25.625rem;   // 410px
     justify-content: center;
     align-items: center;
 }
 
-.memberIMG{
+.memberIMG {
     border-radius: 1rem;
-    width: 174.706px;
-    height: 315.598px;
+    width: 10.919rem;    // 174.706px
+    height: 19.725rem;   // 315.598px
     object-fit: cover;
 }
 
-.memberInfo{
-    margin: 1.75rem 0rem;
+.memberInfo {
+    margin: 1.75rem 0;
     display: inline-flex;
     flex-direction: column;
     gap: 0.688rem;
-    padding-left: 15px;
+    padding-left: 0.938rem;  // 15px
 
+    .header {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 1rem;  // 16px
+
+        h2 {
+            font-size: 1.75rem;
+        }
+
+        .socials {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+
+            a {
+                background-color: white;
+                width: 1.875rem;
+                height: 1.875rem;
+                border-radius: 6.25rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    .standing {
+        display: flex;
+        gap: 0.938rem;
+        font-size: 0.875rem;
+        font-weight: bold;
+
+        li {
+            list-style: none;
+            background-color: white;
+            padding: 0.5rem 0.75rem;
+            border-radius: 1.25rem;
+        }
+
+        .position {
+            background-color: #6563DE;
+            color: white;
+        }
+    }
+
+    .interests {
+        margin-left: 1rem;
+        max-width: 39.375rem;  // 630px
+        height: 10.438rem;     // 167px
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        font-size: 1rem;       // 16px (duplicate removed)
+        line-height: 129.993%;
+        padding: 0.688rem 0;   // 11px 0px
+    }
 }
 
-.memberInfo .header{
-    display: flex;
-    justify-content: space-between;
-    padding-right: 16px;
-}
-
-.header h2{
-    font-size: 1.75rem;
-}
-
-.header .socials{
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.header .socials a{
-    background-color: white;
-    width: 1.875rem;
-    height: 1.875rem;
-    border-radius: 6.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.memberInfo .standing{
-    display: flex;
-    gap: 0.938rem;
-    font-size: 0.875rem;
-    font-weight: bold;
-}
-
-.standing li{
-    list-style: none;
-    background-color: white;
-    padding: 0.5rem 0.75rem;
-    border-radius: 1.25rem;
-}
-
-.standing .position{
-    background-color: #6563DE;
-    color: white;
-}
-
-.memberInfo .interests{
-    margin-left: 1rem;
-    max-width: 630px;
-    height: 167px;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    font-size: 16px;
-    line-height: 129.993%;
-    padding: 11px 0px;
-    font-size: 16px;
-}
-
-// test
 .otherMembers {
     display: flex;
     flex-direction: column;
-    width: 44px;
-    height: 306px;
+    width: 2.75rem;    // 44px
+    height: 19.125rem; // 306px
 }
 
 .sideBtns {
-  padding: 0;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  overflow: hidden;
-  transition: opacity 0.2s ease;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    transition: opacity 0.2s ease;
 
-  &.active {
-    opacity: 1;
-  }
-
-  &.dim {
-    opacity: 0.3;
-
-    &:hover {
-      opacity: 0.6;
+    &.active {
+        opacity: 1;
     }
-  }
+
+    &.dim {
+        opacity: 0.3;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
 }
 
-.imgBtn{
+.imgBtn {
     object-fit: cover;
 }
