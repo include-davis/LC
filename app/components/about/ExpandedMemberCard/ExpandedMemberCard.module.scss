@@ -92,6 +92,8 @@
     flex-direction: column;
     width: 2.75rem;    // 44px
     height: 19.125rem; // 306px
+    border-radius: 1rem; //16px
+    overflow: hidden; // allows border to take effect, because w/o it the buttons overflow the div
 }
 
 .sideBtns {
