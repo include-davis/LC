@@ -1,5 +1,5 @@
 .container {
-    background-image: url(/images/about/backgrounds/James_Background.svg);
+    // background-image: url(/images/about/backgrounds/James_Background.svg);
     background-size: auto;
     background-position: center;
     background-repeat: no-repeat;
@@ -75,7 +75,7 @@
 
     .interests {
         margin-left: 1rem;
-        max-width: 39.375rem;  // 630px
+        width: 39.375rem;  // 630px
         height: 10.438rem;     // 167px
         display: flex;
         flex-direction: column;
