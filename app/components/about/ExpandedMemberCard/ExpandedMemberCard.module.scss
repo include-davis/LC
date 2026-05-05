@@ -1,13 +1,31 @@
+// .container {
+//     // background-image: url(/images/about/backgrounds/James_Background.svg);
+//     background-size: auto;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     display: flex;
+//     width: 64.438rem; // 1031px
+//     height: 27.125rem; // 434px
+//     justify-content: center;
+//     align-items: center;
+// }
 .container {
-    // background-image: url(/images/about/backgrounds/James_Background.svg);
+    width: 64.438rem; // 1031px
+    height: 27.125rem; // 434px
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.card{
     background-size: auto;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
-    width: 64.438rem; // 1031px
-    height: 27.125rem; // 434px
+
     justify-content: center;
-    align-items: center;
+    align-items: center;  
 }
 
 .memberIMG {
@@ -119,4 +137,11 @@
 
 .imgBtn {
     object-fit: cover;
+}
+
+.closeBtn{
+    position: relative;
+    bottom: 180px;
+    background: transparent;
+    border: none;
 }
