@@ -1,12 +1,11 @@
-import FAQCard from "../../components/about/FAQCard/FAQCard";
+import FAQCardContainer from "../../components/about/FAQCardContainer/FAQCardContainer";
+
+import { FAQ_CARDS } from "../../../data/FAQCardData";
 
 export default function AboutPage() {
     return (
-        <div>
-            <FAQCard 
-                title={"Lorem ipsum dolor sit amet id eligendi deleniti non?"} 
-                description={"Description"} 
-            />
-        </div>
+        <>
+            <FAQCardContainer cards={FAQ_CARDS} />
+        </>
     )
 }
