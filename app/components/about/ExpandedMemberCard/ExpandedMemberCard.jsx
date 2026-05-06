@@ -13,7 +13,8 @@ export default function ExpandedMemberCard(){
 
     return (
         <div className={styles.container} style={{ backgroundImage: `url(/images/about/backgrounds/${current.name}_Background.svg)` }}>
-
+            <button className={styles.closeBtn}><Image src='/images/about/icons/x.png' alt='x icon' width={25} height={25} /></button>
+            
             <div className={styles.card}>
                 <Image className={styles.memberIMG} src={current.noBorderImage} alt={current.name} width={174} height={315} />
 
@@ -53,7 +54,7 @@ export default function ExpandedMemberCard(){
                     ))}
                 </div>
             </div>
-            <button className={styles.closeBtn}><Image src='/images/about/icons/x.png' alt='x icon' width={25} height={25} /></button>
+
         </div>
     );
 }
