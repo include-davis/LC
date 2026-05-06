@@ -16,22 +16,23 @@ export default function FAQCard({ title, description }) {
             <div className={styles.header} onClick={() => setExpanded(!isExpanded)}>
                 <h3 className={styles.title}>{title}</h3>
 
-                <div className={styles.headerIcon}>
-                    {isExpanded ? (
-                        <Image src={MINUS_ICON} alt="Minus Icon" />
-                    ) : (
-                        <Image src={PLUS_ICON} alt="Plus Icon" />
-                    )}
+                <div className={styles.headerIconContainer}>
+                    <div className={styles.headerIconImgContainer}>
+                        <Image className={`${styles.headerIcon} ${styles.minusIcon} ${isExpanded ? styles.rotateIn : styles.rotateOutRight}`} src={MINUS_ICON} alt="Minus Icon" />
+                    </div>
+
+                    <div className={styles.headerIconImgContainer}>
+                        <Image className={`${styles.headerIcon} ${styles.plusIcon} ${isExpanded ? styles.rotateOutLeft : styles.rotateIn}`} src={PLUS_ICON} alt="Plus Icon" />
+                    </div>
                 </div>
             </div>
 
-            {isExpanded && (
-                <div>
+            <div className={`${styles.content} ${isExpanded ? styles.contentExpanded : ""}`}>
+                <div> {/* ← this wrapper is required */}
                     <div className={styles.separator} />
-                    
                     <p className={styles.description}>{description}</p>
-                </div>                
-            )}
+                </div>
+            </div>
         </div>
     )
 }

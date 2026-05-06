@@ -11,13 +11,14 @@
     padding: 16px 30px;
     
     background-color: #E0E0F8;
+
+    // transition: height 0.2s ease-in;
 }
 
 .header {
-    margin: 10px 0px;
-
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     cursor: pointer;
 }
@@ -27,10 +28,53 @@
 
     font-size: 20px;
     font-weight: 900;
+
+    margin: 10px 0px;
+}
+
+.headerIconContainer {
+    position: relative;
+
+    width: 59px;
+    height: 51px;
 }
 
 .headerIcon {
-    padding: 0px 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.rotateIn {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.rotateOutRight {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.rotateOutLeft {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.content {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows 0.35s ease;
+}
+
+.content > div {  /* needs a direct div child to work */
+    min-height: 0;
+}
+
+.contentExpanded {
+    grid-template-rows: 1fr;
 }
 
 .separator {
