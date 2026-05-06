@@ -19,17 +19,17 @@ export default function ExpandedMemberCard(){
 
                 <div className={styles.memberInfo}>
                     <section className={styles.header}>
-                        <h2>{current.name} {current.lastName} {current.pronouns}</h2>
+                        <h2 className={styles.headerTitle} >{current.name} {current.lastName} {current.pronouns}</h2>
                         <div className={styles.socials}>
-                            <a href='#' rel='linkedin'><Image src={'/images/about/icons/linkedin.svg'} width={14} height={14}/></a>
-                            <a href='#' rel='instagram'><Image src={'/images/about/icons/instagram.svg'} width={22} height={22}/></a>
+                            <a className={styles.socialLink} href='#' rel='linkedin'><Image src={'/images/about/icons/linkedin.svg'} width={14} height={14}/></a>
+                            <a className={styles.socialLink} href='#' rel='instagram'><Image src={'/images/about/icons/instagram.svg'} width={22} height={22}/></a>
                         </div>
                     </section>
 
                     <ul className={styles.standing}>
                         <li className={styles.position}>{current.position}</li>
-                        <li>{current.year}</li>
-                        <li>{current.major}</li>
+                        <li className={styles.standingLi}>{current.year}</li>
+                        <li className={styles.standingLi}>{current.major}</li>
                     </ul>
 
                     <ul className={styles.interests}>
@@ -53,7 +53,7 @@ export default function ExpandedMemberCard(){
                     ))}
                 </div>
             </div>
-            <button className={styles.closeBtn}>x</button>
+            <button className={styles.closeBtn}><Image src='/images/about/icons/x.png' alt='x icon' width={25} height={25} /></button>
         </div>
     );
 }

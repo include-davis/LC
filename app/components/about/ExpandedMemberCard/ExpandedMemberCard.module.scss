@@ -1,29 +1,17 @@
-// .container {
-//     // background-image: url(/images/about/backgrounds/James_Background.svg);
-//     background-size: auto;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     display: flex;
-//     width: 64.438rem; // 1031px
-//     height: 27.125rem; // 434px
-//     justify-content: center;
-//     align-items: center;
-// }
+
 .container {
     width: 64.438rem; // 1031px
     height: 27.125rem; // 434px
     display: flex;
     align-items: center;
     justify-content: center;
-
-}
-
-.card{
     background-size: auto;
     background-position: center;
     background-repeat: no-repeat;
-    display: flex;
+}
 
+.card{
+    display: flex;
     justify-content: center;
     align-items: center;  
 }
@@ -42,67 +30,70 @@
     gap: 0.688rem; // 11px
     padding-left: 1.75rem; // 28px
     padding-right: 1.25rem; // 20px
+}
 
-    .header {
-        display: flex;
-        justify-content: space-between;
-        padding-right: 1rem;  // 16px
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1rem;  // 16px
+}
 
-        h2 {
-            font-size: 1.75rem; // 28px
-            height: 2.563rem; //41px
-            display: flex;
-            align-items: center;
-        }
+.headerTitle{
+    font-size: 1.75rem; // 28px
+    height: 2.563rem; //41px
+    display: flex;
+    align-items: center;
+}
 
-        .socials {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
 
-            a {
-                background-color: white;
-                width: 1.875rem;
-                height: 1.875rem;
-                border-radius: 6.25rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-        }
-    }
+.socialLink{
+    background-color: white;
+    width: 1.875rem;
+    height: 1.875rem;
+    border-radius: 6.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    .standing {
-        display: flex;
-        gap: 0.938rem; // 15px
-        font-size: 0.875rem;
-        font-weight: bold;
+.standing {
+    display: flex;
+    gap: 0.938rem; // 15px
+    font-size: 0.875rem;
+    font-weight: bold;
+}
 
-        li {
-            list-style: none;
-            background-color: white;
-            padding: 0.5rem 0.75rem;
-            border-radius: 1.25rem;
-        }
+.standingLi {
+    list-style: none;
+    background-color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 1.25rem;
+}
 
-        .position {
-            background-color: #6563DE;
-            color: white;
-        }
-    }
+.position {
+    list-style: none;
+    background-color: #6563DE;
+    padding: 0.5rem 0.75rem;
+    border-radius: 1.25rem;
+    color: white;
+}
 
-    .interests {
-        margin-left: 1rem;
-        width: 39.375rem;  // 630px
-        height: 10.438rem;     // 167px
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        font-size: 1rem;       // 16px (duplicate removed)
-        line-height: 129.993%;
-        padding: 1.5rem 0;   // 11px 0px
-        list-style-position: inside;
-    }
+.interests {
+    margin-left: 1rem;
+    width: 39.375rem;  // 630px
+    height: 10.438rem;     // 167px
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 1rem;       // 16px (duplicate removed)
+    line-height: 129.993%;
+    padding: 1.5rem 0;   // 11px 0px
+    list-style-position: inside;
 }
 
 .otherMembers {
@@ -142,6 +133,9 @@
 .closeBtn{
     position: relative;
     bottom: 180px;
+    left: 0.313rem; //5px
     background: transparent;
     border: none;
+    height: 0rem;
+    width: 0rem;
 }
