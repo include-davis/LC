@@ -9,7 +9,7 @@ import MINUS_ICON from "../../../../public/images/about/minus.svg"
 import PLUS_ICON from "../../../../public/images/about/plus.svg"
 
 export default function FAQCard({ title, description }) {
-    const [isExpanded, setExpanded] = useState(true);
+    const [isExpanded, setExpanded] = useState(false);
 
     return (
         <div className={styles.card}>
