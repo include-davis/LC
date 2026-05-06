@@ -55,31 +55,31 @@ export default function ExpandedMemberCard(){
 
                     {/* Hard coding method */}
                     <button onClick={() => setActiveIndex(0)} className={`${styles.sideBtns} ${0 === activeIndex ? styles.active : styles.dim}`} aria-label={`View ${LCboard[0].name} ${LCboard[0].lastName}`} >
-                        <Image src={LCboard[0].noBorderImage} alt={LCboard[0].name} className={styles.imgBtn} width={50} height={70}/>
+                        <Image src={'/images/about/btnIMGs/jamesBtn.png'} alt={LCboard[0].name} className={styles.imgBtn} width={50} height={70}/>
                     </button>
 
                     <button onClick={() => setActiveIndex(1)} className={`${styles.sideBtns} ${1 === activeIndex ? styles.active : styles.dim}`} aria-label={`View ${LCboard[1].name} ${LCboard[1].lastName}`} >
-                        <Image src={LCboard[1].noBorderImage} alt={LCboard[1].name} className={styles.imgBtn} width={50} height={70}/>
+                        <Image src={'/images/about/btnIMGs/celiaBtn.png'} alt={LCboard[1].name} className={styles.imgBtn} width={50} height={70}/>
                     </button>
 
                     <button onClick={() => setActiveIndex(2)} className={`${styles.sideBtns} ${2 === activeIndex ? styles.active : styles.dim}`} aria-label={`View ${LCboard[2].name} ${LCboard[2].lastName}`} >
-                        <Image src={LCboard[2].noBorderImage} alt={LCboard[2].name} className={styles.imgBtn} width={50} height={70}/>
+                        <Image src={'/images/about/btnIMGs/leiaBtn.png'} alt={LCboard[2].name} className={styles.imgBtn} width={50} height={70}/>
                     </button>
 
                     <button onClick={() => setActiveIndex(3)} className={`${styles.sideBtns} ${3 === activeIndex ? styles.active : styles.dim}`} aria-label={`View ${LCboard[3].name} ${LCboard[3].lastName}`} >
-                        <Image src={LCboard[3].noBorderImage} alt={LCboard[3].name} className={styles.imgBtn} width={50} height={70}/>
+                        <Image src={'/images/about/btnIMGs/imogenBtn.png'} alt={LCboard[3].name} className={styles.imgBtn} width={50} height={70}/>
                     </button>
 
                     <button onClick={() => setActiveIndex(4)} className={`${styles.sideBtns} ${4 === activeIndex ? styles.active : styles.dim}`} aria-label={`View ${LCboard[4].name} ${LCboard[4].lastName}`} >
-                        <Image src={LCboard[4].noBorderImage} alt={LCboard[4].name} className={styles.imgBtn} width={50} height={70}/>
+                        <Image src={'/images/about/btnIMGs/bethBtn.png'} alt={LCboard[4].name} className={styles.imgBtn} width={50} height={70}/>
                     </button>
 
                     <button onClick={() => setActiveIndex(5)} className={`${styles.sideBtns} ${5 === activeIndex ? styles.active : styles.dim}`} aria-label={`View ${LCboard[5].name} ${LCboard[5].lastName}`} >
-                        <Image src={LCboard[5].noBorderImage} alt={LCboard[5].name} className={styles.imgBtn} width={50} height={70}/>
+                        <Image src={'/images/about/btnIMGs/jayBtn.png'} alt={LCboard[5].name} className={styles.imgBtn} width={50} height={70}/>
                     </button>
 
                     <button onClick={() => setActiveIndex(6)} className={`${styles.sideBtns} ${6 === activeIndex ? styles.active : styles.dim}`} aria-label={`View ${LCboard[6].name} ${LCboard[6].lastName}`} >
-                        <Image src={LCboard[6].noBorderImage} alt={LCboard[6].name} className={styles.imgBtn} width={50} height={70}/>
+                        <Image src={'/images/about/btnIMGs/fionaBtn.png'} alt={LCboard[6].name} className={styles.imgBtn} width={50} height={70}/>
                     </button>
 
                 </div>
