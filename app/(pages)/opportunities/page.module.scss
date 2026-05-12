@@ -5,21 +5,21 @@
   background-color: var(--white);
 }
 
-.inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--space-xl);
-}
+// .inner {
+//   max-width: var(--max-width);
+//   margin: 0 auto;
+//   padding: 0 var(--space-xl);
+// }
 
 // HERO - Main title + subtitle + bird
 .hero {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: var(--space-2xl) var(--space-xl) var(--space-xl);
-  position: relative;
+  //max-width: var(--max-width);
+  margin: 0 auto 3rem;
+  padding: var(--space-2xl) var(--space-xl) var(--space-lg);
+  //position: relative;
 }
 
 .heroCotent {
@@ -28,57 +28,72 @@
 
 .heroTitle {
   font-family: var(--font-display);
-  font-size: 3.5rem;
+  font-size: 6rem;
   color: var(--color-primary);
-  line-height: 1.1;
+  line-height: 1.05;
   margin-bottom: var(--space-md);
 }
 
 .heroSubtitle {
   font-size: 0.95rem;
   color: var(--color-text-muted);
-  max-width: 480px;
+  max-width: 420px;
   line-height: 1.6;
 }
 
 .heroBirds {
   flex-shrink: 0;
-  width: 160px;
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-xl);
+}
 
-  img {
-    width: 100%;
-    height: auto;
-  }
+.birdMain {
+  width: 140px;
+  height: auto;
+}
+
+.smallBirdsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.birdsSmall {
+  width: 80px;
+  height: auto;
+  margin-bottom: var(--space-sm);
 }
 
 // PATH BANNER - Full-width Purple Banner
 .pathBanner {
   background: linear-gradient(
-    135deg,
-    var(--color-banner-bg) 0%,
-    var(--color-banner-dark) 100%
+    to right,
+    var(--color-banner-dark) 0%,
+    var(--color-banner-bg) 100%
   );
-  padding: var(--space-xl) var(--space-2xl);
-  margin: 0 0 var(--space-2xl);
+  border-radius: var(--radius-lg);
+  margin: 0 var(--space-xl) 5rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .pathBannerInner {
-  max-width: var(--max-width);
-  margin: 0 auto;
+  padding: var(--space-2xl) 180px;
   text-align: center;
 }
 
 .pathBannerTitle {
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   color: var(--color-text-on-purple);
   margin-bottom: var(--space-md);
 }
 
 .pathBannerBody {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 560px;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 600px;
   margin: 0 auto var(--space-lg);
   line-height: 1.7;
 }
@@ -92,6 +107,7 @@
   padding: var(--space-sm) var(--space-lg);
   font-size: 0.85rem;
   text-decoration: none;
+  margin-top: var(--space-md);
   transition: background-color 0.2s;
 
   &:hover {
@@ -99,10 +115,58 @@
   }
 }
 
+.bannerDecoLeft {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  pointer-events: none;
+}
+
+.bannerDecoRight {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  pointer-events: none;
+}
+
+.bannerStripes {
+  height: 30px;
+  width: auto;
+  opacity: 0.85;
+}
+
+// .stripesWrapper {
+//   display: flex;
+//   flex-direction: column;
+//   gap: var(--space-xs);
+// }
+
+.bannerBird {
+  height: 100px;
+  width: auto;
+  opacity: 0.9;
+}
+
 // Program section - Common blocks (shared by Undergrad and Grad)
 .programsSection {
-  max-width: var(--max-width);
-  margin: 0 auto var(--space-2xl);
+  //max-width: var(--max-width);
+  margin: 0 auto 5rem;
   padding: 0 var(--space-xl);
 }
 
@@ -115,8 +179,8 @@
 
 .sectionTitle {
   font-family: var(--font-body);
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 700;
   color: var(--color-text);
 }
 
@@ -126,7 +190,7 @@
   text-decoration: none;
   border: 1px solid var(--color-primary);
   border-radius: var(--radius-pill);
-  padding: 3px 12px;
+  padding: 3px 14px;
   transition:
     background-color 0.2s,
     color 0.2s;
@@ -140,7 +204,7 @@
 // Horizontal card row
 .cardRow {
   display: flex;
-  gap: var(--space-md);
+  gap: var(--space-xl);
   overflow-x: auto; // Narrow screens can swipe left and right
   padding-bottom: var(--space-sm);
   scrollbar-width: none; // Hide scrollbar in Firefox
@@ -151,29 +215,81 @@
 }
 
 // CTA Banner - "Get involved with us!"
+
+.ctaBannerOuter {
+  margin: 0 var(--space-xl) 5rem;
+}
+
 .ctaBanner {
+  background: linear-gradient(
+    to right,
+    var(--color-banner-bg) 0%,
+    var(--color-banner-dark) 100%
+  );
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) 80px;
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-lg);
-  background: linear-gradient(
-    135deg,
-    var(--color-banner-bg) 0%,
-    var(--color-banner-dark) 100%
-  );
-  padding: var(--space-xl);
-  margin-bottom: var(--space-2xl);
 }
 
-.ctaText {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  color: var(--color-text-on-purple);
-  margin: 0;
+.ctaDecoLeft {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  pointer-events: none;
+
+  img {
+    height: 30%;
+    width: auto;
+    display: block;
+  }
 }
 
-.sparkle {
-  font-size: 1.4rem;
-  color: rgba(255, 255, 255, 0.7);
-  user-select: none;
+.ctaDecoRight {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  pointer-events: none;
+  transform: scaleX(-1);
+
+  img {
+    height: 50%;
+    width: auto;
+    display: block;
+  }
+}
+
+.ctaSparkle {
+  height: 58px;
+  width: auto;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.22));
+  }
+}
+
+.ctaTextImg {
+  height: 52px;
+  width: auto;
+  display: block;
 }

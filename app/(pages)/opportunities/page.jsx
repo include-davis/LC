@@ -8,28 +8,32 @@ const undergradPrograms = [
     id: "language-research",
     title: "Language Research",
     subtitle: "Research",
-    image: "/images/language-research.jpg",
+    subtitleImage: "/images/tags/tag-research.png",
+    image: "/images/language-research.png",
     href: "/undergrad-programs",
   },
   {
     id: "study-abroad",
     title: "Study Abroad",
     subtitle: "Study Abroad",
-    image: "/images/study-abroad.jpg",
+    subtitleImage: "/images/tags/tag-study-abroad.png",
+    image: "/images/study-abroad.png",
     href: "/undergrad-programs",
   },
   {
     id: "linguistics-major",
     title: "Linguistics Major",
     subtitle: "Major",
-    image: "/images/linguistics-major.jpg",
+    subtitleImage: "/images/tags/tag-major.png",
+    image: "/images/linguistics-major.png",
     href: "/undergrad-programs",
   },
   {
     id: "ferreiralab-assistant",
     title: "Ferreiralab Assistant",
     subtitle: "Work",
-    image: "/images/ferreiralab-assistant.jpg",
+    subtitleImage: "/images/tags/tag-internship.png",
+    image: "/images/ferreiralab-assistant.png",
     href: "/undergrad-programs",
   },
 ];
@@ -39,35 +43,44 @@ const gradPrograms = [
     id: "phd",
     title: "Ph.D. Program",
     subtitle: "Research",
-    image: "/images/phd-program.jpg",
+    subtitleImage: "/images/tags/tag-major.png",
+    image: "/images/phd-program.png",
     href: "/grad-programs",
   },
   {
     id: "ma",
     title: "M.A. Program",
     subtitle: "Research",
-    abbr: "M.A.",
-    solidColor: "#E8A020",
+    subtitleImage: "/images/tags/tag-major.png",
+    image: "/images/ma-program.png",
     href: "/grad-programs",
   },
   {
     id: "gc",
     title: "Governing Committees",
     subtitle: "Major",
-    abbr: "G.C.",
-    solidColor: "#3AAEA8",
+    subtitleImage: "/images/tags/tag-leadership.png",
+    image: "/images/gc-program.png",
     href: "/grad-programs",
   },
   {
     id: "research-labs",
     title: "Research Labs",
     subtitle: "Research",
-    image: "/images/research-labs.jpg",
+    subtitleImage: "/images/tags/tag-research.png",
+    image: "/images/research-labs.png",
     href: "/grad-programs",
   },
 ];
 
 export default function OpportunitiesPage() {
+  const handleScrollToUndergrad = (e) => {
+    e.preventDefault();
+    document
+      .getElementById("undergrad")
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <main className={styles.page}>
       {/* ── HERO ── */}
@@ -80,12 +93,44 @@ export default function OpportunitiesPage() {
         </div>
         {/* Bird SVG — export from Figma and place in /public/images/ */}
         <div className={styles.heroBirds} aria-hidden="true">
-          <img src="/images/birds.svg" alt="" />
+          <img src="/images/birds.svg" alt="" className={styles.birdMain} />
+          <div className={styles.smallBirdsWrapper}>
+            <img
+              src="/images/birds-smallup.png"
+              alt=""
+              className={styles.birdsSmall}
+            />
+            <img
+              src="/images/birds-smalldown.png"
+              alt=""
+              className={styles.birdsSmall}
+            />
+          </div>
         </div>
       </section>
 
       {/* ── PATH BANNER ── */}
       <section className={styles.pathBanner}>
+        <div className={styles.bannerDecoLeft} aria-hidden="true">
+          {/* <div className={styles.stripesWrapper}>
+            <img
+              src="/images/banner-stripes-left1.png"
+              alt=""
+              className={styles.bannerStripes}
+            />
+            <img
+              src="/images/banner-stripes-left2.png"
+              alt=""
+              className={styles.bannerStripes}
+            />
+          </div> */}
+          <img
+            src="/images/banner-birdleft.svg"
+            alt=""
+            className={styles.bannerBird}
+          />
+        </div>
+
         <div className={styles.pathBannerInner}>
           <h2 className={styles.pathBannerTitle}>
             Find Your Path in Linguistics!
@@ -100,14 +145,38 @@ export default function OpportunitiesPage() {
             gain real-world experience, and connect with people who share your
             passion!
           </p>
-          <a href="#" className={styles.pathBannerBtn}>
+          <a
+            href="#undergrad"
+            className={styles.pathBannerBtn}
+            onClick={handleScrollToUndergrad}
+          >
             Start Exploring
           </a>
+        </div>
+
+        <div className={styles.bannerDecoRight} aria-hidden="true">
+          {/* <div className={styles.stripesWrapper}>
+            <img
+              src="/images/banner-stripes-right1.png"
+              alt=""
+              className={styles.bannerStripes}
+            />
+            <img
+              src="/images/banner-stripes-right2.png"
+              alt=""
+              className={styles.bannerStripes}
+            />
+          </div> */}
+          <img
+            src="/images/banner-birdright.png"
+            alt=""
+            className={styles.bannerBird}
+          />
         </div>
       </section>
 
       {/* ── UNDERGRAD PROGRAMS ── */}
-      <section className={styles.programsSection}>
+      <section className={styles.programsSection} id="undergrad">
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Undergraduate Programs</h2>
           <a href="/undergrad-programs" className={styles.seeAll}>
@@ -122,14 +191,38 @@ export default function OpportunitiesPage() {
       </section>
 
       {/* ── CTA BANNER ── */}
-      <section className={styles.ctaBanner}>
-        <span className={styles.sparkle} aria-hidden="true">
-          ✦
-        </span>
-        <p className={styles.ctaText}>Get involved with us!</p>
-        <span className={styles.sparkle} aria-hidden="true">
-          ✦
-        </span>
+      <section className={styles.ctaBannerOuter}>
+        <div className={styles.ctaBanner}>
+          {/* <div className={styles.ctaDecoLeft} aria-hidden="true">
+            <img src="/images/cta-stripes.png" alt="" />
+          </div> */}
+
+          <img
+            src="/images/sparkle.svg"
+            alt=""
+            className={styles.ctaSparkle}
+            aria-hidden="true"
+          />
+
+          <a href="/get-involved" className={styles.ctaLink}>
+            <img
+              src="/images/cta-text.png"
+              alt="Get involved with us!"
+              className={styles.ctaTextImg}
+            />
+          </a>
+
+          <img
+            src="/images/sparkle.svg"
+            alt=""
+            className={styles.ctaSparkle}
+            aria-hidden="true"
+          />
+
+          {/* <div className={styles.ctaDecoRight} aria-hidden="true">
+            <img src="/images/cta-stripes.png" alt="" />
+          </div> */}
+        </div>
       </section>
 
       {/* ── GRAD PROGRAMS ── */}

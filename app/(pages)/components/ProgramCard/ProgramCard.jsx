@@ -17,6 +17,7 @@ import styles from "./ProgramCard.module.scss";
 export default function ProgramCard({
   title,
   subtitle,
+  subtitleImage,
   image,
   abbr,
   solidColor,
@@ -36,9 +37,19 @@ export default function ProgramCard({
           {abbr && <span className={styles.abbr}>{abbr}</span>}
         </div>
 
-        {/* Card text */}
+        {/* Title */}
         <h3 className={styles.title}>{title}</h3>
-        <p className={styles.subtitle}>{subtitle}</p>
+
+        {/* Subtitle: Image tags should be displayed first, otherwise text should be displayed. */}
+        {subtitleImage ? (
+          <img
+            src={subtitleImage}
+            alt={subtitle}
+            className={styles.subtitleImg}
+          />
+        ) : (
+          <p className={styles.subtitle}>{subtitle}</p>
+        )}
       </a>
     </article>
   );

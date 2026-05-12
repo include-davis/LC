@@ -1,17 +1,16 @@
 .card {
-  flex: 0 0 auto; // It is not compressed and maintains its width in horizontal flex.
+  flex: 0 0 auto;
   width: 160px;
   border-radius: var(--radius-md);
   background-color: var(--pure-white);
-  border: 1px solid var(--color-card-border);
+  border: none;
   box-shadow: var(--shadow-card);
   overflow: hidden;
   transition:
-    box-shadow 0.2s,
-    transform 0.2s;
-
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
   &:hover {
-    box-shadow: var(--shadow-card-hover);
+    box-shadow: 0 6px 28px rgba(124, 111, 212, 0.22);
     transform: translateY(-3px);
   }
 }
@@ -26,14 +25,12 @@
 // Cover area: Image or solid color + abbreviation
 .imageWrap {
   width: 100%;
-  aspect-ratio: 1 / 1; // Square cover
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(
-    --color-primary-bg
-  ); // Placeholder color before image loading
+  background-color: var(--color-primary-bg);
 }
 
 .image {
@@ -55,17 +52,23 @@
 // Card text area
 .title {
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--color-text);
-  margin: var(--space-sm) var(--space-sm) 2px;
+  margin: var(--space-sm) var(--space-sm) 4px;
   line-height: 1.3;
 
-  // Use ellipses if there are more than two lines.
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.subtitleImg {
+  height: 18px;
+  width: auto;
+  margin: 0 var(--space-sm) var(--space-xs);
+  display: block;
 }
 
 .subtitle {
