@@ -67,11 +67,7 @@
 
 // PATH BANNER - Full-width Purple Banner
 .pathBanner {
-  background: linear-gradient(
-    to right,
-    var(--color-banner-dark) 0%,
-    var(--color-banner-bg) 100%
-  );
+  background: linear-gradient(104deg, #8482e5 -4.47%, #e0e0f8 122.65%);
   border-radius: var(--radius-lg);
   margin: 0 var(--space-xl) 5rem;
   position: relative;
@@ -157,10 +153,21 @@
 //   gap: var(--space-xs);
 // }
 
-.bannerBird {
-  height: 100px;
-  width: auto;
+.bannerBirdLeft {
+  height: 92.497px;
+  width: 80px;
   opacity: 0.9;
+  left: 46.514px;
+  top: 178px;
+}
+
+.bannerBirdRight {
+  width: 80px;
+  height: 92.497px;
+  opacity: 0.9;
+  //position: absolute;
+  left: 1214.515px;
+  top: 214px;
 }
 
 // Program section - Common blocks (shared by Undergrad and Grad)
@@ -222,9 +229,10 @@
 
 .ctaBanner {
   background: linear-gradient(
-    to right,
-    var(--color-banner-bg) 0%,
-    var(--color-banner-dark) 100%
+    104deg,
+    #e0e0f8 -4.47%,
+    #bdbcf1 32.16%,
+    #6563de 122.65%
   );
   border-radius: var(--radius-lg);
   padding: var(--space-xl) 80px;

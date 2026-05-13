@@ -127,7 +127,7 @@ export default function OpportunitiesPage() {
           <img
             src="/images/banner-birdleft.svg"
             alt=""
-            className={styles.bannerBird}
+            className={styles.bannerBirdLeft}
           />
         </div>
 
@@ -170,7 +170,7 @@ export default function OpportunitiesPage() {
           <img
             src="/images/banner-birdright.png"
             alt=""
-            className={styles.bannerBird}
+            className={styles.bannerBirdRight}
           />
         </div>
       </section>
