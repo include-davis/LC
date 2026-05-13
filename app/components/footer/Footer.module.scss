@@ -49,9 +49,11 @@
     color: #A3A1EB;
     font-weight: 500;
     line-height: normal;
+    transition: ease-in 0.2s;
 
     &:hover{
         color: #CC81F9;
+        
     }
 
 }
@@ -63,11 +65,60 @@
 
 .map{
     border-radius: 16px;
+    object-fit: cover;
 
     &:hover{
         background-color: black;
     }
     
+}
+
+.mapWrapper {
+    position: relative;
+    width: 133px;
+    height: 125px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+
+    .mapOverlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.27);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        gap: 2px;
+        box-shadow: 0 4px 12.9px 0 rgba(0, 0, 0, 0.76);
+
+
+    }
+
+    &:hover .mapOverlay {
+        opacity: 1;
+    }
+}
+
+.overLayTXT{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+
+    span {
+        color: white;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+}
+
+.mapIcon{
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.8));
 }
 
 .includeMsg{

@@ -65,7 +65,16 @@ export default function Footer(){
 
                         </section>
                         <a href={mapsLink} target='_blank' rel='google maps'>
-                            <Image className={styles.map} src={'/images/footer/kerrHall.png'} alt={'Kerr Hall'} width={133} height={125} />
+                            <div className={styles.mapWrapper}>
+                                <Image className={styles.map} src={'/images/footer/kerrHall.png'} alt={'Kerr Hall'} width={133} height={125} />
+                                <div className={styles.mapOverlay}>
+                                    <div className={styles.overLayTXT} >
+                                        <span>Open Map</span>
+                                        <Image className={styles.mapIcon} src={'/images/footer/exLink.png'} alt={'External Link'} width={18} height={18} />
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </a> 
                     </div>   
                 </div>
