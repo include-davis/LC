@@ -1,0 +1,64 @@
+// Styles for the ArchiveHeader section.
+// Pixel-locked to the 1440 Figma layout; stars are absolutely positioned within the section.
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 1440px;
+  padding: 200px 120px 140px;
+  gap: 10px;
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  width: 434px;
+}
+
+.title {
+  width: fit-content;
+  color: var(--blueish-purple500);
+  font-family: 'Gochi Hand', cursive;
+  font-size: 124px;
+  font-weight: 400;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.subtitle {
+  width: 434px;
+  color: var(--blueish-purple300);
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+// Star cluster — sizes and positions taken directly from Figma.
+.starLarge,
+.starMedium,
+.starSmall {
+  position: absolute;
+}
+
+.starLarge {
+  width: 267px;
+  height: 262px;
+  top: 241px;
+  right: 404px;
+}
+
+.starMedium {
+  width: 211px;
+  height: 206px;
+  top: 123px;
+  right: 234px;
+}
+
+.starSmall {
+  width: 106px;
+  height: 104px;
+  bottom: 77px;
+  right: 252px;
+}
