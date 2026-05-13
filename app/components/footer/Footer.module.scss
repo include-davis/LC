@@ -1,0 +1,71 @@
+.footer{
+
+}
+
+.footerTop{
+    display: flex;
+    padding: 52px 40px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+}
+
+.footerNav{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1 0 0;
+
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+    }
+}
+
+.navLinks{
+    display: flex;
+    align-items: flex-start;
+    gap: 54px;
+
+}
+
+.navHeading{
+    font-size: 20px;
+    color: #6563DE;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.link{
+    font-size: 18px;
+    text-decoration: none;
+    color: #A3A1EB;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.meetingInfo{
+    display: flex;
+    gap: 48px;
+}
+
+.map{
+    border-radius: 16px;
+    
+}
+
+.footerBottom{
+    display: flex;
+    flex-direction: row;
+    padding: 40px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+}

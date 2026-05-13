@@ -8,54 +8,74 @@ import styles from './Footer.module.scss';
 export default function Footer(){
     return (
         <div className={styles.footer}>
-            <div className={styles.footer1}>
-                <section>
-                    <h3>Home</h3>
-                    <a href='#'>Schedule</a>
 
-                </section>
+            <div className={styles.footerTop}>
+                <div className={styles.footerNav}>
+                    <div className={styles.navLinks}>
 
-                <section>
-                    <h3>About</h3>
-                    <a href='#'>Mission</a>
-                    <a href='#'>Board</a>
-                    <a href='#'>FAQ</a>
-
-                </section>
-
-                <section>
-                    <h3>Archive</h3>
-                    <a href='#'>Milestones</a>
-                    <a href='#'>Past Events</a>
-                    <a href='#'>Past Presentations</a>
-                    <a href='#'>Our Community</a>
+                        <section>
+                            <h3 className={styles.navHeading}>Home</h3>
+                            <div>
+                                <a className={styles.link} href='#'>Schedule</a>
+                            </div>
                     
-                </section>
+                        </section>
 
-                <section>
-                    <h3>Opportunities</h3>
-                    <a href='#'>Graduate Programs</a>
-                    <a href='#'>Undergraduate Programs</a>
-                </section>
+                        <section>
+                            <h3 className={styles.navHeading}>About</h3>
+                            <div>
+                                <a className={styles.link} href='#'>Mission</a>
+                                <a className={styles.link} href='#'>Board</a>
+                                <a className={styles.link} href='#'>FAQ</a> 
+                            </div>
+                        </section>
 
-                <div className={styles.location}>
-                    <section>
-                        <h3>Meeting Location</h3>
-                        <a href='#'>Kerr Hall - Room 273</a>
-                        <a href='#'>200 California Ave, Davis, CA</a>
-                        <a href='#'>lingusticsclub@ucdavis.edu</a>
+                        <section>
+                            <h3 className={styles.navHeading}>Archive</h3>
+                            <div>
+                                <a className={styles.link} href='#'>Milestones</a>
+                                <a className={styles.link} href='#'>Past Events</a>
+                                <a className={styles.link} href='#'>Past Presentations</a>
+                                <a className={styles.link} href='#'>Our Community</a>
+                            </div>
+                        </section>
 
-                    </section>
+                        <section>
+                            <h3 className={styles.navHeading}>Opportunities</h3>
+                            <div>
+                                <a className={styles.link} href='#'>Graduate Programs</a>
+                                <a className={styles.link} href='#'>Undergraduate Programs</a> 
+                            </div>
+                        </section>
 
-                </div>                
+                    </div>
+
+                    <div className={styles.meetingInfo}>
+                        <section>
+                            <h3 className={styles.navHeading}>Meeting Location</h3>
+                            <div>
+                                <a className={styles.link} href='#'>Kerr Hall - Room 273</a>
+                                <a className={styles.link} href='#'>200 California Ave, Davis, CA</a>
+                                <a className={styles.link} href='#'>lingusticsclub@ucdavis.edu</a>
+                            </div>
+
+
+                        </section>
+                        <Image className={styles.map} src={'/images/footer/kerrHall.png'} alt={'Kerr Hall'} width={133} height={125} />
+
+                    </div>   
+                </div>
+
+
+
             </div>
 
-            <div className={styles.footer2}>
+            <div className={styles.footerBottom}>
                 <p>Made with 💜 by #include at Davis</p>
 
                 <div className={styles.icons}>
-                    <a href='#'><Image alt={'discord'} width={18} height={18}/></a>
-                    <a href='#'><Image alt={'instagram'} width={22} height={22} /></a>
+                    <a href='#'><Image src={'/images/footer/discord.svg'} alt={'discord'} width={18} height={18}/></a>
+                    <a href='#'><Image src={'/images/footer/instagram.svg'} alt={'instagram'} width={22} height={22} /></a>
                 </div>
             </div>
         </div>
