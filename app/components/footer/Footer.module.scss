@@ -49,6 +49,11 @@
     color: #A3A1EB;
     font-weight: 500;
     line-height: normal;
+
+    &:hover{
+        color: #CC81F9;
+    }
+
 }
 
 .meetingInfo{
@@ -58,7 +63,41 @@
 
 .map{
     border-radius: 16px;
+
+    &:hover{
+        background-color: black;
+    }
     
+}
+
+.includeMsg{
+    color: #A3A1EB;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.socialIcons{
+    display: flex;
+    gap: 8px;
+}
+
+.icon{
+    background-color: #6563DE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+}
+
+.divider{
+    width: 95%;
+    height: 1px;
+    border-top: 1px solid #E0E0E0;
+    margin: 0 auto;
 }
 
 .footerBottom{
@@ -68,4 +107,5 @@
     align-items: center;
     gap: 10px;
     align-self: stretch;
+    justify-content: space-between;
 }
