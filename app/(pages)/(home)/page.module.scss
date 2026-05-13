@@ -1,3 +1,8 @@
+@use '../_globals/mixins.scss' as mixins;
+
+/* ============================================================
+   PAGE WRAPPER
+   ============================================================ */
 .page {
   display: flex;
   flex-direction: column;
@@ -7,19 +12,165 @@
   margin: 0 auto;
 }
 
-/* ~815.7px */
+/* ============================================================
+   HERO — 815.7px
+   PNG inventory (all 1× exports):
+     decoration_top_right.png  563×114
+     decoration_bottom_left.png 563×114
+     decoration_star_2.png     209×242
+     decoration_star_3.png     253×129
+     linguistics_text.png      735×306  (combined: welcome + bubble + button)
+     mascot_wug.png            674×583
+     wug_banner.png           1440×279
+   ============================================================ */
 .hero {
+  position: relative;
   width: 100%;
-  min-height: 50.981rem;
-  background-color: rgba(101, 99, 222, 0.06);
+  min-height: 50.981rem; /* 815.7px */
+  overflow: hidden;
+  background-color: var(--white);
 }
 
-/* 768px */
-.intro {
-  width: 100%;
-  min-height: 48rem;
-  background-color: rgba(101, 99, 222, 0.12);
+/* ---- Top-right cloud strip: 563×114px = 35.188rem × 7.125rem ---- */
+// done 
+.decoTopRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35.188rem;
+  height: 7.125rem;
+  z-index: 1;
 }
+
+/* ---- Star cluster (portrait): 209×242px = 13.063rem × 15.125rem ---- */
+// done
+.decoStar2 {
+  position: absolute;
+  width: 13.063rem;
+  height: 15.125rem;
+  z-index: 4;
+}
+
+/* ---- Star strip (landscape): 253×129px = 15.813rem × 8.063rem ---- */
+//done
+.decoStar3 {
+  position: absolute;
+  width: 15.813rem;
+  height: 8.063rem;
+  top: -8.375rem;
+  left: 6.813rem;
+  z-index: 4;
+}
+
+/* ---- Main two-column flex row ---- */
+.wugMascot {
+  position: absolute;
+  width: 42.125rem;
+  height: 36.438rem;
+  left: 47.875rem;
+  z-index: 2;
+}
+
+/*
+  linguistics_text.png: 735×306px (1×)
+  max-width: 100% lets it scale down if column is narrower than 735px.
+  At 1440px viewport with 52% heroLeft → ~650px column → image scales to ~88%.
+*/
+.linguisticsText {
+  position: absolute;
+  width: 45.938rem;  /* ← add this line (735px = the exact PNG width) */
+  height: 19.125rem;
+  opacity: 1;
+  top: 8.563rem;
+  left: 5.625rem;
+}
+
+/* ---- Bottom-left cloud strip overlay: 563×114px = 35.188rem × 7.125rem ---- */
+// done
+.decoBottomLeft {
+  position: absolute;
+  width: 35.188rem;
+  height: 7.125rem;
+  left: 0;
+  top: 29.438rem;
+  z-index: 2;
+}
+
+/* ---- Bottom purple banner: 1440×279px = 90rem × 17.4375rem ---- */
+.heroBanner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 17.4375rem; /* exact 1× PNG height: 279px */
+  z-index: 4;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@include mixins.tablet {
+  .heroBody {
+    flex-direction: column;
+    padding: 2.5rem 2.5rem 0;
+    min-height: auto;
+  }
+
+  .heroLeft {
+    flex: none;
+    width: 100%;
+  }
+
+  .linguisticsText {
+    max-width: 90%;
+  }
+
+  .heroRight {
+    width: 100%;
+    height: 22rem;
+    align-self: auto;
+  }
+
+  .decoTopRight {
+    width: 22rem;
+    height: 4.5rem; /* preserve 5:1 ratio */
+  }
+
+  .decoStar2 {
+    width: 8rem;
+    height: 9.25rem;
+  }
+
+  .decoStar3 {
+    width: 10rem;
+    height: 5.1rem;
+  }
+}
+
+@include mixins.phone {
+  .heroBody {
+    padding: 2rem 1.5rem 0;
+  }
+
+  .linguisticsText {
+    max-width: 100%;
+  }
+
+  .heroBanner {
+    height: 11rem;
+  }
+
+  .decoTopRight {
+    width: 14rem;
+    height: 2.85rem;
+  }
+}
+
+/* ============================================================
+   REMAINING SECTIONS (scaffolding — to be built later)
+   ============================================================ */
+
+
 
 /* 1083px */
 .schedule {
