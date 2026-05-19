@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 188px;
+
+    padding: 0px 120px;
+
+    height: 455px;
+}
+
+.header {
+    margin-top: 96px;
+
+    font-size: 124px;
+    font-weight: 400;
+
+    color: #6563DE;
+}
+
+.description {
+    font-size: 20px;
+    font-weight: 500;
+
+    color: #A3A1EB;
+}
+
+.starContainer {
+    position: relative;
+}
+
+.starIcon1 {
+    position: absolute;
+
+    top: 80px;
+    right: 305px;
+}
+
+.starIcon2 {
+    position: absolute;
+
+    top: 15px;
+    right: 159px;
+}
+
+.starIcon3 {
+    position: absolute;
+
+    top: 141px;
+    right: 97px;
+}
