@@ -1,86 +1,108 @@
 .footer{
-
+ 
 }
-
+ 
 .footerTop{
     display: flex;
-    padding: 52px 40px;
+    padding: 3.25rem 2.5rem; /* 52px 40px */
     align-items: center;
-    gap: 10px;
+    gap: 0.625rem; /* 10px */
     align-self: stretch;
 }
-
+ 
 .footerNav{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex: 1 0 0;
-
+ 
     section {
         display: flex;
         flex-direction: column;
-        gap: 12px;
-
+        gap: 0.75rem; /* 12px */
+ 
         div{
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 0.375rem; /* 6px */
         }
     }
 }
-
+ 
 .navLinks{
     display: flex;
     align-items: flex-start;
-    gap: 54px;
-
+    gap: 3.375rem; /* 54px */
+ 
 }
-
+ 
 .navHeading{
-    font-size: 20px;
+    font-size: 1.25rem; /* 20px */
     color: #6563DE;
     font-weight: 500;
     line-height: normal;
-}
+    text-decoration: none;
 
+    &:hover{
+        color: #CC81F9;
+    }
+
+}
+ 
 .link{
-    font-size: 18px;
+    font-size: 1.125rem; /* 18px */
     text-decoration: none;
     color: #A3A1EB;
     font-weight: 500;
     line-height: normal;
     transition: ease-in 0.2s;
-
+ 
     &:hover{
         color: #CC81F9;
         
     }
-
+ 
 }
-
+ 
 .meetingInfo{
     display: flex;
-    gap: 48px;
+    gap: 3rem; /* 48px */
 }
 
+.meetingLocation{
+    font-size: 1.25rem; /* 20px */
+    color: #6563DE;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+}
+ 
+.meetingDetails{
+    color: #A3A1EB;
+    font-size: 1.125rem; /* 18px */
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+ 
 .map{
-    border-radius: 16px;
+    border-radius: 1rem; /* 16px */
     object-fit: cover;
-
+ 
     &:hover{
         background-color: black;
     }
     
 }
-
+ 
 .mapWrapper {
     position: relative;
-    width: 133px;
-    height: 125px;
-    border-radius: 8px;
+    width: 8.3125rem; /* 133px */
+    height: 7.8125rem; /* 125px */
+    border-radius: 0.5rem; /* 8px */
     overflow: hidden;
     cursor: pointer;
-
+ 
     .mapOverlay {
         position: absolute;
         inset: 0;
@@ -90,73 +112,75 @@
         justify-content: center;
         opacity: 0;
         transition: opacity 0.2s ease;
-        gap: 2px;
-        box-shadow: 0 4px 12.9px 0 rgba(0, 0, 0, 0.76);
-
-
+        gap: 0.125rem; /* 2px */
+        box-shadow: 0 0.25rem 0.80625rem 0 rgba(0, 0, 0, 0.76); /* 0 4px 12.9px 0 */
+ 
+ 
     }
-
+ 
     &:hover .mapOverlay {
         opacity: 1;
     }
 }
-
+ 
 .overLayTXT{
     display: flex;
     align-items: center;
     justify-content: center;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-
+    text-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.8); /* 0 2px 8px */
+    gap: 0.125rem; /* 2px */
+ 
     span {
         color: white;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
+        font-size: 0.875rem; /* 14px */ 
+        font-style: normal; 
+        font-weight: 500; 
+        line-height: normal; 
     }
-
+ 
 }
-
+ 
 .mapIcon{
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(0 0.125rem 0.5rem rgba(0, 0, 0, 0.8)); /* 0 2px 8px */
 }
-
+ 
 .includeMsg{
     color: #A3A1EB;
-    font-size: 16px;
+    font-size: 1rem; /* 16px */
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
-
+ 
 .socialIcons{
     display: flex;
-    gap: 8px;
+    gap: 0.5rem; /* 8px */
 }
-
+ 
 .icon{
     background-color: #6563DE;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 100px;
+    width: 1.875rem; /* 30px */
+    height: 1.875rem; /* 30px */
+    border-radius: 6.25rem; /* 100px */
 }
-
+ 
 .divider{
     width: 95%;
-    height: 1px;
-    border-top: 1px solid #E0E0E0;
+    height: 0.0625rem; /* 1px */
+    border-top: 0.0625rem solid #E0E0E0; /* 1px */
     margin: 0 auto;
 }
-
+ 
 .footerBottom{
     display: flex;
     flex-direction: row;
-    padding: 40px;
+    padding: 2.5rem; /* 40px */
     align-items: center;
-    gap: 10px;
+    gap: 0.625rem; /* 10px */
     align-self: stretch;
     justify-content: space-between;
 }
+ 

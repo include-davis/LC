@@ -17,7 +17,7 @@ export default function Footer(){
                     <div className={styles.navLinks}>
 
                         <section>
-                            <h3 className={styles.navHeading}>Home</h3>
+                            <a className={styles.navHeading} href='#' >Home</a>
                             <div>
                                 <a className={styles.link} href='#'>Schedule</a>
                             </div>
@@ -25,7 +25,7 @@ export default function Footer(){
                         </section>
 
                         <section>
-                            <h3 className={styles.navHeading}>About</h3>
+                            <a className={styles.navHeading} href='#' >About</a>
                             <div>
                                 <a className={styles.link} href='#'>Mission</a>
                                 <a className={styles.link} href='#'>Board</a>
@@ -34,7 +34,7 @@ export default function Footer(){
                         </section>
 
                         <section>
-                            <h3 className={styles.navHeading}>Archive</h3>
+                            <a className={styles.navHeading} href='#' >Archive</a>
                             <div>
                                 <a className={styles.link} href='#'>Milestones</a>
                                 <a className={styles.link} href='#'>Past Events</a>
@@ -44,7 +44,7 @@ export default function Footer(){
                         </section>
 
                         <section>
-                            <h3 className={styles.navHeading}>Opportunities</h3>
+                            <a className={styles.navHeading} href='#' >Opportunities</a>
                             <div>
                                 <a className={styles.link} href='#'>Graduate Programs</a>
                                 <a className={styles.link} href='#'>Undergraduate Programs</a> 
@@ -55,13 +55,12 @@ export default function Footer(){
 
                     <div className={styles.meetingInfo}>
                         <section>
-                            <h3 className={styles.navHeading}>Meeting Location</h3>
-                            <div>
-                                <a className={styles.link} href='#'>Kerr Hall - Room 273</a>
-                                <a className={styles.link} href='#'>200 California Ave, Davis, CA</a>
-                                <a className={styles.link} href='#'>lingusticsclub@ucdavis.edu</a>
+                            <h3 className={styles.meetingLocation} >Meeting Location</h3>
+                            <div className={styles.meetingDetails}>
+                                <span>Kerr Hall - Room 273</span>
+                                <span>200 California Ave, Davis, CA</span>
+                                <span>lingusticsclub@ucdavis.edu</span>
                             </div>
-
 
                         </section>
                         <a href={mapsLink} target='_blank' rel='google maps'>
@@ -70,7 +69,7 @@ export default function Footer(){
                                 <div className={styles.mapOverlay}>
                                     <div className={styles.overLayTXT} >
                                         <span>Open Map</span>
-                                        <Image className={styles.mapIcon} src={'/images/footer/exLink.png'} alt={'External Link'} width={18} height={18} />
+                                        <Image className={styles.mapIcon} src={'/images/footer/exLink.svg'} alt={'External Link'} width={18} height={18} />
                                     </div>
                                 </div>
                             </div>
@@ -78,8 +77,6 @@ export default function Footer(){
                         </a> 
                     </div>   
                 </div>
-
-
 
             </div>
 
