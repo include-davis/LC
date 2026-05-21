@@ -12,20 +12,24 @@ export const LCboard = [
         outside: 'I am a fencer and a student pilot',
         funFact: null,
         image: '/images/about/James_Border.png',
+        noBorderImage: '/images/about/memberIMGs/James.png',
+        background: 'James_Background.svg',
     },
 
     {
-        id: 2,
-        name: 'Celia',
-        lastName: 'Farrell',
+        id: 4,
+        name: 'Imogen',
+        lastName: 'Garrison',
         pronouns: '(she/her)',
-        position: 'President',
+        position: 'Social Media',
         year: 'Second Year',
-        major: 'Linguistics & Psychology Double Major',
-        interests: 'Psycholinguistics, language acquisition, speech perception, as well as how AI replicates human speech.',
-        funFact: null,
-        outside: 'I love doing theater and technical theater production, and I’m currently set designing a musical!',
-        image: '/images/about/Celia_Border.png',
+        major: 'Linguistics Major',
+        interests: 'Speech Language Pathology, and language evolution.',
+        outside: null,
+        funFact: 'I have four cats',
+        image: '/images/about/Imogen_Border.png',
+        noBorderImage: '/images/about/memberIMGs/Imogen.png',
+        background: 'Imogen_Background.svg',
     },
 
     {
@@ -40,20 +44,24 @@ export const LCboard = [
         funFact: 'I am currently learning the 20 button C/G Anglo concertina (would love to play some sea shanties one day)',
         outside: null,
         image: '/images/about/Leia_Border.png',
+        noBorderImage: '/images/about/memberIMGs/Leia.png',
+        background: 'Leia_Background.svg',
     },
     
     {
-        id: 4,
-        name: 'Imogen',
-        lastName: 'Garrison',
+        id: 2,
+        name: 'Celia',
+        lastName: 'Farrell',
         pronouns: '(she/her)',
-        position: 'Social Media',
+        position: 'President',
         year: 'Second Year',
-        major: 'Linguistics Major',
-        interests: 'Speech Language Pathology, and language evolution.',
-        outside: null,
-        funFact: 'I have four cats',
-        image: '/images/about/Imogen_Border.png',
+        major: 'Linguistics & Psychology Double Major',
+        interests: 'Psycholinguistics, language acquisition, speech perception, as well as how AI replicates human speech.',
+        funFact: null,
+        outside: 'I love doing theater and technical theater production, and I’m currently set designing a musical!',
+        image: '/images/about/Celia_Border.png',
+        noBorderImage: '/images/about/memberIMGs/Celia.png',
+        background: 'Celia_Background.svg',
     },
 
     {
@@ -68,6 +76,8 @@ export const LCboard = [
         funFact: 'I ❤️ baseball so much. Please talk to me about ball',
         outside: null,
         image: '/images/about/Beth_Border.png',
+        noBorderImage: '/images/about/memberIMGs/Beth.png',
+        background: 'Beth_Background.svg',
     },
 
     {
@@ -82,6 +92,8 @@ export const LCboard = [
         funFact: null,
         outside: 'I love hockey, music, crocheting, and video games (like The Last of Us), and my pitbull, Blue',
         image: '/images/about/Jay_Border.png',
+        noBorderImage: '/images/about/memberIMGs/Jay.png',
+        background: 'Jay_Background.svg',
     },
 
     {
@@ -96,6 +108,8 @@ export const LCboard = [
         funFact: null,
         outside: 'Conducting neuroscience research, studying ethics, reading, listening to music, and meeting up with friends both in and outside of linguistics.',
         image: '/images/about/Fiona_Border.png',
+        noBorderImage: '/images/about/memberIMGs/Fiona.png',
+        background: 'Fiona_Background.svg',
     }
 
 ]

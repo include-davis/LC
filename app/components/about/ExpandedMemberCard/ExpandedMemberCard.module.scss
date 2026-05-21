@@ -1,0 +1,148 @@
+@use '../../../(pages)/_globals/mixins.scss' as mixins;
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    width: 64.438rem; // 1031px
+    min-height: 27.125rem; // 434px
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.card{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.memberIMG {
+    width: 10.919rem;    // 174.706px    
+    height: 19.725rem;   // 315.598px
+    object-fit: cover; 
+    border-radius: 16px; // 1rem
+}
+
+.memberInfo {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.688rem; // 11px
+    margin: 1.75rem 0;
+    padding-left: 1.75rem; // 28px
+    padding-right: 1.25rem; // 20px
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1rem;  // 16px
+}
+
+.headerTitle{
+    display: flex;
+    align-items: center;
+    height: 2.563rem; //41px
+    font-size: 1.75rem; // 28px
+    // background: ya mama
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.socialLink{
+    background-color: white;
+    width: 1.875rem;
+    height: 1.875rem;
+    border-radius: 100px; // 6.25rem
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.standing {
+    display: flex;
+    gap: 0.938rem; // 15px
+    font-size: 0.875rem; // 14px
+    font-weight: bold;
+}
+
+.standingLi {
+    list-style: none;
+    background-color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 20px; // 1.25rem
+}
+
+.position {
+    list-style: none;
+    background-color: #6563DE;
+    padding: 0.5rem 0.75rem;
+    border-radius: 20px; // 1.25rem
+    color: white;
+}
+
+.interests {
+    margin-left: 1rem;
+    width: 39.375rem;  // 630px
+    height: 10.438rem;     // 167px
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 1rem;       // 16px (duplicate removed)
+    line-height: 129.993%;
+    padding: 1.5rem 0;   // 11px 0px
+    list-style-position: inside;
+}
+
+.otherMembers {
+    display: flex;
+    flex-direction: column;
+    width: 2.75rem;    // 44px
+    height: 19.125rem; // 306px
+    border-radius: 16px; //1rem
+    overflow: hidden; // allows border to take effect, because w/o it the buttons overflow the div
+}
+
+.sideBtns {
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    transition: opacity 0.2s ease;
+
+    &.active {
+        opacity: 1;
+    }
+
+    &.dim {
+        opacity: 0.3;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+.imgBtn {
+    object-fit: cover; 
+
+}
+
+.closeBtn{
+    position: absolute;
+    top: 2rem; //32px
+    right: 1.875rem; //30px
+    background: transparent;
+    border: none;
+    width: 1.563rem; // 25px
+    height: 1.563rem; // 25px
+    z-index: 100;
+}

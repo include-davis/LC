@@ -3,6 +3,7 @@ import MemberCard from "../../components/about/MemberCard/MemberCard";
 import HeroSection from "../../components/about/HeroSection/HeroSection";
 import Image from 'next/image';
 import { LCboard } from '../../../data/teamMembers';
+import ExpandedMemberCard from "../../components/about/ExpandedMemberCard/ExpandedMemberCard";
 
 import styles from './page.module.scss';
 
