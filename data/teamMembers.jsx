@@ -1,6 +1,7 @@
 export const LCboard = [
 
     {
+        id: 1,
         name: 'James',
         lastName: 'Reid',
         pronouns: '(he/him)',
@@ -14,32 +15,7 @@ export const LCboard = [
     },
 
     {
-        name: 'Imogen',
-        lastName: 'Garrison',
-        pronouns: '(she/her)',
-        position: 'Social Media',
-        year: 'Second Year',
-        major: 'Linguistics Major',
-        interests: 'Speech Language Pathology, and language evolution.',
-        outside: null,
-        funFact: 'I have four cats',
-        image: '/images/about/Imogen_Border.png',
-    },
-
-    {
-        name: 'Leia',
-        lastName: 'Ray',
-        pronouns: '(any/all)',
-        position: 'Co-President',
-        year: 'Second Year',
-        major: 'Linguistics & Statistics Double Major',
-        interests: 'Computational linguistics and the applications of statistical methods in linguistics.',
-        funFact: 'I am currently learning the 20 button C/G Anglo concertina (would love to play some sea shanties one day)',
-        outside: null,
-        image: '/images/about/Leia_Border.png',
-    },
-
-    {
+        id: 2,
         name: 'Celia',
         lastName: 'Farrell',
         pronouns: '(she/her)',
@@ -53,6 +29,35 @@ export const LCboard = [
     },
 
     {
+        id: 3,
+        name: 'Leia',
+        lastName: 'Ray',
+        pronouns: '(any/all)',
+        position: 'Co-President',
+        year: 'Second Year',
+        major: 'Linguistics & Statistics Double Major',
+        interests: 'Computational linguistics and the applications of statistical methods in linguistics.',
+        funFact: 'I am currently learning the 20 button C/G Anglo concertina (would love to play some sea shanties one day)',
+        outside: null,
+        image: '/images/about/Leia_Border.png',
+    },
+    
+    {
+        id: 4,
+        name: 'Imogen',
+        lastName: 'Garrison',
+        pronouns: '(she/her)',
+        position: 'Social Media',
+        year: 'Second Year',
+        major: 'Linguistics Major',
+        interests: 'Speech Language Pathology, and language evolution.',
+        outside: null,
+        funFact: 'I have four cats',
+        image: '/images/about/Imogen_Border.png',
+    },
+
+    {
+        id: 5,
         name: 'Beth',
         lastName: 'Harrison',
         pronouns: '(she/her)',
@@ -66,6 +71,7 @@ export const LCboard = [
     },
 
     {
+        id: 6,
         name: 'Jay',
         lastName: 'Madriaga',
         pronouns: '(any/all)',
@@ -79,6 +85,7 @@ export const LCboard = [
     },
 
     {
+        id: 7,
         name: 'Fiona',
         lastName: 'Sargisian',
         pronouns: '(she/her)',
