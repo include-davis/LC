@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { RiArrowRightSLine } from 'react-icons/ri';
 import styles from './page.module.scss';
+import GallerySection from './_components/GallerySection';
 
 export default function Home() {
   return (
@@ -103,7 +104,7 @@ export default function Home() {
                   src="/home/intro/intro_photo.jpg"
                   alt="Linguistics Club members"
                   fill
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: 'contain' }}
                 />
               </div>
 
@@ -178,9 +179,7 @@ export default function Home() {
         <p>Recent Events Section</p>
       </section>
 
-      <section className={styles.gallery}>
-        <p>Gallery Section</p>
-      </section>
+      <GallerySection />
 
     </main>
   );
