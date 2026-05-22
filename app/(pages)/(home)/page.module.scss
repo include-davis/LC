@@ -167,6 +167,210 @@
 }
 
 /* ============================================================
+   INTRO — 768px
+   ============================================================ */
+
+/* Outer section wrapper */
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 0.625rem;       /* 10px */
+  width: 100%;
+  min-height: 48rem;   /* 768px */
+  z-index: 1;
+}
+
+/* Frame 297 — rounded gradient card (1376×768) */
+.introCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6.875rem 12.094rem; /* 110px 193.5px */
+  gap: 5.125rem;               /* 82px */
+  width: 86rem;                /* 1376px */
+  min-height: 48rem;           /* 768px */
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #ffffff 0%,
+    rgba(224, 224, 248, 0.9) 72.6%,
+    rgba(193, 193, 242, 0.8) 100%
+  );
+  border-radius: 2.5rem; /* 40px */
+}
+
+/* Frame 319 — two-column content row (989×548) */
+.introContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  gap: 5.125rem;    /* 82px */
+  width: 61.813rem; /* 989px */
+  height: 34.25rem; /* 548px */
+}
+
+/* Left column — image + squiggle decorations (420×548) */
+.introImageWrap {
+  position: relative;
+  width: 26.25rem;  /* 420px */
+  height: 34.25rem; /* 548px */
+  flex: none;
+}
+
+/* Frame 211 — photo (353.73×471.94) */
+.introPhoto {
+  position: absolute;
+  width: 22.108rem;  /* 353.73px */
+  height: 29.496rem; /* 471.94px */
+  left: 2.023rem;    /* 32.36px */
+  top: 2.359rem;     /* 37.75px */
+  overflow: hidden;
+}
+
+/* Frame 272 — bottom-left squiggles (223.74×245.4, left:0, top:299.33) */
+.introSquigglesBottomLeft {
+  position: absolute;
+  width: 13.984rem;  /* 223.74px */
+  height: 15.338rem; /* 245.4px */
+  left: 0;
+  top: 18.708rem;    /* 299.33px */
+  /* TODO: drop in SVG export from Figma (Vectors 23–28, Polygons 5–6) */
+}
+
+/* Frame 273 — top-right squiggles (220×245.55, left:199.56, top:0.9) */
+.introSquigglesTopRight {
+  position: absolute;
+  width: 13.75rem;   /* 220px */
+  height: 15.347rem; /* 245.55px */
+  left: 12.473rem;   /* 199.56px */
+  top: 0.056rem;     /* 0.9px */
+  /* TODO: drop in SVG export from Figma (Vectors 29–33, Polygons 7–8) */
+}
+
+/* Frame 296 — right column (487×430.86) */
+.introText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 3rem;         /* 48px */
+  width: 30.438rem;  /* 487px */
+  height: 26.929rem; /* 430.86px */
+  flex: none;
+}
+
+/* Frame 212 — heading + body text (487×317) */
+.introTextBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 1.5rem;       /* 24px */
+  width: 30.438rem;  /* 487px */
+  height: 19.813rem; /* 317px */
+}
+
+/* Frame 209 — heading wrapper (487×189) */
+.introHeadingWrap {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+  gap: 0.625rem;     /* 10px */
+  width: 30.438rem;  /* 487px */
+  height: 11.813rem; /* 189px */
+}
+
+/* Heading — "Hello! We are UC Davis's Linguistics Club!" */
+.introHeading {
+  width: 30.438rem;  /* 487px */
+  height: 11.813rem;  /* 189px */
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3rem;    /* 48px */
+  line-height: 3.938rem; /* 63px */
+  color: var(--black);
+  margin: 0;
+}
+
+/* Frame 12 — body text wrapper (487×104) */
+.introBodyWrap {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+  gap: 0.625rem;    /* 10px */
+  width: 30.438rem; /* 487px */
+  height: 6.5rem;   /* 104px */
+}
+
+/* Body copy */
+.introBody {
+  width: 30.438rem; /* 487px */
+  height: 6.5rem;   /* 104px */
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;   /* 20px */
+  line-height: 1.625rem; /* 26px */
+  color: var(--black);
+  margin: 0;
+}
+
+/* Learn more button (223.75×65.86) */
+.introButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.964rem 1.35rem; /* 15.43px 21.60px — symmetric so content stays centered */
+  gap: 0.059rem;             /* 0.95px */
+  width: 13.984rem;          /* 223.75px */
+  height: 4.116rem;          /* 65.86px */
+  background: #7a78f9;
+  box-shadow: 0 0.42rem 0.36rem rgba(163, 161, 235, 0.2); /* 6.72px 5.76px */
+  border-radius: 2.893rem; /* 46.28px */
+  border: none;
+  cursor: pointer;
+  flex: none;
+}
+
+/* Frame 10 — button inner row */
+.introButtonInner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 0.594rem; /* 9.51px */
+  width: auto;
+}
+
+/* Button label — "Learn More" */
+.introButtonText {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.665rem;   /* 26.64px */
+  line-height: 2.188rem; /* 35px */
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+/* Arrow icon — RiArrowRightSLine (32.35×32.35) */
+.introButtonIcon {
+  width: 2.022rem;  /* 32.35px */
+  height: 2.022rem; /* 32.35px */
+  color: #ffffff;
+  flex: none;
+}
+
+/* ============================================================
    REMAINING SECTIONS (scaffolding — to be built later)
    ============================================================ */
 
