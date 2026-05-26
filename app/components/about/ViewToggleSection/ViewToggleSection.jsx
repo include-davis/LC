@@ -1,14 +1,8 @@
-"use client"
-
 import styles from "./ViewToggleSection.module.scss";
-
-import { useState } from "react";
 
 import ViewToggleButton from "../ViewToggleButton/ViewToggleButton";
 
-export default function ViewToggleSection({ buttonsData }) {
-    const [selectedIndex, setSelected] = useState(0);
-
+export default function ViewToggleSection({ buttonsData, selectedIndex, setSelected }) {
     return (
         <div className={styles.container}>
             {buttonsData.map((buttonData, index) => (
