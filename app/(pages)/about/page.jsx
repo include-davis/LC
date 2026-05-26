@@ -10,6 +10,8 @@ import { VIEW_TOGGLE_BUTTONS } from "../../../data/ViewToggleButtonData";
 export default function AboutPage() {
     const [selectedIndex, setSelected] = useState(0);
 
+    const ActiveView = VIEW_TOGGLE_BUTTONS[selectedIndex].view;
+
     return (
         <>
             <HeroSection />
@@ -18,6 +20,10 @@ export default function AboutPage() {
                 selectedIndex={selectedIndex}
                 setSelected={setSelected}
             />
+            
+            <div>
+                <ActiveView />
+            </div>
         </>
     )
 }
