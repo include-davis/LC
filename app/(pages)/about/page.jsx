@@ -1,13 +1,23 @@
-import FAQCardContainer from "../../components/about/FAQCardContainer/FAQCardContainer";
-import HeroSection from "../../components/about/HeroSection/HeroSection";
+"use client"
 
-import { FAQ_CARDS } from "../../../data/FAQCardData";
+import { useState } from "react";
+
+import HeroSection from "../../components/about/HeroSection/HeroSection";
+import ViewToggleSection from "../../components/about/ViewToggleSection/ViewToggleSection";
+
+import { VIEW_TOGGLE_BUTTONS } from "../../../data/ViewToggleButtonData";
 
 export default function AboutPage() {
+    const [selectedIndex, setSelected] = useState(0);
+
     return (
         <>
             <HeroSection />
-            <FAQCardContainer cards={FAQ_CARDS} />
+            <ViewToggleSection 
+                buttonsData={VIEW_TOGGLE_BUTTONS} 
+                selectedIndex={selectedIndex}
+                setSelected={setSelected}
+            />
         </>
     )
 }
