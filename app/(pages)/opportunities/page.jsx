@@ -111,6 +111,42 @@ export default function OpportunitiesPage() {
 
       {/* ── PATH BANNER ── */}
       <section className={styles.pathBanner}>
+          
+          {/* leftstripe 1 */}
+          <img
+            src="/images/cta-stripes.png"
+            alt=""
+            className={styles.bannerStripesTopLeft}
+          />
+          {/* leftstripe 2 */}
+          <img
+            src="/images/cta-stripes.png"
+            alt=""
+            className={styles.bannerStripesTopLeft2}
+          />
+          {/* leftwugstripe */}
+          <img
+            src="/images/cta-stripes.png"
+            alt=""
+            className={styles.bannerStripesLeftUnderWug}
+          />
+
+          <img
+            src="/images/cta-stripes.png"
+            alt=""
+            className={styles.bannerStripesTopRight}
+          />
+          <img
+            src="/images/cta-stripes.png"
+            alt=""
+            className={styles.bannerStripesTopRight2}
+          />
+          <img
+            src="/images/cta-stripes.png"
+            alt=""
+            className={styles.bannerStripesRightUnderWug}
+          />
+          
         <div className={styles.bannerDecoLeft} aria-hidden="true">
           {/* <div className={styles.stripesWrapper}>
             <img
@@ -124,6 +160,7 @@ export default function OpportunitiesPage() {
               className={styles.bannerStripes}
             />
           </div> */}
+
           <img
             src="/images/banner-birdleft.svg"
             alt=""
