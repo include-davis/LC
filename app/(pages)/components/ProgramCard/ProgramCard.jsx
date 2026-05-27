@@ -17,7 +17,6 @@ import styles from "./ProgramCard.module.scss";
 export default function ProgramCard({
   title,
   subtitle,
-  subtitleImage,
   image,
   abbr,
   solidColor,
@@ -42,15 +41,7 @@ Desktop: Block container; serves no additional function.
 Mobile: Flex container (column direction); serves as the text area for list items. */}
         <div className={styles.textGroup}>
           <h3 className={styles.title}>{title}</h3>
-          {subtitleImage ? (
-            <img
-              src={subtitleImage}
-              alt={subtitle}
-              className={styles.subtitleImg}
-            />
-          ) : (
-            <p className={styles.subtitle}>{subtitle}</p>
-          )}
+          {<p className={styles.subtitle}>{subtitle}</p>}
         </div>
       </a>
     </article>

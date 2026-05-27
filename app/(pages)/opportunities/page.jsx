@@ -8,7 +8,6 @@ const undergradPrograms = [
     id: "language-research",
     title: "Language Research",
     subtitle: "Research",
-    subtitleImage: "/images/tags/tag-research.png",
     image: "/images/language-research.png",
     href: "/undergrad-programs",
   },
@@ -16,7 +15,6 @@ const undergradPrograms = [
     id: "study-abroad",
     title: "Study Abroad",
     subtitle: "Study Abroad",
-    subtitleImage: "/images/tags/tag-study-abroad.png",
     image: "/images/study-abroad.png",
     href: "/undergrad-programs",
   },
@@ -24,7 +22,6 @@ const undergradPrograms = [
     id: "linguistics-major",
     title: "Linguistics Major",
     subtitle: "Major",
-    subtitleImage: "/images/tags/tag-major.png",
     image: "/images/linguistics-major.png",
     href: "/undergrad-programs",
   },
@@ -32,7 +29,6 @@ const undergradPrograms = [
     id: "ferreiralab-assistant",
     title: "Ferreiralab Assistant",
     subtitle: "Work",
-    subtitleImage: "/images/tags/tag-internship.png",
     image: "/images/ferreiralab-assistant.png",
     href: "/undergrad-programs",
   },
@@ -43,7 +39,6 @@ const gradPrograms = [
     id: "phd",
     title: "Ph.D. Program",
     subtitle: "Research",
-    subtitleImage: "/images/tags/tag-major.png",
     image: "/images/phd-program.png",
     href: "/grad-programs",
   },
@@ -51,7 +46,6 @@ const gradPrograms = [
     id: "ma",
     title: "M.A. Program",
     subtitle: "Research",
-    subtitleImage: "/images/tags/tag-major.png",
     image: "/images/ma-program.png",
     href: "/grad-programs",
   },
@@ -59,7 +53,6 @@ const gradPrograms = [
     id: "gc",
     title: "Governing Committees",
     subtitle: "Major",
-    subtitleImage: "/images/tags/tag-leadership.png",
     image: "/images/gc-program.png",
     href: "/grad-programs",
   },
@@ -67,7 +60,6 @@ const gradPrograms = [
     id: "research-labs",
     title: "Research Labs",
     subtitle: "Research",
-    subtitleImage: "/images/tags/tag-research.png",
     image: "/images/research-labs.png",
     href: "/grad-programs",
   },
@@ -111,42 +103,41 @@ export default function OpportunitiesPage() {
 
       {/* ── PATH BANNER ── */}
       <section className={styles.pathBanner}>
-          
-          {/* leftstripe 1 */}
-          <img
-            src="/images/cta-stripes.png"
-            alt=""
-            className={styles.bannerStripesTopLeft}
-          />
-          {/* leftstripe 2 */}
-          <img
-            src="/images/cta-stripes.png"
-            alt=""
-            className={styles.bannerStripesTopLeft2}
-          />
-          {/* leftwugstripe */}
-          <img
-            src="/images/cta-stripes.png"
-            alt=""
-            className={styles.bannerStripesLeftUnderWug}
-          />
+        {/* leftstripe 1 */}
+        <img
+          src="/images/cta-stripes.png"
+          alt=""
+          className={styles.bannerStripesTopLeft}
+        />
+        {/* leftstripe 2 */}
+        <img
+          src="/images/cta-stripes.png"
+          alt=""
+          className={styles.bannerStripesTopLeft2}
+        />
+        {/* leftwugstripe */}
+        <img
+          src="/images/cta-stripes.png"
+          alt=""
+          className={styles.bannerStripesLeftUnderWug}
+        />
 
-          <img
-            src="/images/cta-stripes.png"
-            alt=""
-            className={styles.bannerStripesTopRight}
-          />
-          <img
-            src="/images/cta-stripes.png"
-            alt=""
-            className={styles.bannerStripesTopRight2}
-          />
-          <img
-            src="/images/cta-stripes.png"
-            alt=""
-            className={styles.bannerStripesRightUnderWug}
-          />
-          
+        <img
+          src="/images/cta-stripes.png"
+          alt=""
+          className={styles.bannerStripesTopRight}
+        />
+        <img
+          src="/images/cta-stripes.png"
+          alt=""
+          className={styles.bannerStripesTopRight2}
+        />
+        <img
+          src="/images/cta-stripes.png"
+          alt=""
+          className={styles.bannerStripesRightUnderWug}
+        />
+
         <div className={styles.bannerDecoLeft} aria-hidden="true">
           {/* <div className={styles.stripesWrapper}>
             <img
@@ -187,7 +178,7 @@ export default function OpportunitiesPage() {
             className={styles.pathBannerBtn}
             onClick={handleScrollToUndergrad}
           >
-            Start Exploring
+            Start Exploring ↓
           </a>
         </div>
 

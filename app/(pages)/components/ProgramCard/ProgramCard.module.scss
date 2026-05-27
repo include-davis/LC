@@ -3,18 +3,12 @@
   flex: 0 0 auto;
   width: 160px;
   border-radius: var(--radius-md);
-  background-color: var(--pure-white);
   border: none;
-  box-shadow: var(--shadow-card);
   overflow: hidden;
   //border: 1px solid var(--Blueish-Purple-500, #6563de);
   transition:
     box-shadow 0.25s ease,
     transform 0.25s ease;
-  &:hover {
-    box-shadow: 0 6px 28px rgba(124, 111, 212, 0.22);
-    transform: translateY(-3px);
-  }
 }
 
 .link {

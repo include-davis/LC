@@ -43,7 +43,7 @@
 
 .heroSubtitle {
   font-size: 0.88rem;
-  color: var(--color-text-muted);
+  color: var(--color-primary-light);
   max-width: 340px;
   line-height: 1.6;
 }
@@ -133,15 +133,15 @@
   font-size: 0.78rem;
   font-family: var(--font-body);
   cursor: pointer;
-  border: 1px solid var(--color-primary);
-  background-color: transparent;
+  border: 1px solid var(--color-primary-bg);
+  background-color: white;
   color: var(--color-primary);
   transition:
     background-color 0.15s,
     color 0.15s;
 
   &:hover {
-    background-color: var(--color-primary-light);
+    background-color: var(--color-primary);
     color: var(--pure-white);
     border-color: var(--color-primary-light);
   }
@@ -162,8 +162,9 @@
   font-size: 0.78rem;
   font-family: var(--font-body);
   cursor: pointer;
-  border: 1px solid var(--color-text-muted);
+  border: 1px solid var(--color-primary-bg);
   background-color: transparent;
+  text-decoration: underline;
   color: var(--color-text-muted);
   transition:
     color 0.15s,
@@ -171,7 +172,7 @@
 
   &:hover {
     color: var(--color-text);
-    border-color: var(--color-text);
+    //border-color: var(--color-text);
   }
 }
 
@@ -204,9 +205,6 @@
 // PROGRAM CARD GRID
 // ══════════════════════════════════════════
 .gridSection {
-  background-color: var(
-    --color-primary-bg
-  ); // Light purple background in the grid area
   padding: var(--space-2xl) var(--space-xl);
   margin: 0 auto 10rem;
   margin-bottom: 60px;
@@ -311,17 +309,23 @@
     img {
       content: url("/images/wave-top-mobile.svg");
     }
+    // position: absolute;
   }
 
   // ── Search ────────────────────────────
   .searchSection {
     padding: 0 var(--space-md);
     margin-bottom: 0;
+    // position: relative;
+    // z-index: -1;
   }
 
   .searchBox {
     padding: var(--space-md);
     margin-top: 0px;
+
+    // background: rgba(238, 234, 243, 1);
+    // position: relative;
   }
 
   .filterRow {
