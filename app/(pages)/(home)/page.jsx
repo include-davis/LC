@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { RiArrowRightSLine } from 'react-icons/ri';
 import styles from './page.module.scss';
+// Shared arrow asset: /public/shared/arrow_right.svg — used in intro + recent events buttons
 import GallerySection from './_components/GallerySection';
 
 export default function Home() {
@@ -159,7 +159,14 @@ export default function Home() {
                 {/* Frame 10 — button inner row */}
                 <div className={styles.introButtonInner}>
                   <span className={styles.introButtonText}>Learn More</span>
-                  <RiArrowRightSLine className={styles.introButtonIcon} aria-hidden="true" />
+                  <Image
+                    src="/shared/arrow_right.svg"
+                    alt=""
+                    width={32}
+                    height={32}
+                    className={styles.introButtonIcon}
+                    aria-hidden="true"
+                  />
                 </div>
               </button>
 
@@ -176,7 +183,104 @@ export default function Home() {
       </section>
 
       <section className={styles.recentEvents}>
-        <p>Recent Events Section</p>
+
+        {/* Recent Events Rectangle Section — gradient card (1374×749.54, border-radius: 40px) */}
+        <div className={styles.recentEventsCard}>
+
+          {/* Frame 320 — content column (1084×549.54, align: center, isolation: isolate) */}
+          <div className={styles.recentEventsContent}>
+
+            {/* Wug mascot — decorative, horizontally mirrored (87.55×104.94, absolute, z-index: 0) */}
+            <div className={styles.recentEventsWug} aria-hidden="true">
+              <Image
+                src="/home/recent/recent_wug.png"
+                alt=""
+                fill
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
+
+            {/* Recent Events Title — wrapper (359×73, order: 1, z-index: 1) */}
+            <div className={styles.recentEventsTitleWrap}>
+              <h2 className={styles.recentEventsHeading}>Recent Events</h2>
+            </div>
+
+            {/* Frame 314 — cards + button column (1084×412.54, order: 2, z-index: 2) */}
+            <div className={styles.recentEventsBottom}>
+
+              {/* Frame 329 — event cards row (1084×312, gap: 80px, justify: center) */}
+              <div className={styles.recentEventsItems}>
+
+                {/* Frame 327 — Event Card 1 (308×312) */}
+                <div className={styles.recentEventItem}>
+                  {/* Vector 19 — highlight decoration (165.36×46.67, absolute, z-index: 2) */}
+                  <div className={styles.recentEventDeco} aria-hidden="true">
+                    <Image src="/home/recent/recent_tape.png" alt="" fill style={{ objectFit: 'contain' }} />
+                  </div>
+                  {/* Frame 326 — date wrapper (86×35, z-index: 0) */}
+                  <div className={styles.recentEventDateWrap}>
+                    <span className={styles.recentEventDate}>1/22/26</span>
+                  </div>
+                  {/* Frame 325 — title wrapper (236×56, z-index: 1) */}
+                  <div className={styles.recentEventTitleWrap}>
+                    <p className={styles.recentEventTitle}>Assyrian Language Presentation</p>
+                  </div>
+                </div>
+
+                {/* Frame 328 — Event Card 2 (308×312) */}
+                <div className={styles.recentEventItem}>
+                  <div className={styles.recentEventDeco} aria-hidden="true">
+                    <Image src="/home/recent/recent_tape.png" alt="" fill style={{ objectFit: 'contain' }} />
+                  </div>
+                  {/* Frame 326 — date wrapper (45×35, z-index: 0) */}
+                  <div className={styles.recentEventDateWrap}>
+                    <span className={styles.recentEventDate}>TBA</span>
+                  </div>
+                  {/* Frame 325 — title wrapper (236×28, z-index: 1) */}
+                  <div className={styles.recentEventTitleWrap}>
+                    <p className={styles.recentEventTitle}>...</p>
+                  </div>
+                </div>
+
+                {/* Frame 329 — Event Card 3 (308×312) */}
+                <div className={styles.recentEventItem}>
+                  <div className={styles.recentEventDeco} aria-hidden="true">
+                    <Image src="/home/recent/recent_tape.png" alt="" fill style={{ objectFit: 'contain' }} />
+                  </div>
+                  {/* Frame 326 — date wrapper (45×35, z-index: 0) */}
+                  <div className={styles.recentEventDateWrap}>
+                    <span className={styles.recentEventDate}>TBA</span>
+                  </div>
+                  {/* Frame 325 — title wrapper (236×28, z-index: 1) */}
+                  <div className={styles.recentEventTitleWrap}>
+                    <p className={styles.recentEventTitle}>...</p>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* See More / Archive button (185.32×60.54) */}
+              {/* NOTE: Figma layer is labelled "Archive" — update text to match final copy */}
+              <button className={styles.recentEventsMoreBtn} type="button">
+                {/* Frame 10 — button inner row (106×32, gap: 8.8px) */}
+                <div className={styles.recentEventsMoreBtnInner}>
+                  <span className={styles.recentEventsMoreBtnText}>See More</span>
+                  <Image
+                    src="/shared/arrow_right.svg"
+                    alt=""
+                    width={30}
+                    height={30}
+                    className={styles.recentEventsMoreBtnIcon}
+                    aria-hidden="true"
+                  />
+                </div>
+              </button>
+
+            </div>
+          </div>
+
+        </div>
+
       </section>
 
       <GallerySection />

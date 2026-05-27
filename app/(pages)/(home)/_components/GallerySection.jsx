@@ -1,31 +1,55 @@
 'use client';
 
-import { useState } from 'react';
-import { RiArrowRightSLine } from 'react-icons/ri';
+import { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
 import styles from '../page.module.scss';
 
 /*
-  Column start positions in the track (rem / px):
+  Track layout — column start positions (rem / px at 16px base):
     Big Video 1  (Slide 1):    0rem       (0px)
     Frame 284    (wide):      34.75rem    (556px)
-    Frame 285    (mid):       76.375rem   (1222px)  ← position 1
+    Frame 285    (mid):       76.375rem   (1222px)  ← FLUSH_POSITIONS[1]
     Frame 286    (narrow):   102.25rem    (1636px)
     Big Video 2  (Slide 2):  126.625rem   (2026px)
-    Frame 287    (wide):     161.375rem   (2582px)  ← position 2
-    ── max scroll ──          166.75rem   (2668px)  ← position 3
-    Frame 288    (mid):       203rem      (3248px)  ✗ exceeds max, can't flush-left
-    Frame 289    (narrow):   228.875rem   (3662px)  ✗ exceeds max, can't flush-left
+    Frame 287    (wide):     161.375rem   (2582px)  ← FLUSH_POSITIONS[2]
+    Frame 288    (mid):       203rem      (3248px)
+    Frame 289    (narrow):   228.875rem   (3662px)
 
-  Each entry is the exact rem offset that puts that column's left edge
-  flush with the carousel's left edge. To adjust a position, change its
-  value to any column start above that is ≤ 166.75rem (2668px).
+  Total track width:
+    2×34.25 + 2×41.125 + 2×25.375 + 2×23.875 + 7×0.5 = 252.75rem (4044px)
+
+  FLUSH_POSITIONS[0–2] are fixed: each puts a column's left edge flush with
+  the carousel's left edge.
+
+  FLUSH_POSITIONS[3] (max scroll) = TRACK_WIDTH_REM − carousel_rendered_width_rem.
+  This is computed at runtime so it stays exact at any viewport width.
+  Example: 1440px viewport → 252.75 − 86 = 166.75rem
 */
-const SLIDE_POSITIONS = [0, 76.375, 161.375, 166.75]; /* rem (0px, 1222px, 2582px, 2668px) */
-const TOTAL_SLIDES = SLIDE_POSITIONS.length;
+const FLUSH_POSITIONS = [0, 76.375, 161.375]; /* rem — fixed flush-left column offsets */
+const TRACK_WIDTH_REM = 252.75;               /* rem — total track width (4044px at 16px base) */
 
 export default function GallerySection() {
   const [slide, setSlide] = useState(0);
+  const carouselRef = useRef(null);
 
+  /* slidePositions[3] is recalculated whenever the carousel resizes */
+  const [slidePositions, setSlidePositions] = useState([...FLUSH_POSITIONS, 166.75]);
+
+  useEffect(() => {
+    const computeMaxScroll = () => {
+      if (!carouselRef.current) return;
+      const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+      const carouselWidthRem = carouselRef.current.offsetWidth / rootFontSize;
+      const maxScroll = Math.max(0, TRACK_WIDTH_REM - carouselWidthRem);
+      setSlidePositions([...FLUSH_POSITIONS, maxScroll]);
+    };
+
+    computeMaxScroll();
+    window.addEventListener('resize', computeMaxScroll);
+    return () => window.removeEventListener('resize', computeMaxScroll);
+  }, []);
+
+  const TOTAL_SLIDES = slidePositions.length;
   const goNext = () => setSlide(s => Math.min(s + 1, TOTAL_SLIDES - 1));
   const goPrev = () => setSlide(s => Math.max(s - 1, 0));
 
@@ -41,12 +65,12 @@ export default function GallerySection() {
         </div>
 
         {/* galleryCarousel — viewport / clip window (1376×760), position: relative */}
-        <div className={styles.galleryCarousel}>
+        <div className={styles.galleryCarousel} ref={carouselRef}>
 
           {/* galleryTrack — full horizontal strip, translates on arrow click */}
           <div
             className={styles.galleryTrack}
-            style={{ transform: `translateX(-${SLIDE_POSITIONS[slide]}rem)` }}
+            style={{ transform: `translateX(-${slidePositions[slide]}rem)` }}
           >
 
             {/* ── SLIDE 1 — columns 0–3 ── */}
@@ -170,9 +194,14 @@ export default function GallerySection() {
             disabled={slide === 0}
           >
             {/* TODO: swap for iconamoon:arrow-right-2-light once icon set confirmed */}
-            <RiArrowRightSLine
+            <Image
+              src="/shared/arrow_right.svg"
+              alt=""
+              width={62}
+              height={62}
               className={styles.galleryArrowIcon}
               style={{ transform: 'rotate(180deg)' }}
+              aria-hidden="true"
             />
           </button>
 
@@ -184,7 +213,14 @@ export default function GallerySection() {
             disabled={slide === TOTAL_SLIDES - 1}
           >
             {/* TODO: swap for iconamoon:arrow-right-2-light once icon set confirmed */}
-            <RiArrowRightSLine className={styles.galleryArrowIcon} />
+            <Image
+              src="/shared/arrow_right.svg"
+              alt=""
+              width={62}
+              height={62}
+              className={styles.galleryArrowIcon}
+              aria-hidden="true"
+            />
           </button>
 
         </div>{/* end .galleryCarousel */}
