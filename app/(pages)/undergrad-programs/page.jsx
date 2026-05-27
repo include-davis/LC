@@ -45,7 +45,8 @@ export default function UndergradProgramsPage() {
     <ProgramsPage
       titleLine1="Undergraduate"
       titleLine2="Programs"
-      pageSubtitle="New to linguistics? Come see what undergraduate programs have to offer!"
+      pageSubtitle="New to linguistics? 
+      Come see what undergraduate programs have to offer!"
       programs={programs}
     />
   );

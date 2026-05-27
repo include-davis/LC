@@ -37,19 +37,21 @@ export default function ProgramCard({
           {abbr && <span className={styles.abbr}>{abbr}</span>}
         </div>
 
-        {/* Title */}
-        <h3 className={styles.title}>{title}</h3>
-
-        {/* Subtitle: Image tags should be displayed first, otherwise text should be displayed. */}
-        {subtitleImage ? (
-          <img
-            src={subtitleImage}
-            alt={subtitle}
-            className={styles.subtitleImg}
-          />
-        ) : (
-          <p className={styles.subtitle}>{subtitle}</p>
-        )}
+        {/* textGroup: Title + Sub-label
+Desktop: Block container; serves no additional function.
+Mobile: Flex container (column direction); serves as the text area for list items. */}
+        <div className={styles.textGroup}>
+          <h3 className={styles.title}>{title}</h3>
+          {subtitleImage ? (
+            <img
+              src={subtitleImage}
+              alt={subtitle}
+              className={styles.subtitleImg}
+            />
+          ) : (
+            <p className={styles.subtitle}>{subtitle}</p>
+          )}
+        </div>
       </a>
     </article>
   );

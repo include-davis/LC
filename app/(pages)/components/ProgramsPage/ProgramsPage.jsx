@@ -71,9 +71,23 @@ export default function ProgramsPage({
             <span className={styles.heroTitleLine}>{titleLine1}</span>
             <span className={styles.heroTitleLine}>{titleLine2}</span>
           </h1>
-          {pageSubtitle && (
-            <p className={styles.heroSubtitle}>{pageSubtitle}</p>
-          )}
+          <div className={styles.subtitleWrapper}>
+            <img
+              src="/images/birds-small.svg"
+              alt=""
+              className={styles.subtitleBird}
+              aria-hidden="true"
+            />
+            {pageSubtitle && (
+              <p className={styles.heroSubtitle}>{pageSubtitle}</p>
+            )}
+            <img
+              src="/images/birds-small.svg"
+              alt=""
+              className={styles.subtitleBird}
+              aria-hidden="true"
+            />
+          </div>
         </div>
         {/* Right-side birds (same as Opportunities page) */}
         <div className={styles.heroBirds} aria-hidden="true">
