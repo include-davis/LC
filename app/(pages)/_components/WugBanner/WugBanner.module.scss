@@ -1,0 +1,84 @@
+// Styles for the Wug Graphic Banner section.
+// Pixel-locked to the 1440 Figma layout (parent frame: node 4253:1077, 1441x279.7).
+// All px values from Figma are expressed in rem here (1rem = 16px at default root font-size).
+
+.banner {
+  position: relative;
+  width: 90rem;        // 1440px
+  height: 17.481rem;   // 279.7px
+}
+
+// Gradient strip that forms the visible banner background. Sits in the middle of the
+// taller parent frame so decorations spill above and below the strip.
+.background {
+  position: absolute;
+  top: 2.9375rem;      // 47px
+  left: 0;
+  width: 90rem;        // 1440px
+  height: 8.25rem;     // 132px
+  background: linear-gradient(90deg, #C1C1F2 0%, #FFFFFF 100%);
+}
+
+// Shared base for every decoration image (positioned individually via inline style).
+.decoration {
+  position: absolute;
+}
+
+// Masked bird silhouette. The mask is a bird-shape PNG with alpha; the white background
+// shows through the bird-shaped opening, producing a clean white bird on the banner.
+// Matches Figma node 4253:1090 ("White Wug (Masked)") and its -23.58deg rotation.
+.bird {
+  position: absolute;
+  left: 23.375rem;     // 374px
+  top: 7.04rem;        // 112.66px (matches Figma's offset; the rotation re-centers visually)
+  width: 6.891rem;     // 110.26px
+  height: 7.26rem;     // 116.16px
+  background-color: white;
+  -webkit-mask-image: url('./_assets/bird.png');
+          mask-image: url('./_assets/bird.png');
+  -webkit-mask-mode: alpha;
+          mask-mode: alpha;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
+  transform: rotate(-23.58deg);
+}
+
+// "Wug..." text frame. Each letter inside is absolutely positioned via inline style.
+.wugText {
+  position: absolute;
+  left: 39.71rem;      // 635.36px
+  top: 1rem;           // 16px
+  width: 40.154rem;    // 642.46px
+  height: 16.481rem;   // 263.7px
+}
+
+// Wrapper for each letter. `left` is interpreted as horizontal center via translateX(-50%).
+.letterWrapper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%);
+}
+
+// Inner rotation wrapper. Rotation degrees come from inline style (one value per letter).
+.letterRotated {
+  flex: none;
+}
+
+// The actual letter glyph (Gochi Hand, white with a soft drop-shadow).
+.letter {
+  margin: 0;
+  font-family: 'Gochi Hand', cursive;
+  font-weight: 400;
+  text-align: center;
+  color: #FFFFFF;
+  // -2px 7px 0 rgba(0,0,0,0.25) → rem
+  text-shadow: -0.125rem 0.4375rem 0 rgba(0, 0, 0, 0.25);
+  line-height: normal;
+  word-break: break-word;
+}

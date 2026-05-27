@@ -1,0 +1,125 @@
+// Styles for a single EventCard ("Card Hover" — Figma node 4253:1103).
+// All values from Figma px → rem (1rem = 16px).
+
+// Outer card: 240px wide column, image + meta stacked with a 12px gap.
+.card {
+  width: 15rem;            // 240px
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;            // 12px
+}
+
+// Square image area. The purple "border" is a hand-drawn squiggly PNG laid
+// on top of the photo via ::after, so it sits over the corners without
+// affecting layout. The PNG is expected to have a transparent center so the
+// photo shows through the inside of the squiggle.
+.image {
+  position: relative;
+  width: 15rem;            // 240px
+  height: 15rem;           // 240px
+  background-color: rgba(85, 85, 85, 0); // matches Figma's transparent fill
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+// Squiggly purple border overlay (Figma "card hover" frame).
+// Sits above the photo but below the See-more overlay (no z-index needed —
+// SeeMoreOverlay is rendered after ::after in stacking order via z-index below).
+.image::after {
+  content: "";
+  position: absolute;
+  inset: 0;                // covers the full 240x240
+  background-image: url('./_assets/card-border.png');
+  background-size: 100% 100%; // stretch to fit so the squiggle hugs the edges
+  background-repeat: no-repeat;
+  pointer-events: none;    // don't intercept hover/clicks
+  z-index: 1;
+}
+
+// Hover overlay container. Hidden by default; fades in on card hover.
+// Positioned to sit centered over the image (Figma's left:83 / top:111 in a 240
+// image roughly centers the "See more →" pill).
+.overlay {
+  position: absolute;
+  left: 5.1875rem;         // 83px
+  top: 6.9375rem;          // 111px
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.25rem;            // 4px between "See more" and arrow
+  opacity: 0;
+  transition: opacity 150ms ease; // light placeholder — swap for framer-motion later
+  pointer-events: none;    // overlay shouldn't intercept clicks during fade
+  z-index: 2;              // sit above the squiggle border (z-index: 1)
+}
+
+.image:hover .overlay {
+  opacity: 1;
+}
+
+// "See more" label in the overlay.
+.overlayText {
+  text-align: center;
+  color: var(--white);     // #FFFCF9
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 0.875rem;     // 14px
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+// Wrapper that gives the rotated arrow stroke its 14px slot in the flex row,
+// matching Figma's "Frame 50 / icon container" exactly.
+.overlayArrow {
+  width: 0.875rem;         // 14px
+  padding: 0.25rem 0.0625rem 0.0625rem 0.0625rem; // 4 1 1 1 px
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.625rem;           // 10px (preserved from Figma even though there's one child)
+}
+
+// The actual diagonal stroke. 8x4 sliver, rotated 45deg around its top-left,
+// outlined 1px — produces the small "↗" arrow tip from Figma.
+.overlayArrowStroke {
+  display: block;
+  width: 0.5rem;           // 8px
+  height: 0.25rem;         // 4px
+  transform: rotate(45deg);
+  transform-origin: top left;
+  outline: 1px solid var(--white);
+  outline-offset: -0.03125rem; // -0.5px
+}
+
+// Meta block (title + date) below the image.
+.meta {
+  padding: 0 0.125rem;     // 2px horizontal padding (matches Figma)
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+// Card title (e.g., "Movie Night").
+.title {
+  text-align: center;
+  color: var(--grey-500);  // #232325
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 1.25rem;      // 20px
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+// Card date (e.g., "11/06/25").
+.date {
+  text-align: center;
+  color: var(--grey-200);  // #A7A7A8
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 0.875rem;     // 14px
+  font-weight: 400;
+  word-wrap: break-word;
+}

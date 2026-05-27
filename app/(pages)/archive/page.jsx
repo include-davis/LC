@@ -1,14 +1,17 @@
 // Archive page — composes section components in order.
-// Remaining sections (WuggBanner, PastEvents, Milestones, PastPresentations, Community)
-// will be added below as they're built.
+// Remaining sections (PastEvents, Milestones, PastPresentations, Community) will be added below as built.
 
 import ArchiveHeader from "../_components/ArchiveHeader/ArchiveHeader";
+import WugBanner from "../_components/WugBanner/WugBanner";
+import PastEvents from "../_components/PastEvents/PastEvents";
 import styles from "./page.module.scss";
 
 export default function ArchivePage() {
   return (
     <main className={styles.page}>
       <ArchiveHeader />
+      <WugBanner />
+      <PastEvents />
     </main>
   );
 }

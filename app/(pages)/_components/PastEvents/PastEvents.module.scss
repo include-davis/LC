@@ -1,0 +1,42 @@
+// Styles for the Past Events section.
+// Pixel-locked to the 1440 Figma layout. Values from Figma px → rem (1rem = 16px).
+
+// Outer section frame — Figma "SECTION 3" (Frame with auto layout).
+// Fixed 1440 wide, Hug height (≈681px with current content), vertical flow,
+// padding 84/104/84/104, 10px gap between children, background #FFFCF9.
+.section {
+  width: 90rem;            // 1440px
+  display: flex;
+  flex-direction: column;  // vertical flow
+  align-items: center;     // children centered horizontally within content area
+  gap: 0.625rem;           // 10px
+  padding: 5.25rem 6.5rem; // 84px top/bottom, 104px left/right
+  background-color: #FFFCF9; // matches Figma frame fill
+}
+
+// "Past Events!" title — Figma node 4253:1102.
+// Hug 307x73; Hanken Grotesk 700; 56px; line-height 100%; color #6563DE; center aligned.
+.title {
+  width: 19.1875rem;       // 307px (Hug width preserved as fixed width here)
+  height: 4.5625rem;       // 73px
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 3.5rem;       // 56px
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
+  color: var(--blueish-purple500); // #6563DE
+}
+
+// Row that holds the 4 EventCards.
+// Specs from user + Figma: 67.5rem (1080px) wide, 8px padding, 40px gap,
+// 4 cards * 240 + 3 gaps * 40 = 1080 → fits perfectly inside the row.
+.row {
+  display: flex;
+  width: 67.5rem;          // 1080px
+  padding: 0.5rem;         // 8px
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2.5rem;             // 40px
+}
