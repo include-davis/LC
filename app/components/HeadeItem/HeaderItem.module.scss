@@ -1,0 +1,33 @@
+.container {
+    position: relative;
+    display: inline-block;
+}
+
+.itemButton {
+    display: inline-flex;
+    align-items: center;
+
+    height: 35px;
+
+    padding: 0px 10px;
+
+    color: #6563DE;
+
+    font-family: "Hanken Grotesk";
+    font-weight: 500;
+    font-size: 18px;
+
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: background-color 250ms;
+
+    &:hover {
+        background-color: #E9E8E7;
+    }
+}
