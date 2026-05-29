@@ -5,14 +5,15 @@
 //       <SeeMoreOverlay />
 //     .meta           ← title + date stacked below the image
 //
-// Props let the parent (PastEventsRow) reuse the same component for all 4 cards
-// with different images, titles, and dates.
+// Props let the parent (PastEventsCarousel) reuse the same component for every card
+// with different images, titles, and dates. `image` is optional — TBD cards omit it
+// and render as an empty squiggle frame (no photo).
 
 import SeeMoreOverlay from "./SeeMoreOverlay";
 import styles from "./EventCard.module.scss";
 
 export default function EventCard({
-  image = "https://placehold.co/240x240",
+  image,
   title = "Movie Night",
   date = "11/06/25",
   alt = "",
@@ -21,9 +22,9 @@ export default function EventCard({
     <article className={styles.card}>
       <div
         className={styles.image}
-        // Image is set via inline style so the same .image class can host any URL
-        // without needing a separate selector per card.
-        style={{ backgroundImage: `url(${image})` }}
+        // Image is set via inline style so the same .image class can host any URL.
+        // When no image is supplied (TBD cards), the frame stays empty.
+        style={image ? { backgroundImage: `url(${image})` } : undefined}
         role="img"
         aria-label={alt || title}
       >

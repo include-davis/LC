@@ -2,9 +2,7 @@
 // Pixel-locked to the 1440 Figma layout, expressed in rem (1rem = 16px at default root font-size).
 // Stars are absolutely positioned within the section.
 
-// Section frame — Figma spec: width 100% (fills the viewport), padding 200/140/120/120,
-// 10px gap, content left-aligned. Stars below are absolutely positioned from the right
-// edge, so they stay anchored to the right regardless of viewport width.
+// Section frame — fills the viewport width; padding/gap in rem, content left-aligned.
 .header {
   position: relative;
   display: flex;
@@ -13,7 +11,7 @@
   width: 100%;
   padding: 12.5rem 7.5rem 8.75rem; // 200px top, 120px sides, 140px bottom
   gap: 0.625rem;                   // 10px
-  overflow: hidden;                // matches Figma; clips any star spill at edges
+  overflow: hidden;                // clips any star spill at edges
 }
 
 .titleBlock {
@@ -48,23 +46,25 @@
   position: absolute;
 }
 
+// Stars are anchored from the LEFT so they stay near the title at the x-coordinates
+// they had in the 1440 Figma layout. left = (1440 − originalRightOffset − starWidth) + 2rem shift.
 .starLarge {
   width: 16.6875rem;  // 267px
   height: 16.375rem;  // 262px
   top: 15.0625rem;    // 241px
-  right: 25.25rem;    // 404px
+  left: 50.0625rem;   // 769px + 2rem shift right
 }
 
 .starMedium {
   width: 13.1875rem;  // 211px
   height: 12.875rem;  // 206px
   top: 7.6875rem;     // 123px
-  right: 14.625rem;   // 234px
+  left: 64.1875rem;   // 995px + 2rem shift right
 }
 
 .starSmall {
   width: 6.625rem;    // 106px
   height: 6.5rem;     // 104px
   bottom: 4.8125rem;  // 77px
-  right: 15.75rem;    // 252px
+  left: 69.625rem;    // 1082px + 2rem shift right
 }

@@ -14,29 +14,33 @@ import rect70 from "./_assets/rectangle-70.svg";
 import rect71 from "./_assets/rectangle-71.svg";
 import styles from "./WugBanner.module.scss";
 
-// Convert Figma px values to rem (1rem = 16px) so the layout scales with root font-size.
-const toRem = (px) => `${px / 16}rem`;
+// The 1440px Figma artboard fills the full viewport width, so every coordinate is
+// expressed in vw: 1440px = 100vw → 1px = (1/14.4)vw. This scales the whole cluster
+// proportionally with the page (streaks reach the right edge on any monitor).
+const toVw = (px) => `${px / 14.4}vw`;
 
-// Each entry maps a decoration to its Figma-relative position and size within the banner frame.
+// Each entry maps a decoration to its position and size WITHIN the banner frame.
+// All values are verified directly against Figma MCP metadata (node 4253:1080 children),
+// converted from absolute canvas coords to banner-relative px: rel = abs − bannerOrigin(-0.5, 538).
 const DECOS = [
-  // top-left filled gradient star (renders behind the big outline star)
-  { src: polygon4, left: 26,   top: 0,      w: 110,    h: 131    },
-  // bottom-left 5-point outlined star
-  { src: polygon1, left: 11,   top: 103,    w: 91,     h: 108    },
-  // big wavy outlined star (the dominant decoration on the left)
-  { src: star2,    left: 141,  top: 83.35,  w: 224.79, h: 224.79 },
-  // medium wavy outlined star (sits below the bird area)
-  { src: star3,    left: 463,  top: 39.25,  w: 87.43,  h: 87.43  },
-  // small chubby filled star (just above the wug text)
-  { src: star1,    left: 607,  top: 43.18,  w: 49.56,  h: 49.56  },
-  // small filled 5-point star (near center-bottom)
-  { src: polygon5, left: 538,  top: 132,    w: 54,     h: 64     },
-  // top-right short motion-blur streak
-  { src: rect71,   left: 1206, top: 63,     w: 235,    h: 34     },
-  // middle long motion-blur streak
-  { src: rect70,   left: 735,  top: 97,     w: 705,    h: 42     },
-  // bottom-right medium motion-blur streak
-  { src: rect69,   left: 966,  top: 142,    w: 475,    h: 34     },
+  // Polygon 4 (4253:1089) — top-left filled gradient star; extends above the gradient (top:0)
+  { src: polygon4, left: 26,   top: 0,     w: 110,    h: 131    },
+  // Polygon 1 (4253:1087) — bottom-left 5-point outlined star
+  { src: polygon1, left: 11,   top: 103,   w: 91,     h: 108    },
+  // Star 2 (4253:1086) — big wavy outlined star (dominant decoration on the left)
+  { src: star2,    left: 141,  top: 83.35, w: 224.79, h: 224.79 },
+  // Star 3 (4253:1085) — medium wavy outlined star (sits below the bird area)
+  { src: star3,    left: 463,  top: 39.25, w: 87.425, h: 87.425 },
+  // Star 1 (4253:1084) — small chubby filled star (just above the wug text)
+  { src: star1,    left: 607,  top: 43.18, w: 49.555, h: 49.555 },
+  // Polygon 5 (4253:1088) — small filled 5-point star (near center-bottom)
+  { src: polygon5, left: 538,  top: 132,   w: 54,     h: 64     },
+  // Rectangle 71 (4253:1083) — top-right short motion-blur streak
+  { src: rect71,   left: 1206, top: 63,    w: 235,    h: 24     },
+  // Rectangle 70 (4253:1082) — middle long motion-blur streak (goes behind the wug words)
+  { src: rect70,   left: 735,  top: 97,    w: 705,    h: 32     },
+  // Rectangle 69 (4253:1081) — bottom-right medium motion-blur streak
+  { src: rect69,   left: 966,  top: 142,   w: 475,    h: 24     },
 ];
 
 export default function DecorCluster() {
@@ -49,10 +53,10 @@ export default function DecorCluster() {
           alt=""
           className={styles.decoration}
           style={{
-            left: toRem(d.left),
-            top: toRem(d.top),
-            width: toRem(d.w),
-            height: toRem(d.h),
+            left: toVw(d.left),
+            top: toVw(d.top),
+            width: toVw(d.w),
+            height: toVw(d.h),
           }}
         />
       ))}
