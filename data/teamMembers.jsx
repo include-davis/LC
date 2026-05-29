@@ -1,0 +1,94 @@
+export const LCboard = [
+
+    {
+        name: 'James',
+        lastName: 'Reid',
+        pronouns: '(he/him)',
+        position: 'President',
+        year: 'Second Year',
+        major: 'Linguistics Major',
+        interests: 'Endangered language work, specifically Hawaiian, as well as morphology, syntax, French and Mandarin.',
+        outside: 'I am a fencer and a student pilot',
+        funFact: null,
+        image: '/images/about/James_Border.png',
+    },
+
+    {
+        name: 'Imogen',
+        lastName: 'Garrison',
+        pronouns: '(she/her)',
+        position: 'Social Media',
+        year: 'Second Year',
+        major: 'Linguistics Major',
+        interests: 'Speech Language Pathology, and language evolution.',
+        outside: null,
+        funFact: 'I have four cats',
+        image: '/images/about/Imogen_Border.png',
+    },
+
+    {
+        name: 'Leia',
+        lastName: 'Ray',
+        pronouns: '(any/all)',
+        position: 'Co-President',
+        year: 'Second Year',
+        major: 'Linguistics & Statistics Double Major',
+        interests: 'Computational linguistics and the applications of statistical methods in linguistics.',
+        funFact: 'I am currently learning the 20 button C/G Anglo concertina (would love to play some sea shanties one day)',
+        outside: null,
+        image: '/images/about/Leia_Border.png',
+    },
+
+    {
+        name: 'Celia',
+        lastName: 'Farrell',
+        pronouns: '(she/her)',
+        position: 'President',
+        year: 'Second Year',
+        major: 'Linguistics & Psychology Double Major',
+        interests: 'Psycholinguistics, language acquisition, speech perception, as well as how AI replicates human speech.',
+        funFact: null,
+        outside: 'I love doing theater and technical theater production, and I’m currently set designing a musical!',
+        image: '/images/about/Celia_Border.png',
+    },
+
+    {
+        name: 'Beth',
+        lastName: 'Harrison',
+        pronouns: '(she/her)',
+        position: 'Finance',
+        year: 'Second Year',
+        major: 'Linguistics & Classics Double Major',
+        interests: 'Representation and preservation of endangered/undocumented languages, as well as theoretical phonology. Since I’m studying ancient Greek and Latin, I also want to explore universals and relations across Indo-European languages.',
+        funFact: 'I ❤️ baseball so much. Please talk to me about ball',
+        outside: null,
+        image: '/images/about/Beth_Border.png',
+    },
+
+    {
+        name: 'Jay',
+        lastName: 'Madriaga',
+        pronouns: '(any/all)',
+        position: 'Events Coordinator',
+        year: 'Second Year',
+        major: 'Linguistics & Communications Double Major',
+        interests: null,
+        funFact: null,
+        outside: 'I love hockey, music, crocheting, and video games (like The Last of Us), and my pitbull, Blue',
+        image: '/images/about/Jay_Border.png',
+    },
+
+    {
+        name: 'Fiona',
+        lastName: 'Sargisian',
+        pronouns: '(she/her)',
+        position: 'Fundraising',
+        year: null,
+        major: 'Cognitive Neuroscience Major',
+        interests: 'Dying and evolving languages. I speak Aramaic at home and, due to its old ancestry, it has changed so much over time so doing research on its evolution played a big role in expanding my linguistics knowledge.',
+        funFact: null,
+        outside: 'Conducting neuroscience research, studying ethics, reading, listening to music, and meeting up with friends both in and outside of linguistics.',
+        image: '/images/about/Fiona_Border.png',
+    }
+
+]
