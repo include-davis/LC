@@ -1,0 +1,26 @@
+// Styles for the Milestones section. Pixel-locked to the 1440 Figma layout; px → rem
+// (1rem = 16px). Fixed-rem sizing (this section does not use vw).
+
+// Outer section — Figma "Frame 288" (1440x668). The purple panel is inset 40px horizontally
+// and 20px vertically, so this frame just provides that margin around the panel.
+.section {
+  width: 90rem;            // 1440px
+  padding: 1.25rem 2.5rem; // 20px top/bottom, 40px left/right
+  display: flex;
+}
+
+// The big rounded purple panel — Figma "SECTION2" (1360x628).
+// Diagonal gradient #8482E5 → #E0E0F8 at 118.61deg, 40px radius. overflow:hidden clips the
+// motion-streak decorations that spill past the rounded edges.
+.panel {
+  position: relative;
+  width: 100%;             // fills the section content area (1360px)
+  height: 39.25rem;        // 628px
+  border-radius: 2.5rem;   // 40px
+  background: linear-gradient(118.61deg, #8482E5 4.47%, #E0E0F8 122.65%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5.25rem 6.5rem; // 84px top/bottom, 104px left/right
+}
