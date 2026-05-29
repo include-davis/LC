@@ -2,18 +2,17 @@
     display: inline-flex;
     flex-direction: column;
 
-    padding: 0px 12px;
+    justify-content: center;
+    align-self: stretch;
 
     height: 59px;
 
+    padding: 0px 12px;
     gap: 5px;
 
     text-decoration: none;
 
     border-radius: 8px;
-
-    justify-content: center;
-    align-self: stretch;
 
     transition: background-color 250ms;
 
