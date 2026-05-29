@@ -1,0 +1,29 @@
+.container {
+    width: 100%;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 10px 20px;
+    gap: 16px;
+
+    background-color: #FFFCF9;
+
+    border: 1px solid #A7A7A880;
+}
+
+.iconButton {
+    padding: 0px;
+
+    background-color: transparent;
+
+    border: none;
+
+    cursor: pointer;
+
+    img {
+        display: block;
+    }
+}
