@@ -69,11 +69,17 @@
 }
 
 // Single badge column — star + label, 24px gap, centered. Width set inline (220 / 280).
+// Subtle lift on hover so the badge feels interactive.
 .badge {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;             // 24px
+  transition: transform 300ms ease;
+}
+
+.badge:hover {
+  transform: translateY(-0.5rem); // gentle 8px lift
 }
 
 // Scalloped white star with the number centered on top. Size set inline (220 / 240).
@@ -86,11 +92,25 @@
 }
 
 // The star artwork fills the .star box (already white #FFFCF9 in the SVG).
+// A slow spin animation is always attached but PAUSED; hovering the badge resumes it,
+// so the star spins only on hover and pauses in place (no snap-back) when you leave.
+// Only the star spins — the number sibling stays upright and readable.
 .starImg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  animation: badge-spin 8s linear infinite;
+  animation-play-state: paused;
+}
+
+.badge:hover .starImg {
+  animation-play-state: running;
+}
+
+@keyframes badge-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 // The number inside the star — Gochi Hand, purple, 92px, sits above the star image.
