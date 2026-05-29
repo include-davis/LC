@@ -16,7 +16,7 @@ export default function ViewToggleButton({ icon, iconSelected, iconAlt, text, se
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
-            <Image src={isHovered || isSelected ? iconSelected : icon} alt={iconAlt} /> 
+            <Image className={text.includes("FAQ") && (isHovered || isSelected) ? styles.iconInvert : ''} src={isHovered || isSelected ? iconSelected : icon} alt={iconAlt} /> 
             {text}
         </button>
     )

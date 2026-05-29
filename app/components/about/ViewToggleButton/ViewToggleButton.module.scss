@@ -13,7 +13,7 @@
     gap: 10px;
     
     font-family: 'Hanken Grotesk';
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 600;
     color: #434343;
 
@@ -22,16 +22,16 @@
 
     cursor: pointer;
     transition: all 250ms;
-}
 
-.button:hover {
-    @include button-selected;
+    &:hover {
+        @include button-selected;
+    }
 }
 
 .selected {
     @include button-selected;
 }
 
-.icon {
-    color: red;
+.iconInvert {
+    filter: invert(100%);
 }
