@@ -11,10 +11,12 @@ export default function Polaroid({ w, h, rotate = 0, photo, date }) {
   return (
     <div
       className={styles.polaroid}
+      // Per-polaroid rotation passes through a CSS variable so the :hover rule in the
+      // stylesheet can override it (inline `transform` would win over hover otherwise).
       style={{
         width: toRem(w),
         height: toRem(h),
-        transform: `rotate(${rotate}deg)`,
+        "--polaroid-rotate": `${rotate}deg`,
       }}
     >
       {/* Photo — square (aspect 1:1, full inner width). Gray placeholder if no image. */}

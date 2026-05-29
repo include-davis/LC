@@ -67,6 +67,18 @@
   background: linear-gradient(142.252deg, #FFFFFF 5.19%, #F5E6FE 108.97%);
   box-shadow: -0.125rem 0.1875rem 0.125rem 0.0625rem rgba(0, 0, 0, 0.15);
   overflow: hidden;
+  // Rotation comes through a CSS variable set inline per polaroid; default 0 if absent.
+  transform: rotate(var(--polaroid-rotate, 0deg));
+  // ──── hover animation ────
+  // To remove, delete the `transition`, `position`, and `.polaroid:hover` block below.
+  position: relative;      // so z-index applies on hover
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.05) translateY(-0.5rem);
+  z-index: 10;             // float above neighbouring polaroids
+  box-shadow: -0.25rem 0.5rem 0.625rem 0.125rem rgba(0, 0, 0, 0.2);
 }
 
 // Photo area — Figma "PHOTO". Square (1:1), fills the polaroid's inner width.
