@@ -42,23 +42,23 @@
   z-index: 1;
 }
 
-/* ---- Star cluster (portrait): 209×242px = 13.063rem × 15.125rem ---- */
-// done
+/* ---- Star 2 (321.81×308.39px) — Figma: top: -89px, left: -133px ---- */
 .decoStar2 {
   position: absolute;
-  width: 13.063rem;
-  height: 15.125rem;
+  width: 20.113rem;  /* 321.81px */
+  height: 19.275rem; /* 308.39px */
+  top: -2.5rem;      /* nudged down from -89px */
+  left: -2rem;       /* nudged right from -133px */
   z-index: 4;
 }
 
-/* ---- Star strip (landscape): 253×129px = 15.813rem × 8.063rem ---- */
-//done
+/* ---- Star 3 (257.17×244.70px) — Figma: top: -124px, left: 87px ---- */
 .decoStar3 {
   position: absolute;
-  width: 15.813rem;
-  height: 8.063rem;
-  top: -8.375rem;
-  left: 6.813rem;
+  width: 16.073rem;  /* 257.17px */
+  height: 15.294rem; /* 244.70px */
+  top: -7.75rem;     /* -124px */
+  left: 5.438rem;    /* 87px */
   z-index: 4;
 }
 
@@ -71,18 +71,79 @@
   z-index: 2;
 }
 
-/*
-  linguistics_text.png: 735×306px (1×)
-  max-width: 100% lets it scale down if column is narrower than 735px.
-  At 1440px viewport with 52% heroLeft → ~650px column → image scales to ~88%.
-*/
-.linguisticsText {
+/* ---- Frame 311 — hero text group (734.49×305px) ---- */
+.heroTextFrame {
   position: absolute;
-  width: 45.938rem;  /* ← add this line (735px = the exact PNG width) */
-  height: 19.125rem;
-  opacity: 1;
-  top: 8.563rem;
-  left: 5.625rem;
+  width: 45.906rem;  /* 734.49px */
+  height: 19.063rem; /* 305px */
+  top: 8.563rem;     /* 137px */
+  left: 5.625rem;    /* 90px */
+}
+
+/* Frame 295 — "Welcome to UC Davis's" */
+.heroWelcomeText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18.375rem;  /* 294px */
+  height: 2.25rem;   /* 36px */
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem;  /* 28px */
+  line-height: 2.25rem;
+  color: #3d3b85;
+  margin: 0;
+}
+
+/* Frame 310 — speech bubble + discord button container */
+.heroContentFrame {
+  position: absolute;
+  top: 4.5rem;    /* 72px */
+  left: 4.313rem; /* 69px */
+  right: 1.188rem; /* 19px */
+  height: 14.601rem; /* 233.61px */
+}
+
+/* Frame 301 — speech bubble PNG (653.5×188px at 1x) */
+.heroSpeechBubble {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 11.493rem; /* 183.89px */
+}
+
+/* Join our Discord — outer clip frame (275×92px) */
+.heroDiscordOuter {
+  position: absolute;
+  width: 17.188rem;  /* 275px */
+  height: 5.75rem;   /* 92px */
+  top: 8.726rem;     /* 139.61px */
+  left: 21.375rem;   /* 342px */
+  overflow: hidden;
+}
+
+/* Discord button inner (264.58×60.8px, offset top: 16px left: 6px) */
+.heroDiscordInner {
+  position: absolute;
+  width: 16.536rem;  /* 264.58px */
+  height: 3.8rem;    /* 60.8px */
+  top: 1rem;         /* 16px */
+  left: 0.375rem;    /* 6px */
+  display: block;
+  transition: transform 0.3s ease;
+  transform-origin: center center;
+
+  &:hover {
+    transform: rotate(-8deg);
+  }
+}
+
+/* Image wrapper inside the discord link */
+.heroDiscordImg {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 /* ---- Bottom-left cloud strip overlay: 563×114px = 35.188rem × 7.125rem ---- */
@@ -121,7 +182,7 @@
     width: 100%;
   }
 
-  .linguisticsText {
+  .heroTextFrame {
     max-width: 90%;
   }
 
@@ -152,7 +213,7 @@
     padding: 2rem 1.5rem 0;
   }
 
-  .linguisticsText {
+  .heroTextFrame {
     max-width: 100%;
   }
 
@@ -222,14 +283,15 @@
   flex: none;
 }
 
-/* Frame 211 — photo (353.73×471.94) */
+/* Frame 211 — photo (353.73×471.94px) */
+/* Figma: position absolute, border 10.23px solid #A3A1EB, image scale = Crop (cover) */
 .introPhoto {
   position: absolute;
-  width: 22.108rem;  /* 353.73px */
-  height: 29.496rem; /* 471.94px */
-  left: 2.023rem;    /* 32.36px */
-  top: 2.359rem;     /* 37.75px */
-  overflow: hidden;
+  width: 22.108rem;   /* 353.73px — border-box: includes border */
+  height: 29.496rem;  /* 471.94px */
+  left: 2.023rem;     /* 32.36px */
+  top: 2.359rem;      /* 37.75px */
+  /* border baked into intro_photo.png export from Figma */
 }
 
 /* Frame 272 — bottom-left squiggles (223.74×245.4, left:0, top:299.33) */

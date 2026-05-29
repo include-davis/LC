@@ -19,7 +19,7 @@ export default function Home() {
           />
         </div>
 
-        {/* Decorative — star cluster (209×242px) */}
+        {/* Decorative — star cluster (321.81×308.39px) */}
         <div className={styles.decoStar2} aria-hidden="true">
           <Image
             src="/home/hero/decoration_star_2.png"
@@ -29,7 +29,7 @@ export default function Home() {
           />
         </div>
 
-        {/* Decorative — star strip (253×129px) */}
+        {/* Decorative — star (257.17×244.7px) */}
         <div className={styles.decoStar3} aria-hidden="true">
           <Image
             src="/home/hero/decoration_star_3.png"
@@ -49,19 +49,47 @@ export default function Home() {
             />
         </div>
 
-        <div className={styles.linguisticsText}>
-          {/*
-            linguistics_text.png (735×306px) is a combined asset containing:
-            welcome text + speech bubble + discord button.
-            NOTE: the Discord button inside this image is not clickable.
-            When ready, split into separate assets so the button can be a real <a> link.
-          */}
-          <Image
-            src="/home/hero/linguistics_text.png"
-            alt="Welcome to UC Davis's Linguistics Club — Join our Discord"
-            fill
-            style={{ objectFit: 'contain'}}
-          />
+        {/* Frame 311 — hero text group (734.49×305px, left: 90px, top: 137px) */}
+        <div className={styles.heroTextFrame}>
+
+          {/* Frame 295 — "Welcome to UC Davis's" (294×36px, top: 0, left: 0) */}
+          <p className={styles.heroWelcomeText}>Welcome to UC Davis&apos;s</p>
+
+          {/* Frame 310 — speech bubble + discord button (left: 69px, top: 72px) */}
+          <div className={styles.heroContentFrame}>
+
+            {/* Frame 301 — speech bubble PNG with "Linguistics Club" baked in */}
+            <div className={styles.heroSpeechBubble}>
+              <Image
+                src="/home/hero/hero_speech_bubble.png"
+                alt="Linguistics Club"
+                fill
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
+
+            {/* Join our Discord — outer frame (275×92px, left: 342px, top: 139.61px) */}
+            <div className={styles.heroDiscordOuter}>
+              {/* Inner button (264.58×60.8px, top: 16px, left: 6px) — rotates on hover */}
+              <a
+                href="https://discord.com/invite/9HZTDnaZZr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.heroDiscordInner}
+                aria-label="Join our Discord"
+              >
+                <div className={styles.heroDiscordImg}>
+                  <Image
+                    src="/home/hero/hero_discord_button.png"
+                    alt="Join our Discord"
+                    fill
+                    style={{ objectFit: 'contain' }}
+                  />
+                </div>
+              </a>
+            </div>
+
+          </div>
         </div>
 
         {/* Decorative overlay — bottom left cloud strip (563×114px) */}
@@ -99,9 +127,10 @@ export default function Home() {
             <div className={styles.introImageWrap}>
 
               {/* introPhoto — Frame 211: photo with purple border */}
+              {/* Frame 211 — 353.73×471.94px, border: 10.23px solid #A3A1EB, crop */}
               <div className={styles.introPhoto}>
                 <Image
-                  src="/home/intro/intro_photo.jpg"
+                  src="/home/intro/intro_photo.png"
                   alt="Linguistics Club members"
                   fill
                   style={{ objectFit: 'contain' }}

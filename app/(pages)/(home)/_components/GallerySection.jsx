@@ -22,7 +22,7 @@ import styles from '../page.module.scss';
   the carousel's left edge.
 
   FLUSH_POSITIONS[3] (max scroll) = TRACK_WIDTH_REM − carousel_rendered_width_rem.
-  This is computed at runtime so it stays exact at any viewport width.
+  Computed at runtime so it stays exact at any viewport width.
   Example: 1440px viewport → 252.75 − 86 = 166.75rem
 */
 const FLUSH_POSITIONS = [0, 76.375, 161.375]; /* rem — fixed flush-left column offsets */
