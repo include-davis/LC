@@ -1,6 +1,8 @@
 @mixin button-selected {
     color: #FFF;
+
     background-color: var(--bg-color);
+    border-color: var(--bg-color);
 }
 
 .button {
