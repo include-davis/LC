@@ -11,20 +11,25 @@
   gap: 0.75rem;            // 12px
 }
 
-// Square image area. The purple "border" is a hand-drawn squiggly PNG laid
-// on top of the photo via ::after, so it sits over the corners without
-// affecting layout. The PNG is expected to have a transparent center so the
-// photo shows through the inside of the squiggle.
+// Square card slot. The purple "border" is a hand-drawn squiggly PNG laid on top via
+// ::after; the photo lives on an inset, rounded inner layer (.photo) so it stays inside
+// the squiggle. The PNG has a transparent center so the photo shows through.
 .image {
   position: relative;
   width: 15rem;            // 240px
   height: 15rem;           // 240px
-  background-color: rgba(85, 85, 85, 0); // matches Figma's transparent fill
+  cursor: pointer;
+}
+
+// The photo — inset to sit within the squiggle's border width, with rounded corners so
+// the square image doesn't poke past the wavy edge. `cover` crops it to fill the slot.
+.photo {
+  position: absolute;
+  inset: 0.5rem;           // 8px — matches the squiggle border width
+  border-radius: 1.25rem;  // 20px — rounds corners to follow the squiggle
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow: hidden;
-  cursor: pointer;
 }
 
 // Squiggly purple border overlay (Figma "card hover" frame).

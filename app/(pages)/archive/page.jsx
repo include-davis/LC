@@ -5,6 +5,8 @@ import ArchiveHeader from "../_components/ArchiveHeader/ArchiveHeader";
 import WugBanner from "../_components/WugBanner/WugBanner";
 import PastEvents from "../_components/PastEvents/PastEvents";
 import Milestones from "../_components/Milestones/Milestones";
+import PastPresentations from "../_components/PastPresentations/PastPresentations";
+import Community from "../_components/Community/Community";
 import styles from "./page.module.scss";
 
 export default function ArchivePage() {
@@ -14,6 +16,8 @@ export default function ArchivePage() {
       <WugBanner />
       <PastEvents />
       <Milestones />
+      <PastPresentations />
+      <Community />
     </main>
   );
 }
