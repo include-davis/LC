@@ -1,0 +1,41 @@
+.item {
+    display: inline-flex;
+    flex-direction: column;
+
+    padding: 0px 12px;
+
+    height: 59px;
+
+    gap: 5px;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    justify-content: center;
+    align-self: stretch;
+
+    transition: background-color 250ms;
+
+    &:hover {
+        background-color: #E9E8E7;
+    }
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 500;
+
+    color: #6563DE;
+
+    text-wrap: nowrap;
+}
+
+.description {
+    font-size: 14px;
+    font-weight: 400;
+
+    color: #A2A2A2;
+
+    text-wrap: nowrap;
+}
