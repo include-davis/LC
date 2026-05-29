@@ -1,6 +1,7 @@
-// Archive page wrapper. Each child section sets its own 1440px width.
+// Archive page wrapper. Each child section sets its own width (most are 1440px / 90rem).
 
 .page {
   display: flex;
   flex-direction: column;
+  align-items: center; // center fixed-width sections; full-width sections (100%) are unaffected
 }

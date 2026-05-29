@@ -24,3 +24,92 @@
   justify-content: center;
   padding: 5.25rem 6.5rem; // 84px top/bottom, 104px left/right
 }
+
+// Decorative motion-blur streak — Figma rectangles 72–76. Rounded only on the left
+// (top-left 48px, bottom-left 59px), right side square; blurred. Position, width,
+// gradient, and flip transform are supplied per-streak via inline style.
+.streak {
+  position: absolute;
+  height: 1.5rem;                    // 24px
+  border-radius: 3rem 0 0 3.6875rem; // tl 48px / tr 0 / br 0 / bl 59px
+  filter: blur(2.5px);
+  pointer-events: none;
+}
+
+// Content column — Figma "ALL" (944px). Title + medals, 92px gap, centered.
+// z-index lifts it above the absolutely-positioned streaks.
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5.75rem;            // 92px
+  width: 59rem;            // 944px
+}
+
+// Section title — Hanken Grotesk Bold 56px, #FFFCF9.
+.title {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;       // 56px
+  line-height: normal;
+  color: #FFFCF9;
+  text-align: center;
+  white-space: nowrap;
+}
+
+// Medals row — Figma "MEDALS". 3 badges, 112px gap, bottom-aligned (center badge is taller).
+.medals {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 7rem;               // 112px
+  width: 100%;
+}
+
+// Single badge column — star + label, 24px gap, centered. Width set inline (220 / 280).
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;             // 24px
+}
+
+// Scalloped white star with the number centered on top. Size set inline (220 / 240).
+.star {
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// The star artwork fills the .star box (already white #FFFCF9 in the SVG).
+.starImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// The number inside the star — Gochi Hand, purple, 92px, sits above the star image.
+.number {
+  position: relative;
+  font-family: 'Gochi Hand', cursive;
+  font-weight: 400;
+  font-size: 5.75rem;      // 92px
+  line-height: normal;
+  color: #8482E5;
+}
+
+// Label below the star — Hanken Grotesk Bold 24px, white.
+.label {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;       // 24px
+  line-height: normal;
+  color: #FFFFFF;
+  text-align: center;
+  white-space: nowrap;
+}
