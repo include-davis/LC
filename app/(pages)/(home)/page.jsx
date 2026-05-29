@@ -29,7 +29,7 @@ export default function Home() {
           />
         </div>
 
-        {/* Decorative — star (257.17×244.7px) */}
+        {/* Decorative — star 3 (257.17×244.7px) */}
         <div className={styles.decoStar3} aria-hidden="true">
           <Image
             src="/home/hero/decoration_star_3.png"

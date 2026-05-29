@@ -42,13 +42,13 @@
   z-index: 1;
 }
 
-/* ---- Star 2 (321.81×308.39px) — Figma: top: -89px, left: -133px ---- */
+/* ---- Star 2 (633×610px export ÷ 2 = 316.5×305px display) — Figma: top: -89px, left: -133px ---- */
 .decoStar2 {
   position: absolute;
-  width: 20.113rem;  /* 321.81px */
-  height: 19.275rem; /* 308.39px */
-  top: -2.5rem;      /* nudged down from -89px */
-  left: -2rem;       /* nudged right from -133px */
+  width: 19.781rem;  /* 316.5px */
+  height: 19.063rem; /* 305px */
+  top: -4.063rem;    /* -89px */
+  left: -6.813rem;   /* -133px */
   z-index: 4;
 }
 
@@ -57,8 +57,8 @@
   position: absolute;
   width: 16.073rem;  /* 257.17px */
   height: 15.294rem; /* 244.70px */
-  top: -7.75rem;     /* -124px */
-  left: 5.438rem;    /* 87px */
+  top: -6.95rem;     /* -124px */
+  left: 6.638rem;    /* 87px */
   z-index: 4;
 }
 
@@ -136,6 +136,7 @@
 
   &:hover {
     transform: rotate(-8deg);
+    box-shadow: 0px 4px 3.5px 0px #a3a1eb80;
   }
 }
 
