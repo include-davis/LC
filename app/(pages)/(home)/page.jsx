@@ -208,7 +208,29 @@ export default function Home() {
       </section>
 
       <section className={styles.schedule}>
-        <p>Schedule Section</p>
+
+        {/* Frame 316 — content column (1110×883px, gap: 42px) */}
+        <div className={styles.scheduleCard}>
+
+          {/* Schedule title */}
+          <div className={styles.scheduleTitle}>
+            <h2 className={styles.scheduleHeading}>Schedule</h2>
+          </div>
+
+          {/* Google Calendar embed (1110×768px) */}
+          {/* TODO: replace src calendar ID with the club's real public calendar */}
+          <div className={styles.scheduleCalendarWrap}>
+            <iframe
+              src="https://calendar.google.com/calendar/embed?src=en.usa%23holiday%40group.v.calendar.google.com&ctz=America%2FLos_Angeles&mode=MONTH"
+              className={styles.scheduleCalendar}
+              title="Linguistics Club Schedule"
+              frameBorder="0"
+              scrolling="no"
+            />
+          </div>
+
+        </div>
+
       </section>
 
       <section className={styles.recentEvents}>

@@ -439,11 +439,67 @@
 
 
 
-/* 1083px */
+/* ============================================================
+   SCHEDULE — 1440×1083px, padding: 100px 165px
+   ============================================================ */
+
+/* Section wrapper */
 .schedule {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   width: 100%;
-  min-height: 67.688rem;
-  background-color: rgba(101, 99, 222, 0.06);
+  min-height: 67.688rem; /* 1083px */
+  padding: 6.25rem 10.313rem; /* 100px 165px */
+  background: var(--white);
+}
+
+/* Frame 316 — content column (1110×883px, gap: 42px) */
+.scheduleCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.625rem; /* 42px */
+  width: 100%;
+  min-height: 55.188rem; /* 883px */
+}
+
+/* Schedule title wrapper (234×73px) */
+.scheduleTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 14.625rem; /* 234px */
+  height: 4.563rem; /* 73px */
+}
+
+/* "Schedule" heading */
+.scheduleHeading {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;    /* 56px */
+  line-height: 4.563rem; /* 73px */
+  color: #000000;
+  margin: 0;
+}
+
+/* Calendar iframe wrapper (1110×768px) */
+.scheduleCalendarWrap {
+  width: 100%;
+  height: 48rem; /* 768px */
+  border: 0.196rem solid rgba(163, 163, 163, 0.5); /* 3.13px */
+  border-radius: 0.881rem; /* 14.1px */
+  overflow: hidden; /* clips iframe to rounded corners */
+}
+
+/* iframe fills wrapper exactly */
+.scheduleCalendar {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
 }
 
 /* ============================================================
