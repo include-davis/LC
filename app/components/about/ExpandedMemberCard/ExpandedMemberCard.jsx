@@ -35,7 +35,7 @@ export default function ExpandedMemberCard({ initialIndex = 0, onClose }) {
 
                         <ul className={styles.standing}>
                             <li className={styles.position}>{current.position}</li>
-                            <li className={styles.standingLi}>{current.year}</li>
+                            {current.year && <li className={styles.standingLi}>{current.year}</li>}
                             <li className={styles.standingLi}>{current.major}</li>
                         </ul>
 
