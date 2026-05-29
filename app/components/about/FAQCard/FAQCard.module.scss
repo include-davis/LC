@@ -1,0 +1,98 @@
+.card {
+    width: 1222px;
+    // height: 83px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 16px 30px;
+
+    border-radius: 24px;
+    
+    background-color: #E0E0F8;
+
+    // transition: height 0.2s ease-in;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.title {
+    color: #434343;
+
+    font-size: 1.25rem;
+    font-weight: 900;
+
+    margin: 10px 0px;
+}
+
+.headerIconContainer {
+    position: relative;
+
+    width: 59px;
+    height: 51px;
+}
+
+.headerIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.rotateIn {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.rotateOutRight {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.rotateOutLeft {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.content {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows 0.35s ease;
+}
+
+.content > div {  /* needs a direct div child to work */
+    min-height: 0;
+}
+
+.contentExpanded {
+    grid-template-rows: 1fr;
+}
+
+.separator {
+    width: 100%;
+    height: 3px;
+
+    margin: 23px 0px;
+
+    background-image: linear-gradient(to right, #424E8A, #FDFDFF);
+}
+
+.description {
+    margin: 10px 0px;
+
+    font-size: 1rem;
+    line-height: 229.99999999999997%;
+    font-weight: 500;
+
+    color: #434343;
+}
