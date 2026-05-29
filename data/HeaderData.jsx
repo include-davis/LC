@@ -6,7 +6,7 @@ export const HEADER_ITEMS = [
             {
                 title: "Schedule",
                 description: "See our upcoming events!",
-                link: ""
+                link: "/#schedule"
             },
         ]
     },
@@ -17,17 +17,17 @@ export const HEADER_ITEMS = [
             {
                 title: "Mission",
                 description: "Our mission!",
-                link: ""
+                link: "/about#mission"
             },
             {
                 title: "Board",
                 description: "Our board members!",
-                link: ""
+                link: "/about#board"
             },
             {
                 title: "FAQ",
                 description: "Frequently asked questions!",
-                link: ""
+                link: "/about#faq"
             },
         ]
     },
@@ -38,22 +38,22 @@ export const HEADER_ITEMS = [
             {
                 title: "Events",
                 description: "Explore past events!",
-                link: ""
+                link: "/archive#events"
             },
             {
                 title: "Milestones",
                 description: "Our achievements!",
-                link: ""
+                link: "/archive#milestones"
             },
             {
                 title: "Presentations",
                 description: "Explore past presentations!",
-                link: ""
+                link: "/archive#presentations"
             },
             {
                 title: "Community",
                 description: "Our photo-wall!",
-                link: ""
+                link: "/archive#community"
             },
         ]
     },
@@ -64,12 +64,12 @@ export const HEADER_ITEMS = [
             {
                 title: "Undergraduate Programs",
                 description: "Explore undergraduate programs!",
-                link: ""
+                link: "/opportunties#undergraduate"
             },
             {
                 title: "Graduate Programs",
                 description: "Explore graduate programs!",
-                link: ""
+                link: "/opportunties#graduate"
             },
         ]
     }
