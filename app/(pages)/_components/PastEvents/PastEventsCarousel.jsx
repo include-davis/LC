@@ -12,19 +12,23 @@
 import { useState } from "react";
 import EventCard from "./EventCard";
 import CarouselArrow from "./CarouselArrow";
+import movieNight from "./_assets/movie-night.png";
+import involvementFair from "./_assets/involvement-fair.png";
+import winterWugterland from "./_assets/winter-wugterland.png";
+import linguisticsJeopardy from "./_assets/linguistics-jeopardy.png";
 import styles from "./PastEvents.module.scss";
 
-// 4 real events + 4 TBD placeholders. The real events' `image` is wired up once the
-// Figma photo asset is downloaded (pending a Figma refocus). TBD cards have no image.
+// 4 real events + 4 TBD placeholders. `image` shows a photo cover-cropped into the slot;
+// `placeholder: true` renders a gray fill (same as Community polaroid placeholders).
 const EVENTS = [
-  { title: "Movie Night",          date: "11/06/25"   },
-  { title: "Involvement Fair",     date: "10/15/2025" },
-  { title: "Winter Wugterland",    date: "12/04/2025" },
-  { title: "Linguistics Jeopardy", date: "02/19/2026" },
-  { title: "TBD", date: "TBD" },
-  { title: "TBD", date: "TBD" },
-  { title: "TBD", date: "TBD" },
-  { title: "TBD", date: "TBD" },
+  { title: "Movie Night",          date: "11/06/25",   image: movieNight.src },
+  { title: "Involvement Fair",     date: "10/15/2025", image: involvementFair.src },
+  { title: "Winter Wugterland",    date: "12/04/2025", image: winterWugterland.src },
+  { title: "Linguistics Jeopardy", date: "02/19/2026", image: linguisticsJeopardy.src },
+  { title: "TBD", date: "TBD", placeholder: true },
+  { title: "TBD", date: "TBD", placeholder: true },
+  { title: "TBD", date: "TBD", placeholder: true },
+  { title: "TBD", date: "TBD", placeholder: true },
 ];
 
 const CARDS_PER_PAGE = 4;
@@ -49,7 +53,13 @@ export default function PastEventsCarousel() {
           style={{ transform: `translateX(-${page * PAGE_STRIDE_REM}rem)` }}
         >
           {EVENTS.map((e, i) => (
-            <EventCard key={i} title={e.title} date={e.date} image={e.image} />
+            <EventCard
+              key={i}
+              title={e.title}
+              date={e.date}
+              image={e.image}
+              placeholder={e.placeholder}
+            />
           ))}
         </div>
       </div>

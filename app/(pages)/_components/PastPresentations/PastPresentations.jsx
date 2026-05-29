@@ -10,9 +10,9 @@ import styles from "./PastPresentations.module.scss";
 
 const PRESENTATIONS = [
   { title: "Assyrian Language", date: "01/22/26", image: assyrian.src },
-  { title: "TBD", date: "TBD" },
-  { title: "TBD", date: "TBD" },
-  { title: "TBD", date: "TBD" },
+  { title: "TBD", date: "TBD", placeholder: true },
+  { title: "TBD", date: "TBD", placeholder: true },
+  { title: "TBD", date: "TBD", placeholder: true },
 ];
 
 export default function PastPresentations() {
@@ -26,6 +26,7 @@ export default function PastPresentations() {
             title={p.title}
             date={p.date}
             image={p.image}
+            placeholder={p.placeholder}
             overlayLabel="See photos"
           />
         ))}

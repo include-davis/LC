@@ -18,14 +18,23 @@ export default function EventCard({
   date = "11/06/25",
   alt = "",
   overlayLabel = "See more",
+  placeholder = false,
 }) {
   return (
     <article className={styles.card}>
       <div className={styles.image} role="img" aria-label={alt || title}>
         {/* Photo sits on an inset, rounded inner layer so it stays INSIDE the wavy
-            squiggle border. Omitted entirely for TBD cards (no image). */}
-        {image && (
-          <div className={styles.photo} style={{ backgroundImage: `url(${image})` }} />
+            squiggle border. When `placeholder` is set (no image), the layer renders
+            as a gray fill — matches the polaroid gray placeholders in Community. */}
+        {(image || placeholder) && (
+          <div
+            className={styles.photo}
+            style={
+              image
+                ? { backgroundImage: `url(${image})` }
+                : { backgroundColor: "#DADADA" }
+            }
+          />
         )}
         <SeeMoreOverlay label={overlayLabel} />
       </div>
