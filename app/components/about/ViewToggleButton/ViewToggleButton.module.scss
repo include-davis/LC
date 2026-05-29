@@ -22,16 +22,16 @@
 
     cursor: pointer;
     transition: all 250ms;
-}
 
-.button:hover {
-    @include button-selected;
+    &:hover {
+        @include button-selected;
+    }
 }
 
 .selected {
     @include button-selected;
 }
 
-.icon {
-    color: red;
+.iconInvert {
+    filter: invert(100%);
 }
