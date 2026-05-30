@@ -9,9 +9,9 @@ import STAR_3_SVG from "../../../../public/images/about/star3.svg";
 export default function HeroSection() {
     return (
         <div className={styles.container}>
-            <div>
+            <div className={styles.textContainer}>
                 <h1 className={styles.header}>About Us</h1>
-                <p className={styles.description}>Get to know our club and our amazing board members!</p>
+                <p className={styles.description}>Get to know our club and our amazing board<br />members!</p>
             </div>
 
             <div className={styles.starContainer}>

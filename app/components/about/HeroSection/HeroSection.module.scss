@@ -8,6 +8,13 @@
     gap: 188px;
 }
 
+.textContainer {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
 .header {
     margin-top: 96px;
 
@@ -20,6 +27,7 @@
 .description {
     font-size: 1.25rem;
     font-weight: 500;
+    line-height: 1.25;
 
     color: #A3A1EB;
 }
