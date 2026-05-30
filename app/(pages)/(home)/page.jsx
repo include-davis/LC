@@ -207,7 +207,7 @@ export default function Home() {
 
       </section>
 
-      <section className={styles.schedule}>
+      <section id="schedule" className={styles.schedule}>
 
         {/* Frame 316 — content column (1110×883px, gap: 42px) */}
         <div className={styles.scheduleCard}>
