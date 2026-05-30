@@ -29,9 +29,9 @@ const hankenGrotesk = Hanken_Grotesk({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${gochiHand.variable} ${hankenGrotesk.variable}`}>
-      <header>
+      
           <Header itemsData={HEADER_ITEMS} />
-        </header>
+        
       <body>
 
         {children}
