@@ -1,11 +1,9 @@
 // DESKTOP (Default): Vertical Cards
 .card {
-  flex: 0 0 auto;
-  width: 160px;
+  width: 280px !important;
   border-radius: var(--radius-md);
-  border: none;
   overflow: hidden;
-  //border: 1px solid var(--Blueish-Purple-500, #6563de);
+
   transition:
     box-shadow 0.25s ease,
     transform 0.25s ease;
@@ -53,8 +51,8 @@
 // Card text area
 .title {
   font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.25rem !important;
+  font-weight: 500 !important;
   color: var(--color-text);
   margin: var(--space-sm) var(--space-sm) 4px;
   line-height: 1.3;

@@ -74,6 +74,7 @@ export default function OpportunitiesPage() {
   };
 
   return (
+
     <main className={styles.page}>
       {/* ── HERO ── */}
       <section className={styles.hero}>
@@ -95,7 +96,7 @@ export default function OpportunitiesPage() {
             <img
               src="/images/birds-smalldown.png"
               alt=""
-              className={styles.birdsSmall}
+              className={styles.birdsSmaller}
             />
           </div>
         </div>
@@ -221,9 +222,7 @@ export default function OpportunitiesPage() {
       {/* ── CTA BANNER ── */}
       <section className={styles.ctaBannerOuter}>
         <div className={styles.ctaBanner}>
-          {/* <div className={styles.ctaDecoLeft} aria-hidden="true">
-            <img src="/images/cta-stripes.png" alt="" />
-          </div> */}
+          
 
           <img
             src="/images/sparkle.svg"
@@ -233,11 +232,7 @@ export default function OpportunitiesPage() {
           />
 
           <a href="/get-involved" className={styles.ctaLink}>
-            <img
-              src="/images/cta-text.png"
-              alt="Get involved with us!"
-              className={styles.ctaTextImg}
-            />
+            Get involved with us!
           </a>
 
           <img

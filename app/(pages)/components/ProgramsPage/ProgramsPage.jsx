@@ -101,7 +101,7 @@ export default function ProgramsPage({
             <img
               src="/images/birds-smalldown.png"
               alt=""
-              className={styles.birdsSmall}
+              className={styles.birdsSmaller}
             />
           </div>
         </div>
@@ -115,7 +115,7 @@ export default function ProgramsPage({
           <input
             type="text"
             className={styles.searchInput}
-            placeholder="Search by program name or type..."
+            placeholder="Search by program title, keyword, or category"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             aria-label="Search programs"
