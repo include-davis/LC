@@ -1,0 +1,94 @@
+// Styles for the Wug Graphic Banner section.
+// The Figma artboard is 1440px wide and is meant to fill the full page width, so the
+// banner SCALES with the viewport: the 1440px design maps to 100vw, i.e. 1px = (1/14.4)vw.
+// Using vw keeps every piece (gradient, stars, bird, letters) in the exact Figma
+// proportions while stretching edge-to-edge on any monitor width.
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 19.4236vw;   // 279.7px / 14.4
+  overflow: hidden;    // clip the streaks where they reach the right edge
+}
+
+// Gradient strip — the visible banner bar. Spans the full width; height/offset scale with vw.
+.background {
+  position: absolute;
+  top: 3.2639vw;       // 47px
+  left: 0;
+  width: 100%;
+  height: 9.1667vw;    // 132px
+  background: linear-gradient(90deg, #C1C1F2 0%, #FFFFFF 100%);
+}
+
+// Canvas that hosts all absolute-positioned art. Fills the banner; children are placed
+// with vw values (viewport-relative) so the whole composition scales as one.
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Shared base for every decoration image (positioned individually via inline style).
+.decoration {
+  position: absolute;
+}
+
+// Masked bird silhouette (Figma node 4253:1090, rotated -23.58deg). The mask is a
+// bird-shape PNG with alpha; the white fill shows through the bird-shaped opening.
+.bird {
+  position: absolute;
+  left: 25.9722vw;     // 374px
+  top: 7.8236vw;       // 112.66px — tilted bird, lower half spills onto the white below
+  width: 7.6569vw;     // 110.26px
+  height: 8.0667vw;    // 116.16px
+  background-color: white;
+  -webkit-mask-image: url('./_assets/bird.png');
+          mask-image: url('./_assets/bird.png');
+  -webkit-mask-mode: alpha;
+          mask-mode: alpha;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
+  transform: rotate(-23.58deg);
+}
+
+// "Wug..." text frame. Each letter inside is absolutely positioned via inline style.
+.wugText {
+  position: absolute;
+  left: 44.122vw;      // 635.36px
+  top: 1.1111vw;       // 16px
+  width: 44.6153vw;    // 642.46px
+  height: 18.3125vw;   // 263.7px
+}
+
+// Wrapper for each letter. `left` is interpreted as horizontal center via translateX(-50%).
+.letterWrapper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%);
+}
+
+// Inner rotation wrapper. Rotation degrees come from inline style (one value per letter).
+.letterRotated {
+  flex: none;
+}
+
+// The actual letter glyph (Gochi Hand, white with a soft drop-shadow).
+.letter {
+  margin: 0;
+  font-family: 'Gochi Hand', cursive;
+  font-weight: 400;
+  text-align: center;
+  color: #FFFFFF;
+  // -2px 7px 0 rgba(0,0,0,0.25) → vw so the shadow scales with the letters
+  text-shadow: -0.1389vw 0.4861vw 0 rgba(0, 0, 0, 0.25);
+  line-height: normal;
+  word-break: break-word;
+}

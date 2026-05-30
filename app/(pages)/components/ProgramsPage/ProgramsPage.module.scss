@@ -1,0 +1,475 @@
+@mixin phone {
+  @media screen and (max-width: 720px) {
+    @content;
+  }
+}
+
+.page {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--white);
+}
+
+// ══════════════════════════════════════════
+// HERO
+// ══════════════════════════════════════════
+.hero {
+  display: flex;
+  align-items: flex-start; // Top alignment (two lines for the heading, bird on the right)
+  justify-content: space-between;
+  //max-width: var(--max-width);
+  margin: 0 auto 3rem;
+  padding: var(--space-2xl) var(--space-xl) var(--space-lg);
+}
+
+.heroContent {
+  flex: 1;
+}
+
+// Title: flex column direction → each span takes one line
+.heroTitle {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-display);
+  font-size: 6rem;
+  color: var(--color-primary);
+  line-height: 1.05;
+  margin-bottom: var(--space-md);
+}
+
+.heroTitleLine {
+  display: block;
+}
+
+.heroSubtitle {
+  font-size: 0.88rem;
+  color: var(--color-primary-light);
+  max-width: 340px;
+  line-height: 1.6;
+}
+
+// Right-side birds (main bird + two stacked small birds)
+.heroBirds {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-xl);
+}
+
+.birdMain {
+  width: 140px;
+  height: auto;
+}
+
+.smallBirdsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.birdsSmall {
+  width: 80px;
+  height: auto;
+  margin-bottom: var(--space-sm);
+}
+
+// ══════════════════════════════════════════
+// PROGRAM SEARCH
+// ══════════════════════════════════════════
+.searchSection {
+  //max-width: var(--max-width);
+  margin: 0 auto var(--space-lg);
+  padding: 0 var(--space-xl);
+}
+
+.searchLabel {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+// Search box container (light purple background card)
+.searchBox {
+  background-color: var(--color-primary-bg);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.searchInput {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  border: 1.5px solid var(--color-card-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--pure-white);
+  outline: none;
+  margin-bottom: var(--space-md);
+  transition: border-color 0.2s;
+
+  &:focus {
+    border-color: var(--color-primary);
+  }
+
+  &::placeholder {
+    color: var(--color-text-muted);
+  }
+}
+
+// Filter tabs row
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+// Filter tab button (default state)
+.filterTag {
+  padding: 4px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: 1px solid var(--color-primary-bg);
+  background-color: white;
+  color: var(--color-primary);
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+
+  &:hover {
+    background-color: var(--color-primary);
+    color: var(--pure-white);
+    border-color: var(--color-primary-light);
+  }
+}
+
+// Filter tab button (activated state)
+.filterTagActive {
+  background-color: var(--color-primary);
+  color: var(--pure-white);
+  border-color: var(--color-primary);
+}
+
+// Clear All button (right side, subdued style)
+.clearBtn {
+  margin-left: auto; // Push to the right
+  padding: 4px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: 1px solid var(--color-primary-bg);
+  background-color: transparent;
+  text-decoration: underline;
+  color: var(--color-text-muted);
+  transition:
+    color 0.15s,
+    border-color 0.15s;
+
+  &:hover {
+    color: var(--color-text);
+    //border-color: var(--color-text);
+  }
+}
+
+// ══════════════════════════════════════════
+// Wave/striped decorative stripes
+// ══════════════════════════════════════════
+.waveTop {
+  width: 100%;
+  line-height: 0; // Remove extra blank space below the image
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.waveBottom {
+  width: 100%;
+  line-height: 0;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+// ══════════════════════════════════════════
+// PROGRAM CARD GRID
+// ══════════════════════════════════════════
+.gridSection {
+  padding: var(--space-2xl) var(--space-xl);
+  margin: 0 auto 10rem;
+  margin-bottom: 60px;
+}
+
+.cardGrid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // 4-column adaptive
+  gap: var(--space-xl);
+
+  // In the grid, make the ProgramCard width follow the column width, instead of fixing it to 160px.
+  article {
+    width: 100%;
+  }
+}
+
+// No results were reported
+.noResults {
+  grid-column: 1 / -1; // Spanning all columns
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  padding: var(--space-2xl) 0;
+}
+
+// MOBILE（≤ 768px）
+@media (max-width: 768px) {
+  // ── Hero ──────────────────────────────
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-md) var(--space-md) var(--space-lg);
+    margin-bottom: 0rem;
+
+    position: relative;
+  }
+
+  .heroContent {
+    width: 100%;
+  }
+
+  .heroTitle {
+    font-size: 2.8rem;
+    text-align: center;
+    align-items: center;
+    margin-bottom: -3px;
+  }
+
+  .heroSubtitle {
+    text-align: center;
+    max-width: 100%;
+    font-size: 0.88rem;
+    margin: 0 auto;
+    color: #a3a1eb;
+  }
+
+  .birdMain {
+    display: none;
+  }
+
+  .heroBirds {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: calc(var(--space-md) + 4.41rem);
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+  }
+
+  .smallBirdsWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    column-gap: 185px;
+  }
+
+  .birdsSmall {
+    width: 32px;
+    height: auto;
+    margin-bottom: 0;
+
+    &:first-child {
+      display: block;
+      transform: scaleX(-1);
+    }
+
+    &:last-child {
+      display: block;
+    }
+  }
+
+  .waveTop {
+    margin-top: -20px;
+    img {
+      content: url("/images/wave-top-mobile.svg");
+    }
+    // position: absolute;
+  }
+
+  // ── Search ────────────────────────────
+  .searchSection {
+    padding: 0 var(--space-md);
+    margin-bottom: 0;
+    // position: relative;
+    // z-index: -1;
+  }
+
+  .searchBox {
+    padding: var(--space-md);
+    margin-top: 0px;
+
+    // background: rgba(238, 234, 243, 1);
+    // position: relative;
+  }
+
+  .filterRow {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: var(--space-xs);
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .clearBtn {
+    margin-left: 0;
+  }
+
+  // ── Card Grid ─────────────────────────
+  .gridSection {
+    padding: var(--space-lg) var(--space-md);
+    margin-bottom: 40px;
+  }
+
+  .cardGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-xl) var(--space-md) var(--space-md);
+    margin-bottom: 2rem;
+  }
+
+  .heroContent {
+    width: 100%;
+  }
+
+  .heroTitle {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 3.5rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .heroTitleLine {
+    display: inline;
+  }
+
+  .heroSubtitle {
+    text-align: center;
+    max-width: 580px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 auto;
+    color: var(--color-text-muted);
+    color: #a3a1eb;
+  }
+
+  .birdMain {
+    display: none;
+  }
+
+  .heroBirds {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    margin-top: -0.75rem;
+    height: 0;
+
+    pointer-events: none;
+    position: relative;
+    z-index: 2;
+  }
+
+  .smallBirdsWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    column-gap: 500px;
+  }
+
+  .birdsSmall {
+    width: 34px;
+    height: auto;
+    margin-bottom: 0;
+
+    &:first-child {
+      display: block;
+      transform: scaleX(-1);
+    }
+
+    &:last-child {
+      display: block;
+    }
+  }
+
+  .waveTop {
+    margin-top: -20px;
+    img {
+      content: url("/images/wave-top-mobile.svg");
+    }
+  }
+
+  // ── Search ────────────────────────────
+  .searchSection {
+    padding: 0 var(--space-md);
+    margin-bottom: 0;
+  }
+
+  .searchBox {
+    padding: var(--space-md);
+  }
+
+  .filterRow {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: var(--space-xs);
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .clearBtn {
+    margin-left: 0;
+  }
+
+  // ── Card Grid ─────────────────────────
+  .gridSection {
+    padding: var(--space-lg) var(--space-md);
+    margin-bottom: 40px;
+  }
+
+  .cardGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
