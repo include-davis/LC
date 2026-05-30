@@ -1,8 +1,8 @@
 import "./_globals/globals.scss";
 import { Gochi_Hand, Hanken_Grotesk } from "next/font/google";
 
-import Header from "../components/layout/Header/Header";
-import Footer from "../components/layout/Footer/Footer";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 
 import { HEADER_ITEMS } from "../../data/HeaderItems";
 
