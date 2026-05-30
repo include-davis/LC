@@ -2,7 +2,7 @@ import styles from "./Header.module.scss";
 
 import Image from "next/image";
 
-import ICON_SVG from "../../../public/logo.svg";
+import ICON_SVG from "../../../../public/logo.svg";
 import HeaderItem from "../HeadeItem/HeaderItem";
 
 export default function Header({ itemsData }) {
