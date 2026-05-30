@@ -1,12 +1,20 @@
 @use "./mixins.scss";
 
 // Load fonts
-@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Hanken+Grotesk:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Hanken+Grotesk:wght@400;500;700&family=Just+Another+Hand&display=swap');
 
 :root {
   // neutral colors
   --white: #FFFCF9;
   --pure-white: #FFFFFF;
+
+  // brand purples
+  --blueish-purple300: #A3A1EB;
+  --blueish-purple500: #6563DE;
+
+  // neutrals (used for event card title + date)
+  --grey-200: #A7A7A8;
+  --grey-500: #232325;
   --black: #000000;
 
   // purple scale
