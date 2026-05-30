@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import styles from '../(home)/page.module.scss';
+import styles from '../(pages)/(home)/page.module.scss';
 
 /*
   Track layout — column start positions (rem / px at 16px base):
