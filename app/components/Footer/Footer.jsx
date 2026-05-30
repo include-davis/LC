@@ -17,37 +17,37 @@ export default function Footer(){
                     <div className={styles.navLinks}>
 
                         <section>
-                            <a className={styles.navHeading} href='#' >Home</a>
+                            <a className={styles.navHeading} href='/' >Home</a>
                             <div>
-                                <a className={styles.link} href='#'>Schedule</a>
+                                <a className={styles.link} href='/#schedule'>Schedule</a>
                             </div>
                     
                         </section>
 
                         <section>
-                            <a className={styles.navHeading} href='#' >About</a>
+                            <a className={styles.navHeading} href='/about'>About</a>
                             <div>
-                                <a className={styles.link} href='#'>Mission</a>
-                                <a className={styles.link} href='#'>Board</a>
-                                <a className={styles.link} href='#'>FAQ</a> 
+                                <a className={styles.link} href='/about#mission'>Mission</a>
+                                <a className={styles.link} href='/about#board'>Board</a>
+                                <a className={styles.link} href='/about#faq'>FAQ</a> 
                             </div>
                         </section>
 
                         <section>
-                            <a className={styles.navHeading} href='#' >Archive</a>
+                            <a className={styles.navHeading} href='/archive'>Archive</a>
                             <div>
-                                <a className={styles.link} href='#'>Milestones</a>
-                                <a className={styles.link} href='#'>Past Events</a>
-                                <a className={styles.link} href='#'>Past Presentations</a>
-                                <a className={styles.link} href='#'>Our Community</a>
+                                <a className={styles.link} href='/archive#milestones'>Milestones</a>
+                                <a className={styles.link} href='/archive#events'>Past Events</a>
+                                <a className={styles.link} href='/archive#presentations'>Past Presentations</a>
+                                <a className={styles.link} href='/archive#community'>Our Community</a>
                             </div>
                         </section>
 
                         <section>
-                            <a className={styles.navHeading} href='#' >Opportunities</a>
+                            <a className={styles.navHeading} href='/opportunities'>Opportunities</a>
                             <div>
-                                <a className={styles.link} href='#'>Graduate Programs</a>
-                                <a className={styles.link} href='#'>Undergraduate Programs</a> 
+                                <a className={styles.link} href='/opportunities#graduate'>Graduate Programs</a>
+                                <a className={styles.link} href='/opportunities#undegraduate'>Undergraduate Programs</a> 
                             </div>
                         </section>
 
