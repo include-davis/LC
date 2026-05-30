@@ -1,0 +1,40 @@
+@mixin button-selected {
+    color: #FFF;
+
+    background-color: var(--bg-color);
+    border-color: var(--bg-color);
+}
+
+.button {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 12px 20.35px;
+    gap: 10px;
+    
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: 'Hanken Grotesk';
+    
+    color: #434343;
+
+    border: #BABABA 1px solid;
+    border-radius: 33px;
+
+    cursor: pointer;
+    transition: all 250ms;
+
+    &:hover {
+        @include button-selected;
+    }
+}
+
+.selected {
+    @include button-selected;
+}
+
+.iconInvert {
+    filter: invert(100%);
+}

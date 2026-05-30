@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 27px;
+    margin-bottom: 84px;
+
+    padding: 0px 111px;
+    gap: 61px;
+}
+
+.image {
+    flex: 1;
+}
+
+.textContainer {
+    display: flex;
+
+    flex: 1;
+    flex-direction: column;
+
+
+    padding: 30px 0px;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 900;
+
+    text-align: center;
+
+    color: #000000;
+}
+
+.descriptionContainer {
+    margin-top: 20px;
+}
+
+.descriptionContainer > * {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+
+    color: #000000;
+}
