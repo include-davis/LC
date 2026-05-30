@@ -1,9 +1,8 @@
-
 import "./_globals/globals.scss";
 import { Gochi_Hand, Hanken_Grotesk } from "next/font/google";
-import Footer from "../components/footer/Footer.jsx";
 
-import Header from "../components/Header/Header";
+import Header from "../components/layout/Header/Header";
+import Footer from "../components/layout/Footer/Footer";
 
 import { HEADER_ITEMS } from "../../data/HeaderItems";
 
@@ -29,15 +28,15 @@ const hankenGrotesk = Hanken_Grotesk({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${gochiHand.variable} ${hankenGrotesk.variable}`}>
-      <header>
-          <Header itemsData={HEADER_ITEMS} />
-        </header>
       <body>
+        <header>
+            <Header itemsData={HEADER_ITEMS} />
+          </header>
 
         {children}
         
+        <Footer></Footer>
       </body>
-      <Footer></Footer>
     </html>
   );
 }

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './page.module.scss';
 // Shared arrow asset: /public/shared/arrow_right.svg — used in intro + recent events buttons
-import GallerySection from '../components/GallerySection';
+import GallerySection from '../../components/pages/home/GallerySection/GallerySection';
 
 export default function Home() {
   return (
