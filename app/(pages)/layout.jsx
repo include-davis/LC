@@ -4,7 +4,7 @@ import { Gochi_Hand, Hanken_Grotesk } from "next/font/google";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 
-import { HEADER_ITEMS } from "../../data/HeaderItems";
+import { HEADER_ITEMS } from "../../data/HeaderItemsData";
 
 export const metadata = {
   title: "Create Next App",
