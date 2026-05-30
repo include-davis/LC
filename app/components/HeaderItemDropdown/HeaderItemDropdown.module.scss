@@ -1,0 +1,21 @@
+.container {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    
+    margin-top: 14px;
+    padding: 6px;
+
+    gap: 10px;
+    
+    background-color: #FFF;
+
+    border: #D2D1D0 1px solid;
+    border-top: none;
+
+    border-radius: 8px;
+}

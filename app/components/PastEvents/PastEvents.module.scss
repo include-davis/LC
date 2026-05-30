@@ -1,0 +1,87 @@
+// Styles for the Past Events section.
+// Pixel-locked to the 1440 Figma layout. Values from Figma px → rem (1rem = 16px).
+
+// Outer section frame — Figma "SECTION 3" (Frame with auto layout).
+// Fixed 1440 wide, Hug height (≈681px with current content), vertical flow,
+// padding 84/104/84/104, 10px gap between children, background #FFFCF9.
+.section {
+  width: 90rem;            // 1440px
+  display: flex;
+  flex-direction: column;  // vertical flow
+  align-items: center;     // children centered horizontally within content area
+  gap: 3rem;               // 48px — Figma gap between title and carousel (Frame 199)
+  padding: 5.25rem 6.5rem; // 84px top/bottom, 104px left/right
+  background-color: #FFFCF9; // matches Figma frame fill
+}
+
+// "Past Events!" title — Figma node 4253:1102.
+// Hug 307x73; Hanken Grotesk 700; 56px; line-height 100%; color #6563DE; center aligned.
+.title {
+  width: 19.1875rem;       // 307px (Hug width preserved as fixed width here)
+  height: 4.5625rem;       // 73px
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 3.5rem;       // 56px
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
+  color: var(--blueish-purple500); // #6563DE
+}
+
+// Carousel wrapper — Figma "ALL" (node 4253:1103). Holds [left arrow] [viewport] [right arrow].
+// 40px gap between those three, 40px vertical / 20px horizontal padding, centered.
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;             // 40px
+  padding: 2.5rem 1.25rem; // 40px top/bottom, 20px left/right
+}
+
+// Viewport — Figma "CARD STACK SWITCH". Fixed 1080px window that clips the track.
+// 4 cards (240) + 3 gaps (40) = 1080 → exactly 4 cards visible; the rest slide in.
+.viewport {
+  display: flex;
+  align-items: center;
+  width: 68.5rem;          // 1096px → 1080px content (4 cards) + 8px padding each side
+  padding: 0.5rem;         // 8px (border-box, so content stays exactly 1080px)
+  overflow: hidden;        // clips cards beyond the 4 visible — the carousel window
+}
+
+// Track — Figma "CARD STACK". The full row of cards that slides left/right.
+// translateX is set inline per page; the transition makes the page jump animate smoothly.
+.track {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;             // 40px between cards
+  transition: transform 400ms ease;
+}
+
+// Navigation arrow button — Figma "Switch". 40px #6563DE circle (20px radius), 10px padding.
+.arrow {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;           // 40px
+  height: 2.5rem;          // 40px
+  padding: 0.625rem;       // 10px
+  border: none;
+  border-radius: 1.25rem;  // 20px → fully rounded at 40px
+  background-color: var(--blueish-purple500); // #6563DE
+  cursor: pointer;
+}
+
+// Inactive state (Figma "Variant2") — dimmed, e.g. when there's nothing more to scroll.
+.arrowDisabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+// Arrow glyph inside the button (20px). #FFFCF9 stroke comes from the SVG itself.
+.arrowIcon {
+  display: block;
+  width: 1.25rem;          // 20px
+  height: 1.25rem;         // 20px
+}

@@ -1,0 +1,135 @@
+// Styles for the Milestones section. Pixel-locked to the 1440 Figma layout; px → rem
+// (1rem = 16px). Fixed-rem sizing (this section does not use vw).
+
+// Outer section — Figma "Frame 288" (1440x668). The purple panel is inset 40px horizontally
+// and 20px vertically, so this frame just provides that margin around the panel.
+.section {
+  width: 90rem;            // 1440px
+  padding: 1.25rem 2.5rem; // 20px top/bottom, 40px left/right
+  display: flex;
+}
+
+// The big rounded purple panel — Figma "SECTION2" (1360x628).
+// Diagonal gradient #8482E5 → #E0E0F8 at 118.61deg, 40px radius. overflow:hidden clips the
+// motion-streak decorations that spill past the rounded edges.
+.panel {
+  position: relative;
+  width: 100%;             // fills the section content area (1360px)
+  height: 39.25rem;        // 628px
+  border-radius: 2.5rem;   // 40px
+  background: linear-gradient(118.61deg, #8482E5 4.47%, #E0E0F8 122.65%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5.25rem 6.5rem; // 84px top/bottom, 104px left/right
+}
+
+// Decorative motion-blur streak — Figma rectangles 72–76. Rounded only on the left
+// (top-left 48px, bottom-left 59px), right side square; blurred. Position, width,
+// gradient, and flip transform are supplied per-streak via inline style.
+.streak {
+  position: absolute;
+  height: 1.5rem;                    // 24px
+  border-radius: 3rem 0 0 3.6875rem; // tl 48px / tr 0 / br 0 / bl 59px
+  filter: blur(2.5px);
+  pointer-events: none;
+}
+
+// Content column — Figma "ALL" (944px). Title + medals, 92px gap, centered.
+// z-index lifts it above the absolutely-positioned streaks.
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5.75rem;            // 92px
+  width: 59rem;            // 944px
+}
+
+// Section title — Hanken Grotesk Bold 56px, #FFFCF9.
+.title {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;       // 56px
+  line-height: normal;
+  color: #FFFCF9;
+  text-align: center;
+  white-space: nowrap;
+}
+
+// Medals row — Figma "MEDALS". 3 badges, 112px gap, bottom-aligned (center badge is taller).
+.medals {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 7rem;               // 112px
+  width: 100%;
+}
+
+// Single badge column — star + label, 24px gap, centered. Width set inline (220 / 280).
+// Subtle lift on hover so the badge feels interactive.
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;             // 24px
+  transition: transform 300ms ease;
+}
+
+.badge:hover {
+  transform: translateY(-0.5rem); // gentle 8px lift
+}
+
+// Scalloped white star with the number centered on top. Size set inline (220 / 240).
+.star {
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// The star artwork fills the .star box (already white #FFFCF9 in the SVG).
+// A slow spin animation is always attached but PAUSED; hovering the badge resumes it,
+// so the star spins only on hover and pauses in place (no snap-back) when you leave.
+// Only the star spins — the number sibling stays upright and readable.
+.starImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: badge-spin 8s linear infinite;
+  animation-play-state: paused;
+}
+
+.badge:hover .starImg {
+  animation-play-state: running;
+}
+
+@keyframes badge-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+// The number inside the star — Gochi Hand, purple, 92px, sits above the star image.
+.number {
+  position: relative;
+  font-family: 'Gochi Hand', cursive;
+  font-weight: 400;
+  font-size: 5.75rem;      // 92px
+  line-height: normal;
+  color: #8482E5;
+}
+
+// Label below the star — Hanken Grotesk Bold 24px, white.
+.label {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;       // 24px
+  line-height: normal;
+  color: #FFFFFF;
+  text-align: center;
+  white-space: nowrap;
+}

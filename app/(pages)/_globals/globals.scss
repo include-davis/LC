@@ -51,6 +51,30 @@
 
   // max width
   --max-width: 1100px;
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Hanken+Grotesk:wght@400;500;700&family=Just+Another+Hand&display=swap');
+
+:root {
+  // neutral colors
+  --white: #FFFCF9;
+  --pure-white: #FFFFFF;
+
+  // brand purples
+  --blueish-purple300: #A3A1EB;
+  --blueish-purple500: #6563DE;
+
+  // neutrals (used for event card title + date)
+  --grey-200: #A7A7A8;
+  --grey-500: #232325;
+  --black: #000000;
+
+  // purple scale
+  --purple-primary: #6563DE;
+  --purple-dark: #3D3B85;
+  --purple-light: #A3A1EB;
+  --purple-soft: #E0E0F8;
+  --purple-pale: #C1C1F2;
+  --purple-button: #7A78F9;
+  --purple-lavender: #F5E6FE;
 }
 
 * {
