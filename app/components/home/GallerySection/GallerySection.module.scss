@@ -1,0 +1,189 @@
+/* ============================================================
+   GALLERY — 1111px
+   ============================================================ */
+
+/* Outer section wrapper */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 0.625rem;          /* 10px */
+  width: 100%;
+  min-height: 69.4375rem; /* 1111px */
+  background: var(--white); /* exposes 32px (2rem) white gap each side of the card */
+}
+
+/* Frame 312 — inner padded column (1376×1111) */
+.galleryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6.25rem 0;     /* 100px 0 */
+  gap: 4.875rem;          /* 78px */
+  width: min(86rem, calc(100% - 4rem)); /* 1376px max; always 2rem (32px) gap each side */
+  min-height: 69.4375rem; /* 1111px */
+}
+
+/* Gallery title wrapper (188×73) */
+.galleryTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 0.625rem;    /* 10px */
+  width: 11.75rem;  /* 188px */
+  height: 4.5625rem; /* 73px */
+}
+
+/* "Gallery" heading */
+.galleryHeading {
+  width: 11.75rem;      /* 188px */
+  height: 4.5625rem;    /* 73px */
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;    /* 56px */
+  line-height: 4.5625rem; /* 73px */
+  color: var(--black);
+  margin: 0;
+}
+
+/* ---- Carousel viewport — clips track, anchors arrows (1376×760) ---- */
+.galleryCarousel {
+  position: relative;
+  width: 100%;      /* fills the card's responsive width */
+  height: 47.5rem;  /* 760px */
+  overflow: hidden;
+}
+
+/* ---- Full scrollable track — all 8 columns in one flex row ---- */
+.galleryTrack {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.5rem;       /* 8px */
+  height: 47.5rem;   /* 760px */
+  /* Natural width = sum of all columns + gaps; do not set explicit width */
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+/* ---- Column types ---- */
+
+/* Standalone tall media column (Big Video 1 / 2 — 548×760) */
+.galleryBigMedia {
+  flex: none;
+  width: 34.25rem;  /* 548px */
+  height: 47.5rem;  /* 760px */
+  background: #d9d9d9;
+}
+
+/* Base for all stacked columns (Frame 284/285/286/287/288/289) */
+.galleryColStack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;      /* 8px */
+  height: 47.5rem;  /* 760px */
+  flex: none;
+}
+
+.galleryColWide   { width: 41.125rem; } /* Frame 284/287 — 658px */
+.galleryColMid    { width: 25.375rem; } /* Frame 285/288 — 406px */
+.galleryColNarrow { width: 23.875rem; } /* Frame 286/289 — 382px */
+
+/* ---- Quote cards ---- */
+
+/* Blue quote (Member Quote 1 — full column width × 306px, #E0E0F8) */
+.galleryQuoteBlue {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2.9375rem; /* 48px 47px */
+  gap: 0.881rem;           /* 14.1px */
+  width: 100%;
+  height: 19.125rem;       /* 306px */
+  background: var(--purple-soft);
+  flex: none;
+}
+
+/* Lavender quote (Frame 279 — full column width × 368px, #F5E6FE) */
+.galleryQuoteLavender {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2.8125rem; /* 48px 45px */
+  gap: 1rem;               /* 16px */
+  width: 100%;
+  height: 23rem;           /* 368px */
+  background: var(--purple-lavender);
+  flex: none;
+}
+
+/* Shared inner text wrapper (Frame 26 / Frame 280) */
+.galleryQuoteInner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem; /* 24px */
+  width: 100%;
+}
+
+/* Shared quote body text (31px / 40px line-height, centered) */
+.galleryQuoteText {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 1.9375rem; /* 31px */
+  line-height: 2.5rem;  /* 40px */
+  text-align: center;
+  color: var(--black);
+  margin: 0;
+  width: 100%;
+}
+
+/* ---- Media cells ---- */
+
+/* Two-image row (Frame 283 — full column width × remaining height) */
+.galleryMediaRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem; /* 8px */
+  width: 100%;
+  flex: 1;     /* fills height left over after quote card */
+}
+
+/* Each half of the image row (Frames 281/282 — 325×446) */
+.galleryMediaHalf {
+  flex: 1;
+  height: 100%;
+  background: #d9d9d9;
+}
+
+/* Tall stacked media — top cell in mid column (406×437) */
+.galleryMediaTall {
+  width: 100%;
+  height: 27.3125rem; /* 437px */
+  background: #d9d9d9;
+  flex: none;
+}
+
+/* Short stacked media — bottom cell in mid column (406×315) */
+.galleryMediaShort {
+  width: 100%;
+  height: 19.6875rem; /* 315px */
+  background: #d9d9d9;
+  flex: none;
+}
+
+/* Top image in narrow column (382×384) */
+.galleryMediaTop {
+  width: 100%;
+  height: 24rem;      /* 384px */
+  background: #d9d9d9;
+  flex: none;
+}

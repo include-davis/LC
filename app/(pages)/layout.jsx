@@ -1,11 +1,10 @@
-
 import "./_globals/globals.scss";
 import { Gochi_Hand, Hanken_Grotesk } from "next/font/google";
-import Footer from "../components/footer/Footer.jsx";
 
 import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 
-import { HEADER_ITEMS } from "../../data/HeaderItems";
+import { HEADER_ITEMS } from "../../data/HeaderItemsData";
 
 export const metadata = {
   title: "Create Next App",
@@ -31,13 +30,14 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${gochiHand.variable} ${hankenGrotesk.variable}`}>
       <body>
         <header>
-          <Header itemsData={HEADER_ITEMS} />
-        </header>
+            <Header itemsData={HEADER_ITEMS} />
+          </header>
 
         {children}
 
         <Footer></Footer>
         
+        <Footer></Footer>
       </body>
     </html>
   );

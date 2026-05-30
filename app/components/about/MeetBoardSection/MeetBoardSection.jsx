@@ -21,7 +21,7 @@ export default function MeetBoardSection() {
                 />
             )}
 
-            <div className={styles.meetTheBoard}>
+            <div id="board" className={styles.meetTheBoard}>
                 <h2>Meet the Board!</h2>
                 <div className={styles.memberCards}>
                     {LCboard.map((member, i) => (

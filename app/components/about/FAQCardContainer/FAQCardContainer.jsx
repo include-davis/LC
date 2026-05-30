@@ -4,7 +4,7 @@ import FAQCard from "../FAQCard/FAQCard";
 
 export default function FAQCardContainer({ cards }) {
     return (
-        <div className={styles.container}>
+        <div id="faq" className={styles.container}>
             {cards.map((card, index) => (
                 <FAQCard
                     key={index}

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './page.module.scss';
 // Shared arrow asset: /public/shared/arrow_right.svg — used in intro + recent events buttons
-import GallerySection from '../../components/GallerySection';
+import GallerySection from '../../components/home/GallerySection/GallerySection';
 
 export default function Home() {
   return (
@@ -207,7 +207,7 @@ export default function Home() {
 
       </section>
 
-      <section className={styles.schedule}>
+      <section id="schedule" className={styles.schedule}>
 
         {/* Frame 316 — content column (1110×883px, gap: 42px) */}
         <div className={styles.scheduleCard}>
