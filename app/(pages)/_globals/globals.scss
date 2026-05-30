@@ -1,30 +1,28 @@
 @use "./mixins.scss";
 
-// Load fonts
-@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Hanken+Grotesk:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Hanken+Grotesk:wght@400;500;700&family=Just+Another+Hand&display=swap');
 
 :root {
-  // primary colors
+  // neutral colors
   --white: #fffcf9;
   --pure-white: #ffffff;
-
-  // Ruchen added below
+  --black: #000000;
 
   // font
-  --font-display: "Gochi Hand", cursive; // for big title
+  --font-display: "Gochi Hand", cursive;
   --font-body: "Hanken Grotesk", sans-serif;
 
   // main color: purple
-  --color-primary: #7c6fd4; // main purple color (buttons, links, stressing text)
-  --color-primary-light: #a89fe3; // lighter purple (hover state)
-  --color-primary-bg: #eeeaf3; // extremely light purple (backgrounds for section and tag)
-  --color-banner-bg: #7b72cc; // Banner background pruple
-  --color-banner-dark: #5c55ab; // Banner gradual dark purple
+  --color-primary: #7c6fd4;
+  --color-primary-light: #a89fe3;
+  --color-primary-bg: #eeeaf3;
+  --color-banner-bg: #7b72cc;
+  --color-banner-dark: #5c55ab;
 
   // text
-  --color-text: #1a1a2e; // maintext
-  --color-text-muted: #6b6b8a; // secondary text
-  --color-text-on-purple: #ffffff; // text on purple background
+  --color-text: #1a1a2e;
+  --color-text-muted: #6b6b8a;
+  --color-text-on-purple: #ffffff;
 
   // card & tag
   --color-card-border: #e8e4f8;
@@ -61,22 +59,21 @@
   --pure-white: #FFFFFF;
 
   // brand purples
-  --blueish-purple300: #A3A1EB;
-  --blueish-purple500: #6563DE;
+  --blueish-purple300: #a3a1eb;
+  --blueish-purple500: #6563de;
 
-  // neutrals (used for event card title + date)
-  --grey-200: #A7A7A8;
+  // neutrals
+  --grey-200: #a7a7a8;
   --grey-500: #232325;
-  --black: #000000;
 
   // purple scale
-  --purple-primary: #6563DE;
-  --purple-dark: #3D3B85;
-  --purple-light: #A3A1EB;
-  --purple-soft: #E0E0F8;
-  --purple-pale: #C1C1F2;
-  --purple-button: #7A78F9;
-  --purple-lavender: #F5E6FE;
+  --purple-primary: #6563de;
+  --purple-dark: #3d3b85;
+  --purple-light: #a3a1eb;
+  --purple-soft: #e0e0f8;
+  --purple-pale: #c1c1f2;
+  --purple-button: #7a78f9;
+  --purple-lavender: #f5e6fe;
 }
 
 * {

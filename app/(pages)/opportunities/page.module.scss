@@ -24,7 +24,7 @@
   justify-content: space-between;
   //max-width: var(--max-width);
   margin: 0 auto 3rem;
-  padding: var(--space-2xl) var(--space-xl) var(--space-lg);
+  padding: 100px var(--space-xl) 100px;
   position: relative;
 }
 
@@ -35,19 +35,21 @@
 
 .heroTitle {
   font-family: var(--font-display);
-  font-size: 6rem;
+  font-size: 7.75rem !important;;
   color: var(--color-primary);
   line-height: 1.05;
   margin-bottom: var(--space-md);
   position: relative;
+  margin-left: 120px;
 }
 
 .heroSubtitle {
-  font-size: 0.95rem;
+  font-size: 1.25rem !important;;
   color: var(--color-primary-light);
-  max-width: 420px;
+  max-width: 500px;
   line-height: 1.6;
   position: relative;
+  margin-left: 120px;
 }
 
 .heroBirds {
@@ -56,10 +58,11 @@
   align-items: flex-end;
   gap: var(--space-xl);
   position: relative;
+  margin-right: 120px;
 }
 
 .birdMain {
-  width: 140px;
+  width: 180px;
   height: auto;
   position: relative;
 }
@@ -72,7 +75,14 @@
 }
 
 .birdsSmall {
-  width: 80px;
+  width: 113px;
+  height: auto;
+  margin-bottom: var(--space-sm);
+  position: relative;
+}
+
+.birdsSmaller {
+  width: 83px;
   height: auto;
   margin-bottom: var(--space-sm);
   position: relative;
@@ -94,17 +104,18 @@
 }
 
 .pathBannerTitle {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
+  font-family: var(--font-display) !important;
+  letter-spacing: 5% !important;
+  font-size: 3.5rem !important;
   color: var(--color-text-on-purple);
   margin-bottom: var(--space-md);
   position: relative;
 }
 
 .pathBannerBody {
-  font-size: 0.9rem;
+  font-size: 1.5rem !important;
   color: rgba(255, 255, 255, 0.88);
-  max-width: 600px;
+  max-width: 928px;
   margin: 0 auto var(--space-lg);
   line-height: 1.7;
   position: relative;
@@ -273,9 +284,10 @@
 // Horizontal card row
 .cardRow {
   display: flex;
-  gap: var(--space-xl);
+  gap: 100px;
+  justify-content: center;
   overflow-x: auto; // Narrow screens can swipe left and right
-  padding-bottom: var(--space-sm);
+  padding-bottom: 100px;
   scrollbar-width: none; // Hide scrollbar in Firefox
 
   &::-webkit-scrollbar {
@@ -297,6 +309,7 @@
     #bdbcf1 32.16%,
     #6563de 122.65%
   );
+  height: 418px;
   border-radius: var(--radius-lg);
   padding: var(--space-xl) 80px;
   position: relative;
@@ -339,7 +352,7 @@
 }
 
 .ctaSparkle {
-  height: 58px;
+  height: 113px;
   width: auto;
   flex-shrink: 0;
   opacity: 0.85;
@@ -349,6 +362,15 @@
   display: inline-flex;
   align-items: center;
   text-decoration: none;
+  // border: black solid 1px;
+  width: 500px;
+  height: 111px;
+  border-radius: 16px;
+  background-color: white;
+  justify-content: center;
+  color: #8482E5;
+  font-weight: 800px !important;
+  font-size: 3rem !important;
   transition:
     transform 0.25s ease,
     filter 0.25s ease;
