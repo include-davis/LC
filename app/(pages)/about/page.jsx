@@ -19,7 +19,7 @@ export default function AboutPage() {
                 title={HERO_SECTION_DATA.title}
                 description={HERO_SECTION_DATA.description}
             />
-
+    
             <ViewToggleSection 
                 buttonsData={VIEW_TOGGLE_BUTTONS} 
                 selectedIndex={selectedIndex}

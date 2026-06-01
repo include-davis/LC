@@ -1,3 +1,5 @@
+@use "../../../\(pages\)/_globals/mixins.scss" as mixins;
+
 .container {
     display: flex;
     justify-content: center;
@@ -7,10 +9,35 @@
 
     padding: 0px 111px;
     gap: 61px;
+
+    @include mixins.phone {
+        flex-direction: column;
+
+        margin-top: 46px;
+        margin-bottom: 21px;
+
+        padding: 0px 20px;
+        gap: 46px;
+    }
+}
+
+.imageContainer {
+    flex: 1;
+
+    align-self: center;
+
+    @include mixins.phone {
+        padding: 0px 36px;
+    }
 }
 
 .image {
-    flex: 1;
+    width: 579px;
+
+    @include mixins.phone {
+        width: 290px;
+        height: 167px;
+    }
 }
 
 .textContainer {
@@ -19,8 +46,18 @@
     flex: 1;
     flex-direction: column;
 
-
     padding: 30px 0px;
+
+    color: #000;
+
+    @include mixins.phone {
+        padding: 52px 28px;
+
+        color: #FFF;
+
+        background: linear-gradient(to bottom, #8482E5, #C1C1F2);
+        border-radius: 40px;
+    }
 }
 
 .title {
@@ -29,7 +66,9 @@
 
     text-align: center;
 
-    color: #000000;
+    @include mixins.phone {
+        font-size: 2rem;
+    }
 }
 
 .descriptionContainer {
@@ -41,5 +80,8 @@
     font-weight: 500;
     line-height: 1.2;
 
-    color: #000000;
+    @include mixins.phone {
+        font-size: 0.875rem;
+        line-height: 1.3;
+    }
 }
