@@ -2,15 +2,12 @@
 
 .container {
     display: flex;
+    justify-content: space-between;
 
-    @include mixins.sm-desktop {
-        justify-content: space-between;
-
-        height: 455px;
-        
-        padding: 0px 120px;
-        gap: 188px;
-    }
+    height: 455px;
+    
+    padding: 0px 120px;
+    gap: 188px;
 
     @include mixins.phone {
         height: fit-content;
@@ -21,13 +18,11 @@
 }
 
 .textContainerMobile {
+    display: none;
+
     width: 100%;
 
     margin-top: 96.18px;
-
-    @include mixins.sm-desktop {
-        display: none;
-    }
 
     @include mixins.phone {
         display: block;
@@ -42,11 +37,9 @@
 }
 
 .textContainerDesktop {
-    margin-top: 96px;
+    display: block;
 
-    @include mixins.sm-desktop {
-        display: block;
-    }
+    margin-top: 96px;
 
     @include mixins.phone {
         display: none;
@@ -54,12 +47,10 @@
 }
 
 .header {
+    font-size: 7.75rem;
     font-weight: 400;
-    color: #6563DE;
 
-    @include mixins.sm-desktop {
-        font-size: 7.75rem;
-    }
+    color: #6563DE;
 
     @include mixins.phone {
         margin-top: 30.82px;
@@ -72,16 +63,13 @@
 }
 
 .description {
+    width: 434px;
+    
+    font-size: 1.25rem;
+    line-height: 1.25;
     font-weight: 500;
 
     color: #A3A1EB;
-
-    @include mixins.sm-desktop {
-        width: 434px;
-        
-        font-size: 1.25rem;
-        line-height: 1.25;
-    }
 
     @include mixins.phone {
         width: 100%;
@@ -97,10 +85,7 @@
 
 .starContainerDesktop {        
     position: relative;
-
-    @include mixins.sm-desktop {
-        display: block;
-    }    
+    display: block;
     
     @include mixins.phone {
         display: none;
