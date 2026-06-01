@@ -1,3 +1,5 @@
+@use "../../\(pages\)/_globals/mixins.scss" as mixins;
+
 .container {
     display: flex;
     align-items: center;
@@ -10,6 +12,13 @@
 
     background-color: #FFFCF9;
     border: 1px solid #A7A7A880;
+
+    @include mixins.phone {
+        justify-content: space-between;
+
+        margin-top: 29.32px;
+        padding: 12px 16px;
+    }
 }
 
 .iconButton {
@@ -21,6 +30,32 @@
     cursor: pointer;
 
     img {
+        display: block;
+    }
+}
+
+.headerItemsContainerDesktop {
+    display: flex;
+
+    gap: 16px;
+    
+    @include mixins.phone {
+        display: none;
+    }
+}
+
+.headerMenuButtonMobile {
+    display: none;
+
+    margin: -12px -16px;
+    padding: 12px 16px;
+        
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+
+    @include mixins.phone {
         display: block;
     }
 }
