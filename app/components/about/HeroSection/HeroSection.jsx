@@ -6,12 +6,12 @@ import STAR_1_SVG from "../../../../public/images/about/star1.svg";
 import STAR_2_SVG from "../../../../public/images/about/star2.svg";
 import STAR_3_SVG from "../../../../public/images/about/star3.svg";
 
-export default function HeroSection() {
+export default function HeroSection({ title, description }) {
     return (
         <div className={styles.container}>
             <div>
-                <h1 className={styles.header}>About Us</h1>
-                <p className={styles.description}>Get to know our club and our amazing board members!</p>
+                <h1 className={styles.header}>{title}</h1>
+                <p className={styles.description}>{description}</p>
             </div>
 
             <div className={styles.starContainer}>
