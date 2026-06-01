@@ -1,31 +1,110 @@
+@use "../../../../app/(pages)/_globals/mixins.scss" as mixins;
+
 .container {
     display: flex;
-    justify-content: space-between;
 
-    height: 455px;
+    @include mixins.sm-desktop {
+        justify-content: space-between;
 
-    padding: 0px 120px;
-    gap: 188px;
+        height: 455px;
+        
+        padding: 0px 120px;
+        gap: 188px;
+    }
+
+    @include mixins.phone {
+        height: fit-content;
+        margin-bottom: 34px;
+
+        padding: 0px;
+    }
+}
+
+.textContainerMobile {
+    width: 100%;
+
+    margin-top: 96.18px;
+
+    @include mixins.sm-desktop {
+        display: none;
+    }
+
+    @include mixins.phone {
+        display: block;
+    }
+}
+
+.starAndHeaderContainer {
+    display: flex;
+    justify-content: center;
+
+    padding: 0px 30px;
+}
+
+.textContainerDesktop {
+    margin-top: 96px;
+
+    @include mixins.sm-desktop {
+        display: block;
+    }
+
+    @include mixins.phone {
+        display: none;
+    }
 }
 
 .header {
-    margin-top: 96px;
-
-    font-size: 7.75rem;
     font-weight: 400;
-
     color: #6563DE;
+
+    @include mixins.sm-desktop {
+        font-size: 7.75rem;
+    }
+
+    @include mixins.phone {
+        margin-top: 30.82px;
+
+        width: fit-content;
+        text-wrap: nowrap;
+        
+        font-size: 4rem;
+    }
 }
 
 .description {
-    font-size: 1.25rem;
     font-weight: 500;
 
     color: #A3A1EB;
+
+    @include mixins.sm-desktop {
+        width: 434px;
+        
+        font-size: 1.25rem;
+        line-height: 1.25;
+    }
+
+    @include mixins.phone {
+        width: 100%;
+
+        margin-top: 5px;
+
+        font-size: 0.875rem;
+
+        text-align: center;
+        text-wrap: nowrap;
+    }
 }
 
-.starContainer {
+.starContainerDesktop {        
     position: relative;
+
+    @include mixins.sm-desktop {
+        display: block;
+    }    
+    
+    @include mixins.phone {
+        display: none;
+    }
 }
 
 .starIcon1 {
