@@ -26,9 +26,7 @@ export default function AboutPage() {
                 setSelected={setSelected}
             />
             
-            <div>
-                <ActiveView />
-            </div>
+            <ActiveView />
         </>
     )
 }
