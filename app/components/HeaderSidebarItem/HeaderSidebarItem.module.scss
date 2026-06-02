@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Hanken Grotesk";
+    
+    color: #6563DE;
+}
+
+.icon {
+    transition: rotate 150ms ease-in-out;
+}
+
+.rotate180 {
+    rotate: 180deg;
+}
+
+.subItemsContainer {
+    display: none;
+    flex-direction: column;
+
+    padding-left: 8px;
+    gap: 12px;
+
+    &.open {
+        display: flex;
+    }
+}
+
+.subItem {
+    display: block;   
+
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+
+    color: #8482E5;
+}

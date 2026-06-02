@@ -3,6 +3,7 @@ import styles from "./Header.module.scss";
 import Image from "next/image";
 
 import HeaderItem from "../HeadeItem/HeaderItem";
+import HeaderSidebar from "../HeaderSidebar/HeaderSidebar";
 
 import ICON_SVG from "../../../public/logo.svg";
 import HEADER_MENU_SVG from "../../../public/shared/hamburger_menu.svg";
@@ -37,6 +38,8 @@ export default function Header({ itemsData }) {
                     alt="Header Menu"
                 />
             </button>
+
+            <HeaderSidebar itemsData={itemsData} />
         </div>
     )
 }

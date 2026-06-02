@@ -1,0 +1,49 @@
+.container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+    top: 0;
+    right: 0;
+
+    width: 348px;
+    height: 100dvh;
+
+    padding: 32px;
+    padding-top: 71px;
+
+    gap: 36px;
+
+    background-color: #FFFCF9;
+
+    border-top-left-radius: 32px;
+    border-bottom-left-radius: 32px;
+
+    z-index: 10;
+}
+
+.topBarContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header {
+    font-size: 28px;
+    font-weight: 600;
+
+    color: #14142C;
+}
+
+.closeBtn {
+    background-color: transparent;
+    border: none;
+}
+
+.itemsContainer {
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+}
