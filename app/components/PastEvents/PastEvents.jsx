@@ -8,7 +8,7 @@ import styles from "./PastEvents.module.scss";
 
 export default function PastEvents() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="events">
       <PastEventsTitle />
       <PastEventsCarousel />
     </section>

@@ -17,7 +17,7 @@ export const HEADER_ITEMS = [
             {
                 title: "Mission",
                 description: "Our mission!",
-                link: "/about#mission"
+                link: "/about#ClubMissionSection"
             },
             {
                 title: "Board",
@@ -58,18 +58,18 @@ export const HEADER_ITEMS = [
         ]
     },
     {
-        title: "Opportunties",
-        link: "/opportunties",
+        title: "Opportunities",
+        link: "/opportunities",
         subitems: [
             {
                 title: "Undergraduate Programs",
                 description: "Explore undergraduate programs!",
-                link: "/opportunties#undergraduate"
+                link: "/undergrad-programs"
             },
             {
                 title: "Graduate Programs",
                 description: "Explore graduate programs!",
-                link: "/opportunties#graduate"
+                link: "/grad-programs"
             },
         ]
     }

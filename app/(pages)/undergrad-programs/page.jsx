@@ -11,7 +11,7 @@ const programs = [
     subtitle: "Research",
     subtitleImage: "/images/tags/tag-research.png",
     image: "/images/language-research.png",
-    href: "#language-research",
+    href: "https://www.languagecluster.com/about-us",
   },
   {
     id: "study-abroad",
@@ -19,7 +19,7 @@ const programs = [
     subtitle: "Study Abroad",
     subtitleImage: "/images/tags/tag-study-abroad.png",
     image: "/images/study-abroad.png",
-    href: "#study-abroad",
+    href: "https://linguistics.ucdavis.edu/study-abroad",
   },
   {
     id: "linguistics-major",
@@ -27,7 +27,7 @@ const programs = [
     subtitle: "Major/Minor",
     subtitleImage: "/images/tags/tag-major.png",
     image: "/images/linguistics-major.png",
-    href: "#linguistics-major",
+    href: "https://linguistics.ucdavis.edu/major-linguistics",
   },
   {
     id: "ferreiralab",
@@ -35,7 +35,7 @@ const programs = [
     subtitle: "Internship",
     subtitleImage: "/images/tags/tag-internship.png",
     image: "/images/ferreiralab-assistant.png",
-    href: "#ferreiralab",
+    href: "https://ferreiralab.faculty.ucdavis.edu",
   },
 ];
 // ─────────────────────────────────────────────────

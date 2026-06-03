@@ -7,7 +7,7 @@ import styles from "./Community.module.scss";
 
 export default function Community() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="community">
       <div className={styles.panel}>
         <h2 className={styles.title}>Our Community!</h2>
         {/* Two rows of 4 polaroids, gap 52px between rows / 20px within a row.

@@ -11,7 +11,7 @@ const programs = [
     subtitle: "Major/Minor",
     subtitleImage: "/images/tags/tag-major.png",
     image: "/images/phd-program.png",
-    href: "#phd",
+    href: "https://linguistics.ucdavis.edu/phd-program",
   },
   {
     id: "ma",
@@ -21,7 +21,7 @@ const programs = [
     // abbr: "M.A.",
     // solidColor: "#E8A020",
     image: "/images/ma-program.png",
-    href: "#ma",
+    href: "https://linguistics.ucdavis.edu/ma-program-and-requirements",
   },
   {
     id: "gc",
@@ -31,7 +31,7 @@ const programs = [
     // abbr: "G.C.",
     // solidColor: "#3AAEA8",
     image: "/images/gc-program.png",
-    href: "#gc",
+    href: "https://linguistics.ucdavis.edu/governing-committees",
   },
   {
     id: "phonetics-lab",
@@ -39,7 +39,7 @@ const programs = [
     subtitle: "Research",
     subtitleImage: "/images/tags/tag-research.png",
     image: "/images/research-labs.png",
-    href: "#phonetics-lab",
+    href: "https://phonlab.ucdavis.edu",
   },
 ];
 // ─────────────────────────────────────────────────
