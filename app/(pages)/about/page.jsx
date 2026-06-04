@@ -1,21 +1,29 @@
+"use client"
 
-// importing footer function
-import Footer from "../../components/footer/Footer"
+import { useState } from "react";
 
-import MemberCard from "../../components/about/MemberCard/MemberCard";
-import Image from 'next/image';
-import { LCboard } from '../../../data/teamMembers';
+import HeroSection from "../../components/about/HeroSection/HeroSection";
+import ViewToggleSection from "../../components/about/ViewToggleSection/ViewToggleSection";
 
-export default function About() {
+import { VIEW_TOGGLE_BUTTONS } from "../../../data/ViewToggleButtonData";
+
+export default function AboutPage() {
+    const [selectedIndex, setSelected] = useState(0);
+
+    const ActiveView = VIEW_TOGGLE_BUTTONS[selectedIndex].view;
+
     return (
-        <div>
-            {/* {LCboard.map((member) => (
-                <MemberCard name={member.name} image={member.image} pronouns={member.pronouns} position={member.position}></MemberCard>
-            ))} */}
+        <>
+            <HeroSection />
+            <ViewToggleSection 
+                buttonsData={VIEW_TOGGLE_BUTTONS} 
+                selectedIndex={selectedIndex}
+                setSelected={setSelected}
+            />
             
-            <Footer></Footer>
-
-        </div>
-        
+            <div>
+                <ActiveView />
+            </div>
+        </>
     )
 }

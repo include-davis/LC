@@ -1,6 +1,7 @@
 export const LCboard = [
 
     {
+        id: 1,
         name: 'James',
         lastName: 'Reid',
         pronouns: '(he/him)',
@@ -11,35 +12,12 @@ export const LCboard = [
         outside: 'I am a fencer and a student pilot',
         funFact: null,
         image: '/images/about/James_Border.png',
+        noBorderImage: '/images/about/memberIMGs/James.png',
+        background: 'James_Background.svg',
     },
-
+    
     {
-        name: 'Imogen',
-        lastName: 'Garrison',
-        pronouns: '(she/her)',
-        position: 'Social Media',
-        year: 'Second Year',
-        major: 'Linguistics Major',
-        interests: 'Speech Language Pathology, and language evolution.',
-        outside: null,
-        funFact: 'I have four cats',
-        image: '/images/about/Imogen_Border.png',
-    },
-
-    {
-        name: 'Leia',
-        lastName: 'Ray',
-        pronouns: '(any/all)',
-        position: 'Co-President',
-        year: 'Second Year',
-        major: 'Linguistics & Statistics Double Major',
-        interests: 'Computational linguistics and the applications of statistical methods in linguistics.',
-        funFact: 'I am currently learning the 20 button C/G Anglo concertina (would love to play some sea shanties one day)',
-        outside: null,
-        image: '/images/about/Leia_Border.png',
-    },
-
-    {
+        id: 2,
         name: 'Celia',
         lastName: 'Farrell',
         pronouns: '(she/her)',
@@ -50,9 +28,44 @@ export const LCboard = [
         funFact: null,
         outside: 'I love doing theater and technical theater production, and I’m currently set designing a musical!',
         image: '/images/about/Celia_Border.png',
+        noBorderImage: '/images/about/memberIMGs/Celia.png',
+        background: 'Celia_Background.svg',
     },
 
     {
+        id: 3,
+        name: 'Leia',
+        lastName: 'Ray',
+        pronouns: '(any/all)',
+        position: 'Co-President',
+        year: 'Second Year',
+        major: 'Linguistics & Statistics Double Major',
+        interests: 'Computational linguistics and the applications of statistical methods in linguistics.',
+        funFact: 'I am currently learning the 20 button C/G Anglo concertina (would love to play some sea shanties one day)',
+        outside: null,
+        image: '/images/about/Leia_Border.png',
+        noBorderImage: '/images/about/memberIMGs/Leia.png',
+        background: 'Leia_Background.svg',
+    },
+
+    {
+        id: 4,
+        name: 'Imogen',
+        lastName: 'Garrison',
+        pronouns: '(she/her)',
+        position: 'Social Media',
+        year: 'Second Year',
+        major: 'Linguistics Major',
+        interests: 'Speech Language Pathology, and language evolution.',
+        outside: null,
+        funFact: 'I have four cats',
+        image: '/images/about/Imogen_Border.png',
+        noBorderImage: '/images/about/memberIMGs/Imogen.png',
+        background: 'Imogen_Background.svg',
+    },
+
+    {
+        id: 5,
         name: 'Beth',
         lastName: 'Harrison',
         pronouns: '(she/her)',
@@ -63,9 +76,12 @@ export const LCboard = [
         funFact: 'I ❤️ baseball so much. Please talk to me about ball',
         outside: null,
         image: '/images/about/Beth_Border.png',
+        noBorderImage: '/images/about/memberIMGs/Beth.png',
+        background: 'Beth_Background.svg',
     },
 
     {
+        id: 6,
         name: 'Jay',
         lastName: 'Madriaga',
         pronouns: '(any/all)',
@@ -76,9 +92,12 @@ export const LCboard = [
         funFact: null,
         outside: 'I love hockey, music, crocheting, and video games (like The Last of Us), and my pitbull, Blue',
         image: '/images/about/Jay_Border.png',
+        noBorderImage: '/images/about/memberIMGs/Jay.png',
+        background: 'Jay_Background.svg',
     },
 
     {
+        id: 7,
         name: 'Fiona',
         lastName: 'Sargisian',
         pronouns: '(she/her)',
@@ -89,6 +108,8 @@ export const LCboard = [
         funFact: null,
         outside: 'Conducting neuroscience research, studying ethics, reading, listening to music, and meeting up with friends both in and outside of linguistics.',
         image: '/images/about/Fiona_Border.png',
+        noBorderImage: '/images/about/memberIMGs/Fiona.png',
+        background: 'Fiona_Background.svg',
     }
 
 ]
