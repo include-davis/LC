@@ -3,7 +3,7 @@ import styles from './MemberCardMobile.module.scss';
 
 export default function MemberCardMobile({ id, name, lastName, image, pronouns, positionShort, year, major, interests, outside, funFact }) {
     return (
-        <div className={styles.cardContainer} key={id} style={{ cursor: 'pointer',  backgroundImage: `url(/images/about/backgrounds/mobile/${name}Mobile.svg)` }}>
+        <div className={styles.cardContainer} key={id} style={{backgroundImage: `url(/images/about/backgrounds/mobile/${name}Mobile.svg)` }}>
 
             <div className={styles.cardContent} >
                 <div className={styles.topHalf}>

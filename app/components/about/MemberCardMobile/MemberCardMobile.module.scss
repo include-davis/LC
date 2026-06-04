@@ -122,6 +122,10 @@
     height: 9px;
     stroke-width: 4px;
     stroke: #000;
+
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 .memberDetails{
