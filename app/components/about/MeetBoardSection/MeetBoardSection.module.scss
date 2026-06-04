@@ -16,7 +16,7 @@
     font-family: "Hanken Grotesk";
     font-size: 3rem; /* 48px */
     font-style: normal;
-    font-weight: 900;
+    font-weight: 900; 
     line-height: normal;
 }
 
@@ -24,20 +24,43 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 3.5rem 8rem;
+    gap: 3.5rem 8rem; /* 56px 128px */
     margin-left: 6%;
     margin-right: 12%;
 }
 
-.mobileMemberCards{
+.mobileMemberCards {
     display: flex;
     flex-direction: column;
-    gap: 21px;
+    gap: 1.3125rem; /* 21px */
 }
 
-@media (max-width: 402px){
-    .boardHeading{
+.mobileMeetTheBoard {
+    display: none;
+}
+
+@media (max-width: 402px) { 
+
+    .meetTheBoard {
+        display: none;
+    }
+
+    .mobileMeetTheBoard {
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem; /* 56px */
+    }
+
+    .boardHeader {
+        background-image: url(/images/about/backgrounds/mobileBoardHeader.svg);
+    }
+
+    .boardHeading {
         color: #FFF;
         font-size: 2rem; /* 32px */
+        font-style: normal;
+        font-weight: 900; 
+        line-height: normal;
+        padding: 1rem; /* 16px */
     }
 }

@@ -39,23 +39,30 @@ export default function MeetBoardSection() {
                 </div>
             </div>
 
-            <div className={styles.mobileMemberCards}>
-                {LCboard.map((member, i) => (
-                    <MemberCardMobile
-                        key={member.id}
-                        name={member.name}
-                        lastName={member.lastName}
-                        image={member.noBorderImage}
-                        pronouns={member.pronouns}
-                        positionShort={member.positionShort}
-                        year={member.yearShort} 
-                        major={member.majorShort}
-                        interests={member.interests}
-                        outside={member.outside}
-                        funFact={member.funFact}
-                    />
-                ))}
+            <div className={styles.mobileMeetTheBoard}>
+                <div className={styles.boardHeader}>
+                    <h2 className={styles.boardHeading}>Meet the Board!</h2>
+                </div>
+
+                <div className={styles.mobileMemberCards}>
+                    {LCboard.map((member, i) => (
+                        <MemberCardMobile
+                            key={member.id}
+                            name={member.name}
+                            lastName={member.lastName}
+                            image={member.noBorderImage}
+                            pronouns={member.pronouns}
+                            positionShort={member.positionShort}
+                            year={member.yearShort} 
+                            major={member.majorShort}
+                            interests={member.interests}
+                            outside={member.outside}
+                            funFact={member.funFact}
+                        />
+                    ))}
+                </div>
             </div>
+
 
         </>
     );   
