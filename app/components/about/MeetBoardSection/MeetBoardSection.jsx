@@ -7,6 +7,8 @@ import { useState } from "react";
 import MemberCard from "../../../components/about/MemberCard/MemberCard";
 import ExpandedMemberCard from "../../../components/about/ExpandedMemberCard/ExpandedMemberCard";
 
+import MemberCardMobile from "../../../components/about/MemberCardMobile/MemberCardMobile";
+
 import { LCboard } from "../../../../data/teamMembers";
 
 export default function MeetBoardSection() {
@@ -36,6 +38,25 @@ export default function MeetBoardSection() {
                     ))}
                 </div>
             </div>
+
+            <div className={styles.mobileMemberCards}>
+                {LCboard.map((member, i) => (
+                    <MemberCardMobile
+                        key={member.id}
+                        name={member.name}
+                        lastName={member.lastName}
+                        image={member.noBorderImage}
+                        pronouns={member.pronouns}
+                        positionShort={member.positionShort}
+                        year={member.yearShort} 
+                        major={member.majorShort}
+                        interests={member.interests}
+                        outside={member.outside}
+                        funFact={member.funFact}
+                    />
+                ))}
+            </div>
+
         </>
     );   
 }

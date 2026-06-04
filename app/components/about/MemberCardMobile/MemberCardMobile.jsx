@@ -1,19 +1,46 @@
 import Image from 'next/image';
 import styles from './MemberCardMobile.module.scss';
 
-export default function MemberCardMobile({ id, name, image, pronouns, position, year, major, onClick }) {
+export default function MemberCardMobile({ id, name, lastName, image, pronouns, positionShort, year, major, interests, outside, funFact }) {
     return (
-        <div className={styles.cardContainer} key={id} onClick={onClick} style={{ cursor: 'pointer' }}>
-            <Image className={styles.memberIMG} src={image} alt={name} width={153} height={245} />
-            <section className={styles.memberInfo}>
-                <h3>{name} {pronouns}</h3>
-                <ul className={styles.standing}>
-                    <li className={styles.position}>{position}</li>
-                    {year && <li className={styles.standingLi}>{year}</li>}
-                    <li className={styles.standingLi}>{major}</li>
-                </ul>
-            </section>
-            <Image className={styles.arrowSVG} src={'public/images/about/icons/downArrow.svg'} alt={'arrow'} width={20} height={9} />
+        <div className={styles.cardContainer} key={id} style={{ cursor: 'pointer',  backgroundImage: `url(/images/about/backgrounds/mobile/${name}Mobile.svg)` }}>
+
+            <div className={styles.cardContent} >
+                <div className={styles.topHalf}>
+                    <div className={styles.memberStarImg}>
+                        <Image className={styles.memberIMG} src={image} alt={name} width={62} height={62} />
+                        <Image className={styles.diamondSVG} src={'images/about/diamond.svg'} width={36} height={43} />
+                    </div>
+                    <div>
+                        <section className={styles.memberInfo}>
+                            <h3>{name} {lastName} {pronouns}</h3>
+
+                            <ul className={styles.standing}>
+                                <li className={styles.position}>{positionShort}</li>
+                                {year && <li className={styles.standingLi}>{year}</li>}
+                                <li className={styles.standingLi}>{major}</li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+                <div className={styles.expandCard}>
+                        <Image className={styles.arrowSVG} src={'images/about/icons/downArrow.svg'} alt={'arrow'} width={20} height={9} />
+                </div>
+
+                <div className={styles.hidden}>
+                    <div className={styles.memberDetails}>
+                        {interests &&
+                            <li><strong>Main Linguistic Interests:</strong> {interests}</li>
+                        }
+                        {outside &&
+                            <li><strong>Outside of Linguistics:</strong> {outside}</li>
+                        }
+                        {funFact &&
+                            <li><strong>Fun Fact:</strong> {funFact}</li>
+                        }
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
