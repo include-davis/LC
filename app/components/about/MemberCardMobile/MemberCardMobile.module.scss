@@ -2,6 +2,9 @@
     display: none;
 }
 
+.showing{
+    display: flex;
+}
 
 .cardContainer{
     display: flex;
@@ -119,16 +122,24 @@
     justify-content: center;
 }
 
-.arrowSVG{
+.arrowExpandBtn{
     width: 20px;
     height: 9px;
     stroke-width: 4px;
     stroke: #000;
-
-    &:hover{
-        cursor: pointer;
-    }
+    display: flex;
+    justify-content: center;
+    width: -webkit-fill-available;
 }
+
+.arrow{
+    transition: transform 0.4s ease-in-out;
+}
+
+.rotatedArrow{
+    transform: rotate(180deg);
+}
+
 
 .memberDetails{
     width: 308px;

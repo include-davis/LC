@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import Image from 'next/image';
 import styles from './MemberCardMobile.module.scss';
 
 export default function MemberCardMobile({ id, name, lastName, image, pronouns, positionShort, year, major, interests, outside, funFact }) {
+    const [isExpanded, setIsExpanded] = useState(false);
     return (
         <div className={styles.cardContainer} key={id} style={{backgroundImage: `url(/images/about/backgrounds/mobile/${name}Mobile.svg)` }}>
 
@@ -23,11 +25,11 @@ export default function MemberCardMobile({ id, name, lastName, image, pronouns, 
                         </section>
                     </div>
                 </div>
-                <div className={styles.expandCard}>
-                        <Image className={styles.arrowSVG} src={'images/about/icons/downArrow.svg'} alt={'arrow'} width={20} height={9} />
+                <div className={styles.arrowExpandBtn} onClick={() => setIsExpanded(!isExpanded)}>
+                        <Image className={`${styles.arrow} ${isExpanded ? styles.rotatedArrow : ''}`} src={'images/about/icons/downArrow.svg'} alt={'arrow'} width={20} height={9} />
                 </div>
 
-                <div className={styles.hidden}>
+                <div className={isExpanded ? styles.showing : styles.hidden}>
                     <div className={styles.memberDetails}>
                         {interests &&
                             <li><strong>Main Linguistic Interests:</strong> {interests}</li>
