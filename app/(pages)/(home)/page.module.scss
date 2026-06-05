@@ -1,0 +1,967 @@
+@use '../_globals/mixins.scss' as mixins;
+
+/* ============================================================
+   PAGE WRAPPER
+   ============================================================ */
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 90rem; /* 1440px */
+  margin: 0 auto;
+}
+
+/* ============================================================
+   HERO — 815.7px
+   PNG inventory (all 1× exports):
+     decoration_top_right.png  563×114
+     decoration_bottom_left.png 563×114
+     decoration_star_2.png     209×242
+     decoration_star_3.png     253×129
+     linguistics_text.png      735×306  (combined: welcome + bubble + button)
+     mascot_wug.png            674×583
+     wug_banner.png           1440×279
+   ============================================================ */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 50.981rem; /* 815.7px */
+  overflow: hidden;
+  background-color: var(--white);
+}
+
+/* ---- Top-right cloud strip: 563×114px = 35.188rem × 7.125rem ---- */
+// done 
+.decoTopRight {
+  position: absolute;
+  top: 4.3rem;
+  right: 0;
+  width: 35.188rem;
+  height: 7.125rem;
+  z-index: 1;
+}
+
+/* ---- Star 2 (633×610px export ÷ 2 = 316.5×305px display) — Figma: top: -89px, left: -133px ---- */
+.decoStar2 {
+  position: absolute;
+  width: 19.781rem;  /* 316.5px */
+  height: 19.063rem; /* 305px */
+  top: -4.063rem;    /* -89px */
+  left: -6.813rem;   /* -133px */
+  z-index: 4;
+}
+
+/* ---- Star 3 (257.17×244.70px) — Figma: top: -124px, left: 87px ---- */
+.decoStar3 {
+  position: absolute;
+  width: 16.073rem;  /* 257.17px */
+  height: 15.294rem; /* 244.70px */
+  top: -6.95rem;     /* -124px */
+  left: 6.638rem;    /* 87px */
+  z-index: 4;
+}
+
+/* ---- Main two-column flex row ---- */
+.wugMascot {
+  position: absolute;
+  width: 42.125rem;
+  height: 36.438rem;
+  left: 47.875rem;
+  z-index: 2;
+}
+
+/* ---- Frame 311 — hero text group (734.49×305px) ---- */
+.heroTextFrame {
+  position: absolute;
+  width: 45.906rem;  /* 734.49px */
+  height: 19.063rem; /* 305px */
+  top: 8.563rem;     /* 137px */
+  left: 5.625rem;    /* 90px */
+}
+
+/* Frame 295 — "Welcome to UC Davis's" */
+.heroWelcomeText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18.375rem;  /* 294px */
+  height: 2.25rem;   /* 36px */
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem;  /* 28px */
+  line-height: 2.25rem;
+  color: var(--purple-dark);
+  margin: 0;
+}
+
+/* Frame 310 — speech bubble + discord button container */
+.heroContentFrame {
+  position: absolute;
+  top: 4.5rem;    /* 72px */
+  left: 4.313rem; /* 69px */
+  right: 1.188rem; /* 19px */
+  height: 14.601rem; /* 233.61px */
+}
+
+/* Frame 301 — speech bubble PNG (653.5×188px at 1x) */
+.heroSpeechBubble {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 11.493rem; /* 183.89px */
+}
+
+/* Join our Discord — outer clip frame (275×92px) */
+.heroDiscordOuter {
+  position: absolute;
+  width: 17.188rem;  /* 275px */
+  height: 5.75rem;   /* 92px */
+  top: 8.726rem;     /* 139.61px */
+  left: 21.375rem;   /* 342px */
+  overflow: hidden;
+}
+
+/* Discord button inner (264.58×60.8px, offset top: 16px left: 6px) */
+.heroDiscordInner {
+  position: absolute;
+  width: 16.536rem;  /* 264.58px */
+  height: 3.8rem;    /* 60.8px */
+  top: 1rem;         /* 16px */
+  left: 0.375rem;    /* 6px */
+  display: block;
+  transition: transform 0.3s ease;
+  transform-origin: center center;
+
+  &:hover {
+    transform: rotate(-8deg);
+    filter: drop-shadow(0 0.25rem 0.219rem #a3a1eb80);
+  }
+}
+
+/* Image wrapper inside the discord link */
+.heroDiscordImg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- Bottom-left cloud strip overlay: 563×114px = 35.188rem × 7.125rem ---- */
+// done
+.decoBottomLeft {
+  position: absolute;
+  width: 35.188rem;
+  height: 7.125rem;
+  left: 0;
+  top: 29.438rem;
+  z-index: 2;
+}
+
+/* ---- Bottom purple banner: 1440×279px = 90rem × 17.4375rem ---- */
+.heroBanner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 17.4375rem; /* exact 1× PNG height: 279px */
+  z-index: 4;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@include mixins.tablet {
+  .heroBody {
+    flex-direction: column;
+    padding: 2.5rem 2.5rem 0;
+    min-height: auto;
+  }
+
+  .heroLeft {
+    flex: none;
+    width: 100%;
+  }
+
+  .heroTextFrame {
+    max-width: 90%;
+  }
+
+  .heroRight {
+    width: 100%;
+    height: 22rem;
+    align-self: auto;
+  }
+
+  .decoTopRight {
+    width: 22rem;
+    height: 4.5rem; /* preserve 5:1 ratio */
+  }
+
+  .decoStar2 {
+    width: 8rem;
+    height: 9.25rem;
+  }
+
+  .decoStar3 {
+    width: 10rem;
+    height: 5.1rem;
+  }
+}
+
+@include mixins.phone {
+  .heroBody {
+    padding: 2rem 1.5rem 0;
+  }
+
+  .heroTextFrame {
+    max-width: 100%;
+  }
+
+  .heroBanner {
+    height: 11rem;
+  }
+
+  .decoTopRight {
+    width: 14rem;
+    height: 2.85rem;
+  }
+}
+
+/* ============================================================
+   INTRO — 768px
+   ============================================================ */
+
+/* Outer section wrapper */
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 0.625rem;       /* 10px */
+  width: 100%;
+  min-height: 48rem;   /* 768px */
+  z-index: 1;
+  background: var(--white); /* exposes 32px (2rem) white gap each side of the card */
+}
+
+/* Frame 297 — rounded gradient card (1376×768) */
+.introCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6.875rem 12.094rem; /* 110px 193.5px */
+  gap: 5.125rem;               /* 82px */
+  width: min(86rem, calc(100% - 4rem)); /* 1376px max; always 2rem (32px) gap each side */
+  min-height: 48rem;           /* 768px */
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(224, 224, 248, 0.7) 72.6%,
+    rgba(193, 193, 242, 0.525) 100%
+  );
+  border-radius: 2.5rem; /* 40px */
+}
+
+/* Frame 319 — two-column content row (989×548) */
+.introContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  gap: 5.125rem;    /* 82px */
+  width: 61.813rem; /* 989px */
+  height: 34.25rem; /* 548px */
+}
+
+/* Left column — image + squiggle decorations (420×548) */
+.introImageWrap {
+  position: relative;
+  width: 26.25rem;  /* 420px */
+  height: 34.25rem; /* 548px */
+  flex: none;
+}
+
+/* Frame 211 — photo (353.73×471.94px) */
+/* Figma: position absolute, border 10.23px solid #A3A1EB, image scale = Crop (cover) */
+.introPhoto {
+  position: absolute;
+  width: 22.108rem;   /* 353.73px — border-box: includes border */
+  height: 29.496rem;  /* 471.94px */
+  left: 2.023rem;     /* 32.36px */
+  top: 2.359rem;      /* 37.75px */
+  /* border baked into intro_photo.png export from Figma */
+}
+
+/* Frame 272 — bottom-left squiggles (223.74×245.4, left:0, top:299.33) */
+.introSquigglesBottomLeft {
+  position: absolute;
+  width: 13.984rem;  /* 223.74px */
+  height: 15.338rem; /* 245.4px */
+  left: 0;
+  top: 18.708rem;    /* 299.33px */
+  /* TODO: drop in SVG export from Figma (Vectors 23–28, Polygons 5–6) */
+}
+
+/* Frame 273 — top-right squiggles (220×245.55, left:199.56, top:0.9) */
+.introSquigglesTopRight {
+  position: absolute;
+  width: 13.75rem;   /* 220px */
+  height: 15.347rem; /* 245.55px */
+  left: 12.473rem;   /* 199.56px */
+  top: 0.056rem;     /* 0.9px */
+  /* TODO: drop in SVG export from Figma (Vectors 29–33, Polygons 7–8) */
+}
+
+/* Frame 296 — right column (487×430.86) */
+.introText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 3rem;         /* 48px */
+  width: 30.438rem;  /* 487px */
+  height: 26.929rem; /* 430.86px */
+  flex: none;
+}
+
+/* Frame 212 — heading + body text (487×317) */
+.introTextBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 1.5rem;       /* 24px */
+  width: 30.438rem;  /* 487px */
+  height: 19.813rem; /* 317px */
+}
+
+/* Frame 209 — heading wrapper (487×189) */
+.introHeadingWrap {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+  gap: 0.625rem;     /* 10px */
+  width: 30.438rem;  /* 487px */
+  height: 11.813rem; /* 189px */
+}
+
+/* Heading — "Hello! We are UC Davis's Linguistics Club!" */
+.introHeading {
+  width: 30.438rem;  /* 487px */
+  height: 11.813rem;  /* 189px */
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3rem;    /* 48px */
+  line-height: 3.938rem; /* 63px */
+  color: var(--black);
+  margin: 0;
+}
+
+/* Frame 12 — body text wrapper (487×104) */
+.introBodyWrap {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+  gap: 0.625rem;    /* 10px */
+  width: 30.438rem; /* 487px */
+  height: 6.5rem;   /* 104px */
+}
+
+/* Body copy */
+.introBody {
+  width: 30.438rem; /* 487px */
+  height: 6.5rem;   /* 104px */
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;   /* 20px */
+  line-height: 1.625rem; /* 26px */
+  color: var(--black);
+  margin: 0;
+}
+
+/* Learn more button (223.75×65.86) */
+.introButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.964rem 1.35rem; /* 15.43px 21.60px — symmetric so content stays centered */
+  gap: 0.059rem;             /* 0.95px */
+  width: 13.984rem;          /* 223.75px */
+  height: 4.116rem;          /* 65.86px */
+  background: var(--purple-button);
+  box-shadow: 0 0.42rem 0.36rem rgba(163, 161, 235, 0.2); /* 6.72px 5.76px */
+  border-radius: 2.893rem; /* 46.28px */
+  border: none;
+  cursor: pointer;
+  flex: none;
+}
+
+/* Frame 10 — button inner row */
+.introButtonInner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 0.594rem; /* 9.51px */
+  width: auto;
+}
+
+/* Button label — "Learn More" */
+.introButtonText {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.665rem;   /* 26.64px */
+  line-height: 2.188rem; /* 35px */
+  color: var(--pure-white);
+  white-space: nowrap;
+}
+
+/* Arrow icon — right arrow PNG (32.35×32.35) */
+.introButtonIcon {
+  width: 2.022rem;  /* 32.35px */
+  height: 2.022rem; /* 32.35px */
+  flex: none;
+}
+
+/* ============================================================
+   REMAINING SECTIONS (scaffolding — to be built later)
+   ============================================================ */
+
+
+
+/* ============================================================
+   SCHEDULE — 1440×1083px, padding: 100px 165px
+   ============================================================ */
+
+/* Section wrapper */
+.schedule {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 67.688rem; /* 1083px */
+  padding: 6.25rem 10.313rem; /* 100px 165px */
+  background: var(--white);
+}
+
+/* Frame 316 — content column (1110×883px, gap: 42px) */
+.scheduleCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.625rem; /* 42px */
+  width: 100%;
+  min-height: 55.188rem; /* 883px */
+}
+
+/* Schedule title wrapper (234×73px) */
+.scheduleTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 14.625rem; /* 234px */
+  height: 4.563rem; /* 73px */
+}
+
+/* "Schedule" heading */
+.scheduleHeading {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;    /* 56px */
+  line-height: 4.563rem; /* 73px */
+  color: var(--black);
+  margin: 0;
+}
+
+/* Calendar iframe wrapper (1110×768px) */
+.scheduleCalendarWrap {
+  width: 100%;
+  height: 48rem; /* 768px */
+  border: 0.196rem solid rgba(163, 163, 163, 0.5); /* 3.13px */
+  border-radius: 0.881rem; /* 14.1px */
+  overflow: hidden; /* clips iframe to rounded corners */
+}
+
+/* iframe fills wrapper exactly */
+.scheduleCalendar {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ============================================================
+   RECENT EVENTS — 749.54px
+   Asset inventory:
+     mascot_wug.png   — export from Figma as PNG 2× (complex illustration with border/fill);
+                        CSS applies scaleX(-1) for the mirror — no need for a separate mirrored file
+     Vector 19        — export from Figma as PNG 2× (or SVG); 165.36×46.67px highlight squiggle,
+                        one export covers all three cards
+   ============================================================ */
+
+/* Outer section wrapper */
+.recentEvents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 0.625rem;         /* 10px */
+  width: 100%;
+  min-height: 46.847rem; /* 749.54px */
+  background: var(--white); /* exposes white gap on each side of the card and reveals border-radius */
+}
+
+/* Recent Events Rectangle Section — gradient card (1374×749.54) */
+.recentEventsCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6.25rem 9.3125rem; /* 100px 149px */
+  gap: 2.25rem;               /* 36px */
+  width: min(85.875rem, calc(100% - 4.125rem)); /* 1374px max; always 33px (2.0625rem) gap each side */
+  min-height: 46.847rem;      /* 749.54px */
+  background: linear-gradient(176.96deg, #8482e5 -1.42%, #c1c1f2 104.28%);
+  border-radius: 2.5rem;      /* 40px */
+}
+
+/* Frame 320 — content column (1084×549.54, align: center, isolation: isolate) */
+.recentEventsContent {
+  position: relative;       /* anchor for absolutely positioned Wug */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  gap: 4rem;             /* 64px */
+  width: 67.75rem;       /* 1084px */
+  min-height: 34.347rem; /* 549.54px */
+  isolation: isolate;
+}
+
+/* Wug mascot — decorative (87.55×104.94, absolute, z-index: 0) */
+/* Figma has matrix(-1,0,0,1,0,0) on this layer, but PNG exports bake transforms in —
+   recent_wug.png already faces left, so no CSS transform is needed here. */
+.recentEventsWug {
+  position: absolute;
+  width: 5.472rem;  /* 87.55px */
+  height: 6.559rem; /* 104.94px */
+  left: 63.211rem;  /* 1011.37px — from Frame 320's left edge */
+  top: 3.831rem;    /* 61.3px */
+  z-index: 0;
+}
+
+/* Recent Events Title — wrapper (359×73, z-index: 1) */
+.recentEventsTitleWrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 0.625rem;      /* 10px */
+  width: 22.4375rem;  /* 359px */
+  height: 4.5625rem;  /* 73px */
+  flex: none;
+  z-index: 1;
+}
+
+/* "Recent Events" heading */
+.recentEventsHeading {
+  width: 22.4375rem;      /* 359px */
+  height: 4.5625rem;      /* 73px */
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3.5rem;      /* 56px */
+  line-height: 4.5625rem; /* 73px */
+  color: var(--pure-white);
+  margin: 0;
+}
+
+/* Frame 314 — bottom area: cards row + button (1084×412.54, z-index: 2) */
+.recentEventsBottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0;
+  gap: 2.5rem;           /* 40px */
+  width: 67.75rem;       /* 1084px */
+  min-height: 25.784rem; /* 412.54px */
+  flex: none;
+  z-index: 2;
+}
+
+/* Frame 329 — event cards row (1084×312, gap: 80px, justify: center) */
+.recentEventsItems {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  gap: 5rem;          /* 80px */
+  width: 67.75rem;    /* 1084px */
+  height: 19.5rem;    /* 312px */
+  flex: none;
+}
+
+/* Frame 327 / 328 / 329 — individual event card (308×312, isolation: isolate) */
+.recentEventItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 3.75rem 2.25rem 8.8125rem; /* 60px 36px 141px */
+  gap: 1.5rem;          /* 24px */
+  width: 19.25rem;      /* 308px */
+  height: 19.5rem;      /* 312px */
+  background: var(--white); /* #FFFCF9 */
+  box-shadow: 0 0.389rem 0.611rem rgba(0, 0, 0, 0.1); /* 0px 6.22px 9.77px */
+  isolation: isolate;
+  flex: none;
+  overflow: visible;
+}
+
+/* Vector 19 — highlight squiggle (165.36×46.67, absolute, z-index: 2) */
+/* box-shadow omitted: without a background, shadow renders as a ghost rectangle around the container */
+.recentEventDeco {
+  position: absolute;
+  width: 10.335rem;  /* 165.36px */
+  height: 2.917rem;  /* 46.67px */
+  left: 4.424rem;    /* 70.79px */
+  top: -1.411rem;    /* -22.58px */
+  flex: none;
+  z-index: 2;
+}
+
+/* Frame 326 — date text wrapper (auto × 35px, z-index: 0) */
+.recentEventDateWrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 0.625rem;    /* 10px */
+  height: 2.1875rem; /* 35px */
+  flex: none;
+  z-index: 0;
+}
+
+/* Date — Gochi Hand 30px */
+.recentEventDate {
+  font-family: 'Gochi Hand', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.875rem;   /* 30px */
+  line-height: 2.1875rem; /* 35px */
+  color: var(--black);
+}
+
+/* Frame 325 — title text wrapper (236×auto, z-index: 1) */
+.recentEventTitleWrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 0.625rem;    /* 10px */
+  width: 14.75rem;  /* 236px */
+  flex: none;
+  z-index: 1;
+}
+
+/* Event title — Hanken Grotesk 21.32px */
+.recentEventTitle {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3325rem; /* 21.32px */
+  line-height: 1.75rem; /* 28px */
+  color: var(--black);
+  margin: 0;
+  width: 14.75rem;      /* 236px */
+}
+
+/* See More button (185.32×60.54) */
+/* NOTE: Figma uses asymmetric padding because it's "Hug" sized — for fixed-width we center via justify-content */
+.recentEventsMoreBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.892rem 1.249rem 0.892rem 1.784rem; /* 14.27px 19.98px 14.27px 28.54px */
+  gap: 0.055rem;           /* 0.88px */
+  width: 11.583rem;        /* 185.32px */
+  height: 3.784rem;        /* 60.54px */
+  background: var(--purple-button);
+  box-shadow: 0 0.388rem 0.333rem rgba(163, 161, 235, 0.2); /* 0px 6.22px 5.33px */
+  border-radius: 2.676rem; /* 42.81px */
+  border: none;
+  cursor: pointer;
+  flex: none;
+}
+
+/* Frame 10 — button inner row (106×32, gap: 8.8px) */
+.recentEventsMoreBtnInner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 0.55rem;    /* 8.8px */
+  width: 6.625rem; /* 106px */
+  height: 2rem;    /* 32px */
+}
+
+/* "Archive" label */
+.recentEventsMoreBtnText {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.54rem;  /* 24.64px */
+  line-height: 2rem;   /* 32px */
+  color: var(--pure-white);
+  white-space: nowrap;
+}
+
+/* Arrow icon — right arrow PNG (29.92×29.92) */
+.recentEventsMoreBtnIcon {
+  width: 1.87rem;  /* 29.92px */
+  height: 1.87rem; /* 29.92px */
+  flex: none;
+}
+
+/* ============================================================
+   GALLERY — 1111px
+   ============================================================ */
+
+/* Outer section wrapper */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 0.625rem;          /* 10px */
+  width: 100%;
+  min-height: 69.4375rem; /* 1111px */
+  background: var(--white); /* exposes 32px (2rem) white gap each side of the card */
+}
+
+/* Frame 312 — inner padded column (1376×1111) */
+.galleryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6.25rem 0;     /* 100px 0 */
+  gap: 4.875rem;          /* 78px */
+  width: min(86rem, calc(100% - 4rem)); /* 1376px max; always 2rem (32px) gap each side */
+  min-height: 69.4375rem; /* 1111px */
+}
+
+/* Gallery title wrapper (188×73) */
+.galleryTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 0.625rem;    /* 10px */
+  width: 11.75rem;  /* 188px */
+  height: 4.5625rem; /* 73px */
+}
+
+/* "Gallery" heading */
+.galleryHeading {
+  width: 11.75rem;      /* 188px */
+  height: 4.5625rem;    /* 73px */
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;    /* 56px */
+  line-height: 4.5625rem; /* 73px */
+  color: var(--black);
+  margin: 0;
+}
+
+/* ---- Carousel viewport — clips track, anchors arrows (1376×760) ---- */
+.galleryCarousel {
+  position: relative;
+  width: 100%;      /* fills the card's responsive width */
+  height: 47.5rem;  /* 760px */
+  overflow: hidden;
+}
+
+/* ---- Full scrollable track — all 8 columns in one flex row ---- */
+.galleryTrack {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.5rem;       /* 8px */
+  height: 47.5rem;   /* 760px */
+  /* Natural width = sum of all columns + gaps; do not set explicit width */
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+/* ---- Column types ---- */
+
+/* Standalone tall media column (Big Video 1 / 2 — 548×760) */
+.galleryBigMedia {
+  flex: none;
+  width: 34.25rem;  /* 548px */
+  height: 47.5rem;  /* 760px */
+  background: #d9d9d9;
+}
+
+/* Base for all stacked columns (Frame 284/285/286/287/288/289) */
+.galleryColStack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;      /* 8px */
+  height: 47.5rem;  /* 760px */
+  flex: none;
+}
+
+.galleryColWide   { width: 41.125rem; } /* Frame 284/287 — 658px */
+.galleryColMid    { width: 25.375rem; } /* Frame 285/288 — 406px */
+.galleryColNarrow { width: 23.875rem; } /* Frame 286/289 — 382px */
+
+/* ---- Quote cards ---- */
+
+/* Blue quote (Member Quote 1 — full column width × 306px, #E0E0F8) */
+.galleryQuoteBlue {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2.9375rem; /* 48px 47px */
+  gap: 0.881rem;           /* 14.1px */
+  width: 100%;
+  height: 19.125rem;       /* 306px */
+  background: var(--purple-soft);
+  flex: none;
+}
+
+/* Lavender quote (Frame 279 — full column width × 368px, #F5E6FE) */
+.galleryQuoteLavender {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2.8125rem; /* 48px 45px */
+  gap: 1rem;               /* 16px */
+  width: 100%;
+  height: 23rem;           /* 368px */
+  background: var(--purple-lavender);
+  flex: none;
+}
+
+/* Shared inner text wrapper (Frame 26 / Frame 280) */
+.galleryQuoteInner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem; /* 24px */
+  width: 100%;
+}
+
+/* Shared quote body text (31px / 40px line-height, centered) */
+.galleryQuoteText {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 1.9375rem; /* 31px */
+  line-height: 2.5rem;  /* 40px */
+  text-align: center;
+  color: var(--black);
+  margin: 0;
+  width: 100%;
+}
+
+/* ---- Media cells ---- */
+
+/* Two-image row (Frame 283 — full column width × remaining height) */
+.galleryMediaRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem; /* 8px */
+  width: 100%;
+  flex: 1;     /* fills height left over after quote card */
+}
+
+/* Each half of the image row (Frames 281/282 — 325×446) */
+.galleryMediaHalf {
+  flex: 1;
+  height: 100%;
+  background: #d9d9d9;
+}
+
+/* Tall stacked media — top cell in mid column (406×437) */
+.galleryMediaTall {
+  width: 100%;
+  height: 27.3125rem; /* 437px */
+  background: #d9d9d9;
+  flex: none;
+}
+
+/* Short stacked media — bottom cell in mid column (406×315) */
+.galleryMediaShort {
+  width: 100%;
+  height: 19.6875rem; /* 315px */
+  background: #d9d9d9;
+  flex: none;
+}
+
+/* Top image in narrow column (382×384) */
+.galleryMediaTop {
+  width: 100%;
+  height: 24rem;      /* 384px */
+  background: #d9d9d9;
+  flex: none;
+}
+
+/* ---- Navigation arrows ---- */
+
+/* Shared arrow button base */
+.galleryArrow {
+  position: absolute;
+  top: 21.25rem;           /* 340px */
+  width: 4.9375rem;        /* 79px */
+  height: 4.9375rem;       /* 79px */
+  border-radius: 2.469rem; /* 39.5px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.572rem 0.572rem 0.501rem 0.501rem; /* 9.16px 9.16px 8.01px 8.01px */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+
+  &:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+}
+
+.galleryArrowLeft  { left: 0.25rem;  } /* 4px from left edge */
+.galleryArrowRight { right: 0.25rem; } /* 4px from right edge — mirrors left; robust across viewport widths */
+
+/* Arrow icon — shared SVG /public/shared/arrow_right.svg (61.83×61.83) */
+.galleryArrowIcon {
+  width: 3.864rem;  /* 61.83px */
+  height: 3.864rem; /* 61.83px */
+}
