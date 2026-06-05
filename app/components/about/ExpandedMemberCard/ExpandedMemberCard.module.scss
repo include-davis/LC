@@ -1,7 +1,7 @@
 @use '../../../(pages)/_globals/mixins.scss' as mixins;
 
 .container {
-    position: relative;
+    // position: relative;
     display: flex;
     align-items: center;
     justify-content: center;    
@@ -10,6 +10,12 @@
     background-size: auto;
     background-position: center;
     background-repeat: no-repeat;
+
+    @include mixins.sm-desktop{
+        width: 100%;
+        background-size: contain;
+    }
+
     
 }
 
@@ -34,6 +40,11 @@
     margin: 1.75rem 0;
     padding-left: 1.75rem; // 28px
     padding-right: 1.25rem; // 20px
+
+    @include mixins.sm-desktop{
+        width: 500px;
+
+    }
 }
 
 .header {
@@ -107,6 +118,13 @@
     line-height: 129.993%;
     padding: 1.5rem 0;   // 11px 0px
     list-style-position: inside;
+
+    @include mixins.sm-desktop{
+        width: fit-content;
+        background-size: contain;
+        overflow-wrap: break-word;
+        padding: 0px;
+    }
 }
 
 .otherMembers {
@@ -146,8 +164,8 @@
 
 .closeBtn{
     position: absolute;
-    top: 2rem; //32px
-    right: 1.875rem; //30px
+    top: -1rem;
+    right: -1.6rem;
     background: transparent;
     border: none;
     width: 1.563rem; // 25px
@@ -160,6 +178,11 @@
     &:hover{
         cursor: pointer;
         transform: scale(1.1);
+    }
+
+    @include mixins.sm-desktop{
+        top: -0.6rem;
+        right: -2.6rem;
     }
 }
 

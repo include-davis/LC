@@ -1,13 +1,24 @@
+@use "app/(pages)/_globals/mixins.scss" as mixins;
+
 .meetTheBoard {
     display: flex;
     flex-direction: column;
     gap: 5.125rem; /* 82px */
     padding: 2.25rem 0; /* 36px */
     background: url(/images/about/aboutBoard.svg);
-    background-position: center;
+    background-size: cover;
+    background-position: top center;
     background-repeat: no-repeat;
     width: 100%;
-    height: 59rem; /* 944px */
+    min-height: 59rem; /* 944px */
+
+    @include mixins.phone{
+        display: none;
+    }
+    @include mixins.tablet{
+        display: none;
+    }
+
 }
 
 .boardHeading {
@@ -18,6 +29,24 @@
     font-style: normal;
     font-weight: 900; 
     line-height: normal;
+
+    @include mixins.phone{
+        color: #FFF;
+        font-size: 2rem; /* 32px */
+        font-style: normal;
+        font-weight: 900; 
+        line-height: normal;
+        padding: 1rem; /* 16px */
+    }
+    @include mixins.tablet{
+        color: #FFF;
+        font-size: 2rem; /* 32px */
+        font-style: normal;
+        font-weight: 900; 
+        line-height: normal;
+        padding: 1rem; /* 16px */
+    }
+
 }
 
 .memberCards {
@@ -33,34 +62,39 @@
     display: flex;
     flex-direction: column;
     gap: 1.3125rem; /* 21px */
+    align-items: center;
+
 }
 
 .mobileMeetTheBoard {
     display: none;
-}
 
-@media (max-width: 402px) { 
-
-    .meetTheBoard {
-        display: none;
+    @include mixins.phone{
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem; /* 56px */
     }
-
-    .mobileMeetTheBoard {
+    @include mixins.tablet{
         display: flex;
         flex-direction: column;
         gap: 3.5rem; /* 56px */
     }
 
-    .boardHeader {
-        background-image: url(/images/about/backgrounds/mobileBoardHeader.svg);
-    }
+}
 
-    .boardHeading {
-        color: #FFF;
-        font-size: 2rem; /* 32px */
-        font-style: normal;
-        font-weight: 900; 
-        line-height: normal;
-        padding: 1rem; /* 16px */
+.boardHeader {
+    @include mixins.phone{
+        background-image: url(/images/about/backgrounds/mobileBoardHeader.svg);
+        background-size: cover;
     }
+    @include mixins.tablet{
+        background-image: url(/images/about/backgrounds/mobileBoardHeader.svg);
+        background-size: cover;
+        min-height: 9rem;
+        background-position: top;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
 }

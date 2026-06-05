@@ -2,7 +2,7 @@
 
 import styles from "./MeetBoardSection.module.scss"
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import MemberCard from "../../../components/about/MemberCard/MemberCard";
 import ExpandedMemberCard from "../../../components/about/ExpandedMemberCard/ExpandedMemberCard";
@@ -12,7 +12,19 @@ import MemberCardMobile from "../../../components/about/MemberCardMobile/MemberC
 import { LCboard } from "../../../../data/teamMembers";
 
 export default function MeetBoardSection() {
+
+    // logic for closing the expanded member cards when user resizes their screen :P
     const [selectedIndex, setSelectedIndex] = useState(null);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 900) {
+                setSelectedIndex(null);
+            }
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     return (
         <>
