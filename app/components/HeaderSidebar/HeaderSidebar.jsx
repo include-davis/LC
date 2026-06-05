@@ -26,6 +26,12 @@ export default function HeaderSidebar({ itemsData = [] }) {
                 ))}
             </div>
 
+            <div className={styles.separator} />
+
+            <div className={styles.socialBtnsContainer}>
+                <a></a>
+                <a></a>
+            </div>
         </div>
     )
 }
