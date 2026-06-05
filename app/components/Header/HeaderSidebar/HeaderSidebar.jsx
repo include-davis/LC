@@ -2,9 +2,12 @@ import styles from "./HeaderSidebar.module.scss";
 
 import Image from "next/image";
 
-import HeaderSidebarItem from "../HeaderSidebarItem/HeaderSidebarItem";
+import HeaderSidebarItem from "../../HeaderSidebarItem/HeaderSidebarItem";
+import SocialButton from "./SocialButton/SocialButton";
 
-import CLOSE_BTN_SVG from "../../../public/shared/x.svg";
+import CLOSE_BTN_SVG from "../../../../public/shared/x.svg";
+import DISCORD_SVG from "../../../../public/shared/discord.svg";
+import INSTAGRAM_SVG from "../../../../public/shared/INSTAGRAM.svg";
 
 export default function HeaderSidebar({ itemsData = [] }) {
     return (
@@ -29,8 +32,8 @@ export default function HeaderSidebar({ itemsData = [] }) {
             <div className={styles.separator} />
 
             <div className={styles.socialBtnsContainer}>
-                <a></a>
-                <a></a>
+                <SocialButton image={DISCORD_SVG} alt={"Discord Icon"} link={"https://discord.com/invite/vbVt26kVfg"} />
+                <SocialButton image={INSTAGRAM_SVG} alt={"Instagram Icon"} link={"https://www.instagram.com/linguisticsclubatucd/"} />
             </div>
         </div>
     )

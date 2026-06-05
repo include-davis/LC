@@ -4,7 +4,7 @@ import styles from "./HeaderItem.module.scss";
 
 import { useState, useRef } from "react";
 
-import HeaderItemDropdown from "../HeaderItemDropdown/HeaderItemDropdown";
+import HeaderItemDropdown from "./HeaderItemDropdown/HeaderItemDropdown";
 
 export default function HeaderItem({ title, link, subitems }) {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
