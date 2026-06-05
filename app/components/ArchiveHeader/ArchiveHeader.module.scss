@@ -1,0 +1,70 @@
+// Styles for the ArchiveHeader section.
+// Pixel-locked to the 1440 Figma layout, expressed in rem (1rem = 16px at default root font-size).
+// Stars are absolutely positioned within the section.
+
+// Section frame — fills the viewport width; padding/gap in rem, content left-aligned.
+.header {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 12.5rem 7.5rem 8.75rem; // 200px top, 120px sides, 140px bottom
+  gap: 0.625rem;                   // 10px
+  overflow: hidden;                // clips any star spill at edges
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  width: 27.125rem; // 434px
+}
+
+.title {
+  width: fit-content;
+  color: var(--blueish-purple500);
+  font-family: 'Gochi Hand', cursive;
+  font-size: 7.75rem; // 124px
+  font-weight: 400;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.subtitle {
+  width: 27.125rem; // 434px
+  color: var(--blueish-purple300);
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 1.25rem; // 20px
+  font-weight: 500;
+  line-height: normal;
+}
+
+// Star cluster — sizes and positions taken directly from Figma.
+.starLarge,
+.starMedium,
+.starSmall {
+  position: absolute;
+}
+
+// Stars are anchored from the LEFT so they stay near the title at the x-coordinates
+// they had in the 1440 Figma layout. left = (1440 − originalRightOffset − starWidth) + 2rem shift.
+.starLarge {
+  width: 16.6875rem;  // 267px
+  height: 16.375rem;  // 262px
+  top: 15.0625rem;    // 241px
+  left: 50.0625rem;   // 769px + 2rem shift right
+}
+
+.starMedium {
+  width: 13.1875rem;  // 211px
+  height: 12.875rem;  // 206px
+  top: 7.6875rem;     // 123px
+  left: 64.1875rem;   // 995px + 2rem shift right
+}
+
+.starSmall {
+  width: 6.625rem;    // 106px
+  height: 6.5rem;     // 104px
+  bottom: 4.8125rem;  // 77px
+  left: 69.625rem;    // 1082px + 2rem shift right
+}

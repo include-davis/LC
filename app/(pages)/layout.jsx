@@ -1,6 +1,7 @@
 
 import "./_globals/globals.scss";
 import { Gochi_Hand, Hanken_Grotesk } from "next/font/google";
+import Footer from "../components/footer/Footer.jsx";
 
 import Header from "../components/Header/Header";
 
@@ -34,6 +35,8 @@ export default function RootLayout({ children }) {
         </header>
 
         {children}
+
+        <Footer></Footer>
         
       </body>
     </html>

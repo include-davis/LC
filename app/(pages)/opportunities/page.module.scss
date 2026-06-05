@@ -1,0 +1,665 @@
+// Page container
+@mixin phone {
+  @media screen and (max-width: 720px) {
+    @content;
+  }
+}
+
+.page {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--white);
+}
+
+// .inner {
+//   max-width: var(--max-width);
+//   margin: 0 auto;
+//   padding: 0 var(--space-xl);
+// }
+
+// HERO - Main title + subtitle + bird
+.hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  //max-width: var(--max-width);
+  margin: 0 auto 3rem;
+  padding: 100px var(--space-xl) 100px;
+  position: relative;
+}
+
+.heroCotent {
+  flex: 1;
+  position: relative;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: 7.75rem !important;;
+  color: var(--color-primary);
+  line-height: 1.05;
+  margin-bottom: var(--space-md);
+  position: relative;
+  margin-left: 120px;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem !important;;
+  color: var(--color-primary-light);
+  max-width: 500px;
+  line-height: 1.6;
+  position: relative;
+  margin-left: 120px;
+}
+
+.heroBirds {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-xl);
+  position: relative;
+  margin-right: 120px;
+}
+
+.birdMain {
+  width: 180px;
+  height: auto;
+  position: relative;
+}
+
+.smallBirdsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  position: relative;
+}
+
+.birdsSmall {
+  width: 113px;
+  height: auto;
+  margin-bottom: var(--space-sm);
+  position: relative;
+}
+
+.birdsSmaller {
+  width: 83px;
+  height: auto;
+  margin-bottom: var(--space-sm);
+  position: relative;
+}
+
+// PATH BANNER - Full-width Purple Banner
+.pathBanner {
+  background: linear-gradient(104deg, #8482e5 -4.47%, #e0e0f8 122.65%);
+  border-radius: var(--radius-lg);
+  margin: 0 var(--space-xl) 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.pathBannerInner {
+  padding: var(--space-2xl) 180px;
+  text-align: center;
+  position: relative;
+}
+
+.pathBannerTitle {
+  font-family: var(--font-display) !important;
+  letter-spacing: 5% !important;
+  font-size: 3.5rem !important;
+  color: var(--color-text-on-purple);
+  margin-bottom: var(--space-md);
+  position: relative;
+}
+
+.pathBannerBody {
+  font-size: 1.5rem !important;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 928px;
+  margin: 0 auto var(--space-lg);
+  line-height: 1.7;
+  position: relative;
+}
+
+.pathBannerBtn {
+  display: inline-block;
+  color: var(--color-text-on-purple);
+  border-radius: var(--radius-pill);
+  padding: var(--space-sm) var(--space-lg);
+  font-size: 0.85rem;
+  text-decoration: none;
+  margin-top: var(--space-md);
+  transition: background-color 0.2s;
+  position: relative;
+}
+
+.bannerDecoLeft {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  pointer-events: none;
+}
+
+.bannerDecoRight {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  pointer-events: none;
+}
+
+.bannerStripesTopLeft {
+  height: 30px;
+  width: 15rem;
+  position: absolute;
+  top: 50px;
+  opacity: 0.2;
+  border-color: (90deg, #9795e9 0%, #c2c2f2 100%);
+}
+
+.bannerStripesTopLeft2 {
+  height: 30px;
+  width: 12rem;
+  position: absolute;
+  top: 100px;
+  opacity: 0.2;
+}
+
+.bannerStripesLeftUnderWug {
+  height: 30px;
+  width: 12rem;
+  position: absolute;
+  top: 300px;
+  left: -5px;
+  opacity: 0.1;
+  rotate: 180deg;
+}
+
+.bannerStripesTopRight {
+  height: 30px;
+  width: 18rem;
+  position: absolute;
+  top: 40px;
+  rotate: 180deg;
+  right: 0px;
+}
+
+.bannerStripesTopRight2 {
+  height: 30px;
+  width: 8.5rem;
+  position: absolute;
+  top: 70px;
+  rotate: 180deg;
+  right: 0px;
+}
+
+.bannerStripesRightUnderWug {
+  height: 30px;
+  width: 10rem;
+  position: absolute;
+  top: 300px;
+  right: -5px;
+  opacity: 0.6;
+}
+
+// .stripesWrapper {
+//   display: flex;
+//   flex-direction: column;
+//   gap: var(--space-xs);
+// }
+
+.bannerBirdLeft {
+  height: 92.497px;
+  width: 80px;
+  opacity: 0.9;
+  left: 46.514px;
+  top: 178px;
+}
+
+.bannerBirdRight {
+  width: 80px;
+  height: 92.497px;
+  opacity: 0.9;
+  // right: 0px;
+  //position: absolute;
+  left: 1214.515px;
+  top: 214px;
+}
+
+// PROGRAMS SECTION（Desktop）
+
+// Program section - Common blocks (shared by Undergrad and Grad)
+.programsSection {
+  //max-width: var(--max-width);
+  margin: 0 auto 5rem;
+  padding: 0 var(--space-xl);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+
+.sectionTitle {
+  font-family: var(--font-body);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.seeAll {
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-pill);
+  padding: 3px 14px;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+
+  &:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-on-purple);
+  }
+}
+
+// Horizontal card row
+.cardRow {
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  overflow-x: auto; // Narrow screens can swipe left and right
+  padding-bottom: 100px;
+  scrollbar-width: none; // Hide scrollbar in Firefox
+
+  &::-webkit-scrollbar {
+    display: none; // Hide scrollbar in Chrome
+  }
+}
+
+// CTA BANNER（Desktop）
+// CTA Banner - "Get involved with us!"
+
+.ctaBannerOuter {
+  margin: 0 var(--space-xl) 5rem;
+}
+
+.ctaBanner {
+  background: linear-gradient(
+    104deg,
+    #e0e0f8 -4.47%,
+    #bdbcf1 32.16%,
+    #6563de 122.65%
+  );
+  height: 418px;
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) 80px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+}
+
+.ctaDecoLeft {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  pointer-events: none;
+
+  img {
+    height: 30%;
+    width: auto;
+    display: block;
+  }
+}
+
+.ctaDecoRight {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  pointer-events: none;
+  transform: scaleX(-1);
+
+  img {
+    height: 50%;
+    width: auto;
+    display: block;
+  }
+}
+
+.ctaSparkle {
+  height: 113px;
+  width: auto;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  // border: black solid 1px;
+  width: 500px;
+  height: 111px;
+  border-radius: 16px;
+  background-color: white;
+  justify-content: center;
+  color: #8482E5;
+  font-weight: 800px !important;
+  font-size: 3rem !important;
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.22));
+  }
+}
+
+.ctaTextImg {
+  height: 52px;
+  width: auto;
+  display: block;
+}
+
+// MOBILE（≤ 768px）
+@media (max-width: 768px) {
+  // ── Hero ──────────────────────────────
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-md) var(--space-md) var(--space-lg);
+    margin-bottom: 2rem;
+    gap: 0;
+  }
+
+  // The bird appears first (moves to the top of the hero).
+  .heroBirds {
+    width: 100%;
+    gap: 0;
+    display: block;
+  }
+
+  .birdMain {
+    display: none;
+  }
+
+  .smallBirdsWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+
+  .birdsSmall {
+    width: 70px;
+    margin-bottom: 0;
+
+    &:first-child {
+      transform: scaleX(-1);
+    }
+
+    &:last-child {
+      display: block;
+    }
+  }
+
+  .heroContent {
+    order: 1;
+    width: 100%;
+  }
+
+  .heroTitle {
+    font-size: 4.5rem;
+    text-align: center;
+  }
+
+  .heroSubtitle {
+    text-align: center;
+    max-width: 100%;
+    font-size: 0.88rem;
+    color: #a3a1eb;
+  }
+
+  // ── Path Banner ───────────────────────
+  .pathBanner {
+    margin: 0 var(--space-md) 2.5rem;
+  }
+
+  .pathBannerInner {
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .pathBannerTitle {
+    font-size: 2rem;
+  }
+
+  .pathBannerBody {
+    max-width: 100%;
+  }
+
+  // Hide the decorative elements (birds, stripes)
+  .bannerDecoLeft,
+  .bannerDecoRight {
+    display: none;
+  }
+
+  // ── Programs Section ──────────────────
+  .programsSection {
+    padding: 0 var(--space-md);
+    margin-bottom: 2.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.15rem;
+  }
+
+  // Change the card layout to vertical stacking (no longer horizontal scrolling)
+  .cardRow {
+    flex-direction: column;
+    overflow-x: unset;
+    gap: var(--space-md);
+    padding-bottom: 0;
+  }
+
+  // ── CTA Banner ────────────────────────
+  .ctaBannerOuter {
+    margin: 0 var(--space-md) 2.5rem;
+  }
+
+  .ctaBanner {
+    padding: var(--space-xl) var(--space-lg);
+    gap: var(--space-md);
+  }
+
+  // Hide the decorative elements (stripes, sparkles), simplify mobile display
+  .ctaDecoLeft,
+  .ctaDecoRight,
+  .ctaSparkle {
+    display: none;
+  }
+
+  .ctaTextImg {
+    height: 36px;
+  }
+
+  // Hide hover effect on mobile (touch devices are not affected)
+  .ctaLink:hover {
+    transform: none;
+    filter: none;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-xl) var(--space-md) var(--space-md);
+    margin-bottom: 2rem;
+  }
+
+  .heroContent {
+    width: 100%;
+  }
+
+  .heroTitle {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 3.5rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .heroTitleLine {
+    display: inline;
+  }
+
+  .heroSubtitle {
+    text-align: center;
+    max-width: 580px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 auto;
+    color: var(--color-text-muted);
+    color: #a3a1eb;
+  }
+
+  .birdMain {
+    display: none;
+  }
+
+  .heroBirds {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    margin-top: 0.3rem;
+    height: 0;
+
+    pointer-events: none;
+    position: relative;
+    z-index: 2;
+  }
+
+  .smallBirdsWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    column-gap: 360px;
+  }
+
+  .birdsSmall {
+    width: 34px;
+    height: auto;
+    margin-bottom: 0;
+
+    &:first-child {
+      display: block;
+      transform: scaleX(-1);
+    }
+
+    &:last-child {
+      display: block;
+    }
+  }
+
+  // ── Path Banner ───────────────────────
+  .pathBanner {
+    margin: 0 var(--space-md) 2.5rem;
+  }
+
+  .pathBannerInner {
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .pathBannerTitle {
+    font-size: 2rem;
+  }
+
+  .pathBannerBody {
+    max-width: 100%;
+  }
+
+  // Hide the decorative elements (birds, stripes)
+  .bannerDecoLeft,
+  .bannerDecoRight {
+    display: none;
+  }
+
+  // ── Programs Section ──────────────────
+  .programsSection {
+    padding: 0 var(--space-md);
+    margin-bottom: 2.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.15rem;
+  }
+
+  // Change the card layout to vertical stacking (no longer horizontal scrolling)
+  .cardRow {
+    flex-direction: column;
+    overflow-x: unset;
+    gap: var(--space-md);
+    padding-bottom: 0;
+  }
+
+  // ── CTA Banner ────────────────────────
+  .ctaBannerOuter {
+    margin: 0 var(--space-md) 2.5rem;
+  }
+
+  .ctaBanner {
+    padding: var(--space-xl) var(--space-lg);
+    gap: var(--space-md);
+  }
+
+  // Hide the decorative elements (stripes, sparkles), simplify mobile display
+  .ctaDecoLeft,
+  .ctaDecoRight,
+  .ctaSparkle {
+    display: none;
+  }
+
+  .ctaTextImg {
+    height: 36px;
+  }
+
+  // Hide hover effect on mobile (touch devices are not affected)
+  .ctaLink:hover {
+    transform: none;
+    filter: none;
+  }
+}
