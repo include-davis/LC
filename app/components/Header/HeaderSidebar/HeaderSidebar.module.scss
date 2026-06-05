@@ -81,9 +81,11 @@
     background: black;
     opacity: 0;
     pointer-events: none;
+
+    transition: opacity ease 200ms;
     
     &.open {
-        opacity: 0.25s;
+        opacity: 0.25;
         pointer-events: auto;
     }
 }
