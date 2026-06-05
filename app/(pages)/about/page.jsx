@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 
-import Footer from "../../components/footer/Footer";
 
 import HeroSection from "../../components/about/HeroSection/HeroSection";
 import ViewToggleSection from "../../components/about/ViewToggleSection/ViewToggleSection";
@@ -27,7 +26,6 @@ export default function AboutPage() {
                 <ActiveView />
             </div>
 
-            <Footer/>
 
         </>
     )
