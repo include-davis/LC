@@ -1,15 +1,17 @@
 .hidden {
     display: none;
+
 }
 
 .showing {
     display: flex;
+
 }
 
 .cardContainer {
     display: flex;
     width: 98%;
-    padding: 0.4375rem 0.3125rem; /* 7px 5px */
+    padding: 14px 0.3125rem; /* 7px 5px */
     flex-direction: column;
     align-items: stretch;
     gap: 0.625rem; /* 10px */
@@ -23,7 +25,7 @@
 
 .cardContent {
     display: flex;
-    padding: 1.6875rem 1.5rem 0.875rem 2.5rem; /* 27px 24px 14px 40px */
+    padding: 1.25rem 0rem; //20px
     flex-direction: column;
     justify-content: center;
     // align-items: center;
@@ -35,6 +37,8 @@
 .topHalf {
     display: flex;
     gap: 0.5rem; /* 8px */
+    align-items: center;
+    width: 19.25rem;
 }
 
 .memberStarImg {
@@ -134,4 +138,5 @@
     flex-direction: column;
     gap: 1.25rem; /* 20px */
     list-style: none;
+    
 }

@@ -17,6 +17,7 @@ export const LCboard = [
         image: '/images/about/James_Border.png',
         noBorderImage: '/images/about/memberIMGs/James.png',
         background: 'James_Background.svg',
+        ExpandedMobileBackground: '/images/about/backgrounds/mobile/expanded/jamesExpandedMobile.png',
         
     },
     
@@ -37,6 +38,7 @@ export const LCboard = [
         image: '/images/about/Celia_Border.png',
         noBorderImage: '/images/about/memberIMGs/Celia.png',
         background: 'Celia_Background.svg',
+        ExpandedMobileBackground: '/images/about/backgrounds/mobile/expanded/celiaExpandedMobile.png',
     },
 
     {
@@ -56,6 +58,7 @@ export const LCboard = [
         image: '/images/about/Leia_Border.png',
         noBorderImage: '/images/about/memberIMGs/Leia.png',
         background: 'Leia_Background.svg',
+        ExpandedMobileBackground: '/images/about/backgrounds/mobile/expanded/leiaExpandedMobile.png',
     },
 
     {
@@ -75,6 +78,7 @@ export const LCboard = [
         image: '/images/about/Imogen_Border.png',
         noBorderImage: '/images/about/memberIMGs/Imogen.png',
         background: 'Imogen_Background.svg',
+        ExpandedMobileBackground: '/images/about/backgrounds/mobile/expanded/imogenExpandedMobile.png',
     },
 
     {
@@ -94,6 +98,7 @@ export const LCboard = [
         image: '/images/about/Beth_Border.png',
         noBorderImage: '/images/about/memberIMGs/Beth.png',
         background: 'Beth_Background.svg',
+        ExpandedMobileBackground: '/images/about/backgrounds/mobile/expanded/bethExpandedMobile.png',
     },
 
     {
@@ -113,6 +118,7 @@ export const LCboard = [
         image: '/images/about/Jay_Border.png',
         noBorderImage: '/images/about/memberIMGs/Jay.png',
         background: 'Jay_Background.svg',
+        ExpandedMobileBackground: '/images/about/backgrounds/mobile/expanded/jayExpandedMobile.png',
     },
 
     {
@@ -132,6 +138,7 @@ export const LCboard = [
         image: '/images/about/Fiona_Border.png',
         noBorderImage: '/images/about/memberIMGs/Fiona.png',
         background: 'Fiona_Background.svg',
+        ExpandedMobileBackground: '/images/about/backgrounds/mobile/expanded/fionaExpandedMobile.png',
     }
 
 ]

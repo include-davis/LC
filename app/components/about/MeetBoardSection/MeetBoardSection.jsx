@@ -70,6 +70,7 @@ export default function MeetBoardSection() {
                             interests={member.interests}
                             outside={member.outside}
                             funFact={member.funFact}
+                            expandedBackground={member.ExpandedMobileBackground}
                         />
                     ))}
                 </div>
