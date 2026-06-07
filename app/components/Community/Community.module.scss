@@ -1,0 +1,105 @@
+// Styles for the Community section. Pixel-locked to the 1440 Figma layout; px → rem.
+// Fixed-rem sizing.
+
+// Outer section — Figma "Frame 289" (1440x1194). The purple panel is inset 40px on all
+// sides, so this frame just provides that margin around the panel.
+.section {
+  width: 90rem;            // 1440px
+  padding: 2.5rem;         // 40px all sides
+  display: flex;
+}
+
+// The big rounded purple panel — Figma "SECTION 5" (1360x1114).
+// Diagonal gradient #8482E5 → #C1C1F2 at 244.279deg, 40px corner radius.
+// overflow:hidden clips any future decorations that spill past the rounded edges.
+.panel {
+  position: relative;
+  width: 100%;             // fills the section content area (1360px)
+  height: 69.625rem;       // 1114px
+  border-radius: 2.5rem;   // 40px
+  background: linear-gradient(244.279deg, #8482E5 9.91%, #C1C1F2 119.85%);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4.5rem;             // 72px (Figma SECTION 5 gap between title and content)
+  padding: 7.5rem 6.25rem; // 120px top/bottom, 100px left/right
+}
+
+// Section title — Hanken Grotesk Bold 56px, #FFFCF9 (same as Milestones).
+.title {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;       // 56px
+  line-height: normal;
+  color: #FFFCF9;
+  text-align: center;
+  white-space: nowrap;
+}
+
+// The polaroid grid — Figma "ALL" (4253:1186). Two rows stacked, 52px between rows.
+.grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.25rem;            // 52px between rows
+}
+
+// A row of 4 polaroids — Figma "ALL" (4253:1187 / 4253:1200). gap 20, items-start
+// so the bottoms can vary (different polaroid heights) without forcing alignment.
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;            // 20px between polaroids
+}
+
+// A single polaroid card — Figma "FRAME". White → light-purple gradient, soft drop
+// shadow, 20px padding. justify-content space-between pushes the photo to the top and
+// the date to the bottom, with the gradient gap between.
+.polaroid {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem;        // 20px
+  background: linear-gradient(142.252deg, #FFFFFF 5.19%, #F5E6FE 108.97%);
+  box-shadow: -0.125rem 0.1875rem 0.125rem 0.0625rem rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  // Rotation comes through a CSS variable set inline per polaroid; default 0 if absent.
+  transform: rotate(var(--polaroid-rotate, 0deg));
+  // ──── hover animation ────
+  // To remove, delete the `transition`, `position`, and `.polaroid:hover` block below.
+  position: relative;      // so z-index applies on hover
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.05) translateY(-0.5rem);
+  z-index: 10;             // float above neighbouring polaroids
+  box-shadow: -0.25rem 0.5rem 0.625rem 0.125rem rgba(0, 0, 0, 0.2);
+}
+
+// Photo area — Figma "PHOTO". Square (1:1), fills the polaroid's inner width.
+// Gray placeholder background when no image; backgroundImage is supplied inline.
+.photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  flex: none;
+  background-color: #DADADA;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// Date — handwritten "Just Another Hand" font, 18px, light-purple #CB80F9.
+.date {
+  font-family: 'Just Another Hand', cursive;
+  font-weight: 400;
+  font-size: 1.125rem;     // 18px
+  line-height: normal;
+  color: #CB80F9;
+  text-align: center;
+  white-space: nowrap;
+}

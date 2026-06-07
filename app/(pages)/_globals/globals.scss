@@ -1,13 +1,71 @@
 @use "./mixins.scss";
 
-// Load fonts
-@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Hanken+Grotesk:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Hanken+Grotesk:wght@400;500;700&family=Just+Another+Hand&display=swap');
 
 :root {
-  // primary colors
-  --white: #FFFCF9;
-  --pure-white: #FFFFFF;
+  // neutral colors
+  --white: #fffcf9;
+  --pure-white: #ffffff;
+  --black: #000000;
 
+  // font
+  --font-display: "Gochi Hand", cursive;
+  --font-body: "Hanken Grotesk", sans-serif;
+
+  // main color: purple
+  --color-primary: #7c6fd4;
+  --color-primary-light: #a89fe3;
+  --color-primary-bg: #eeeaf3;
+  --color-banner-bg: #7b72cc;
+  --color-banner-dark: #5c55ab;
+
+  // text
+  --color-text: #1a1a2e;
+  --color-text-muted: #6b6b8a;
+  --color-text-on-purple: #ffffff;
+
+  // card & tag
+  --color-card-border: #e8e4f8;
+  --color-tag-bg: #eeeafc;
+  --color-tag-active: #7c6fd4;
+
+  // rounded corners
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  // shadows
+  --shadow-card: 0 2px 12px rgba(124, 111, 212, 0.1);
+  --shadow-card-hover: 0 6px 20px rgba(124, 111, 212, 0.18);
+
+  // spacing
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+
+  // max width
+  --max-width: 1100px;
+
+  // brand purples
+  --blueish-purple300: #a3a1eb;
+  --blueish-purple500: #6563de;
+
+  // neutrals
+  --grey-200: #a7a7a8;
+  --grey-500: #232325;
+
+  // purple scale
+  --purple-primary: #6563de;
+  --purple-dark: #3d3b85;
+  --purple-light: #a3a1eb;
+  --purple-soft: #e0e0f8;
+  --purple-pale: #c1c1f2;
+  --purple-button: #7a78f9;
+  --purple-lavender: #f5e6fe;
 }
 
 * {
@@ -42,6 +100,7 @@ p {
   @include mixins.body-text;
 }
 
-caption, small {
+caption,
+small {
   @include mixins.caption;
 }
