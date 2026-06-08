@@ -23,8 +23,18 @@
     font-weight: 600;
     line-height: 1;
     font-family: "Hanken Grotesk";
+
+    text-decoration: none;
     
     color: #6563DE;
+}
+
+.headerContainerToggleArea {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+
+    cursor: pointer;
 }
 
 .icon {

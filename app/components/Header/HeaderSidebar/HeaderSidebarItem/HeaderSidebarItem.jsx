@@ -12,11 +12,13 @@ export default function HeaderSidebarItem({ title, link, subitems = [] }) {
 
     return (
         <div className={styles.container}>
-            <button className={styles.headerContainer} onClick={() => setOpen(!isOpen)}>
+            <div className={styles.headerContainer}>
                 <a href={link} className={styles.title}>{title}</a>
             
-                <Image className={[styles.icon, isOpen && styles.rotate180].filter(Boolean).join(' ')} src={DOWN_CHEVRON_SVG} alt="Down Arrow Icon" />
-            </button>
+                <div className={styles.headerContainerToggleArea} >
+                    <Image className={[styles.icon, isOpen && styles.rotate180].filter(Boolean).join(' ')} src={DOWN_CHEVRON_SVG} alt="Down Arrow Icon" />
+                </div>
+            </div>
 
             {/* Combines a bunch of different scss classes together below */}
             <div className={[styles.subItemsContainer, isOpen && styles.open].filter(Boolean).join(' ')}>

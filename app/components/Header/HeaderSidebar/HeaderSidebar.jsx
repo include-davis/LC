@@ -41,6 +41,7 @@ export default function HeaderSidebar({ itemsData = [], isOpen, onClose }) {
                             key={index}
                             title={item.title} 
                             subitems={item.subitems} 
+                            link={item.link}
                         />
                     ))}
                 </div>
