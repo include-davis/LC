@@ -8,8 +8,23 @@ import SocialButton from "./SocialButton/SocialButton";
 import CLOSE_BTN_SVG from "../../../../public/shared/x.svg";
 import DISCORD_SVG from "../../../../public/shared/discord.svg";
 import INSTAGRAM_SVG from "../../../../public/shared/INSTAGRAM.svg";
+import { useEffect } from "react";
 
 export default function HeaderSidebar({ itemsData = [], isOpen, onClose }) {
+    useEffect(() => {
+        function handleEscape(e) {
+            if (e.key != 'Escape')
+                return;
+
+            onClose();
+        }
+
+        if (isOpen)
+            window.addEventListener('keydown', handleEscape);
+
+        return () => window.removeEventListener('keydown', handleEscape);
+    });
+
     return (
         <>
             <div className={`${styles.container} ${isOpen ? styles.open : ''} `}>
