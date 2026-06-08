@@ -13,15 +13,15 @@
     
     transform: translateX(100%);
 
-    padding: 32px;
-    padding-top: 71px;
+    padding: 2rem;
+    padding-top: 4.438rem;
 
-    gap: 36px;
+    gap: 2.25rem;
 
     background-color: #FFFCF9;
 
-    border-top-left-radius: 32px;
-    border-bottom-left-radius: 32px;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
 
     z-index: 10;
     transition: transform 300ms ease-out;
@@ -37,7 +37,7 @@
 }
 
 .header {
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: 600;
 
     color: #14142C;
@@ -54,7 +54,7 @@
     display: flex;
     flex-direction: column;
 
-    gap: 24px;
+    gap: 1.5rem;
 }
 
 .separator {
@@ -67,7 +67,7 @@
 .socialBtnsContainer {
     display: flex;
 
-    gap: 8px;
+    gap: 0.5rem;
 }
 
 .backdrop {
