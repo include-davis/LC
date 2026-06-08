@@ -5,7 +5,7 @@ import Footer from "../components/footer/Footer.jsx";
 
 import Header from "../components/Header/Header";
 
-import { HEADER_ITEMS } from "../../data/HeaderItems";
+import { HEADER_ITEMS } from "../../data/HeaderItemsData";
 
 export const metadata = {
   title: "Create Next App",
