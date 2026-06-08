@@ -54,7 +54,10 @@ export default function HeaderSidebar({ itemsData = [], isOpen, onClose }) {
                 </div>
             </div>
 
-            <div className={`${styles.backdrop} ${isOpen ? styles.open : ''}`}></div>
+            <div 
+                className={`${styles.backdrop} ${isOpen ? styles.open : ''}`} 
+                onClick={onClose}
+            />
         </>
     )
 }
