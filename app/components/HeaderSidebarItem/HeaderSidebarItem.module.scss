@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
 
-    gap: 12px;
+    gap: 0.75rem;
 }
 
 .headerContainer {
@@ -19,8 +19,9 @@
 }
 
 .title {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 600;
+    line-height: 1;
     font-family: "Hanken Grotesk";
     
     color: #6563DE;
@@ -38,8 +39,8 @@
     display: none;
     flex-direction: column;
 
-    padding-left: 8px;
-    gap: 12px;
+    padding-left: 0.5rem;
+    gap: 0.75rem;
 
     &.open {
         display: flex;
@@ -47,10 +48,11 @@
 }
 
 .subItem {
-    display: block;   
-
-    font-size: 18px;
+    display: block;
+    
+    font-size: 1.125rem;
     font-weight: 400;
+    line-height: 1;
     text-decoration: none;
 
     color: #8482E5;
