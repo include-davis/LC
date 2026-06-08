@@ -15,7 +15,7 @@ export default function HeaderSidebarItem({ title, link, subitems = [] }) {
             <div className={styles.headerContainer}>
                 <a href={link} className={styles.title}>{title}</a>
             
-                <div className={styles.headerContainerToggleArea} >
+                <div className={styles.headerContainerToggleArea} onClick={() => setOpen(!isOpen)}>
                     <Image className={[styles.icon, isOpen && styles.rotate180].filter(Boolean).join(' ')} src={DOWN_CHEVRON_SVG} alt="Down Arrow Icon" />
                 </div>
             </div>
