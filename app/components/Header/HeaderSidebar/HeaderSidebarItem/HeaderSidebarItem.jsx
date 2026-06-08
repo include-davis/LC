@@ -5,7 +5,7 @@ import styles from "./HeaderSidebarItem.module.scss";
 import { useState } from "react";
 import Image from "next/image";
 
-import DOWN_CHEVRON_SVG from "../../../public/shared/down_chevron.svg";
+import DOWN_CHEVRON_SVG from "../../../../../public/shared/down_chevron.svg";
 
 export default function HeaderSidebarItem({ title, link, subitems = [] }) {
     const [isOpen, setOpen] = useState(false);

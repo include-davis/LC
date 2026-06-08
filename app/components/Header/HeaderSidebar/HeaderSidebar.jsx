@@ -1,14 +1,14 @@
 import styles from "./HeaderSidebar.module.scss";
 
+import { useEffect } from "react";
 import Image from "next/image";
 
-import HeaderSidebarItem from "../../HeaderSidebarItem/HeaderSidebarItem";
+import HeaderSidebarItem from "./HeaderSidebarItem/HeaderSidebarItem";
 import SocialButton from "./SocialButton/SocialButton";
 
 import CLOSE_BTN_SVG from "../../../../public/shared/x.svg";
 import DISCORD_SVG from "../../../../public/shared/discord.svg";
 import INSTAGRAM_SVG from "../../../../public/shared/INSTAGRAM.svg";
-import { useEffect } from "react";
 
 export default function HeaderSidebar({ itemsData = [], isOpen, onClose }) {
     useEffect(() => {
