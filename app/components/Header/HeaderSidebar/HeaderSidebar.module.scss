@@ -6,10 +6,12 @@
     box-sizing: border-box;
 
     top: 0;
-    right: -100dvw;
+    right: 0;
 
     width: 348px;
     height: 100dvh;
+    
+    transform: translateX(100%);
 
     padding: 32px;
     padding-top: 71px;
@@ -22,11 +24,10 @@
     border-bottom-left-radius: 32px;
 
     z-index: 10;
-    
-    transition: right ease 300ms;
+    transition: transform 300ms ease-out;
 
     &.open {
-        right: 0;
+        transform: translateX(0);
     }
 }
 
