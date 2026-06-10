@@ -17,7 +17,7 @@ const PRESENTATIONS = [
 
 export default function PastPresentations() {
   return (
-    <section className={styles.section} id="presentations">
+    <section className={styles.section}>
       <h2 className={styles.title}>Past Presentations!</h2>
       <div className={styles.row}>
         {PRESENTATIONS.map((p, i) => (

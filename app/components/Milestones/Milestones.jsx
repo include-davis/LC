@@ -17,7 +17,7 @@ const MEDALS = [
 
 export default function Milestones() {
   return (
-    <section className={styles.section} id="milestones">
+    <section className={styles.section}>
       <div className={styles.panel}>
         <MilestoneStreaks />
         {/* Content (title + medals) sits above the streaks via z-index. */}
