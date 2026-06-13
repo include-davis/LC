@@ -17,7 +17,7 @@ export default function Footer(){
                     <div className={styles.footerNav}>
                         <div className={styles.navLinks}>
 
-                        <section>
+                        <section className={styles.navSection}>
                             <a className={styles.navHeading} href='#' >Home</a>
                             <div>
                                 <a className={styles.link} href='#'>Schedule</a>
@@ -25,7 +25,7 @@ export default function Footer(){
                     
                         </section>
 
-                        <section>
+                        <section className={styles.navSection}>
                             <a className={styles.navHeading} href='#' >About</a>
                             <div>
                                 <a className={styles.link} href='#'>Mission</a>
@@ -34,21 +34,13 @@ export default function Footer(){
                             </div>
                         </section>
 
-                        <section>
+                        <section className={styles.navSection}>
                             <a className={styles.navHeading} href='#' >Archive</a>
                             <div>
                                 <a className={styles.link} href='#'>Milestones</a>
                                 <a className={styles.link} href='#'>Past Events</a>
                                 <a className={styles.link} href='#'>Past Presentations</a>
                                 <a className={styles.link} href='#'>Our Community</a>
-                            </div>
-                        </section>
-
-                        <section>
-                            <a className={styles.navHeading} href='#' >Opportunities</a>
-                            <div>
-                                <a className={styles.link} href='#'>Graduate Programs</a>
-                                <a className={styles.link} href='#'>Undergraduate Programs</a> 
                             </div>
                         </section>
 
@@ -100,11 +92,10 @@ export default function Footer(){
                     <a className={styles.icon} href='#'><Image src={'/images/footer/discord.svg'} alt={'discord'} width={18} height={18}/></a>
                     <a className={styles.icon} href='#'><Image src={'/images/footer/instagram.svg'} alt={'instagram'} width={22} height={22} /></a>
                 </div>
+
+                </div>
             </div>
 
-            <div className={styles.mobileFooter}>
-
-            </div>
         </>
     )
 }
