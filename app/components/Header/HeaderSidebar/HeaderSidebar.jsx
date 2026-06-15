@@ -8,7 +8,7 @@ import SocialButton from "./SocialButton/SocialButton";
 
 import CLOSE_BTN_SVG from "../../../../public/shared/x.svg";
 import DISCORD_SVG from "../../../../public/shared/discord.svg";
-import INSTAGRAM_SVG from "../../../../public/shared/INSTAGRAM.svg";
+import INSTAGRAM_SVG from "../../../../public/shared/instagram.svg";
 
 export default function HeaderSidebar({ itemsData = [], isOpen, onClose }) {
     useEffect(() => {

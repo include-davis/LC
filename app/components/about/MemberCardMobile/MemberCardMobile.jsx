@@ -5,7 +5,7 @@ import styles from './MemberCardMobile.module.scss';
 export default function MemberCardMobile({ id, name, lastName, image, pronouns, positionShort, year, major, interests, outside, funFact, expandedBackground }) {
     const [isExpanded, setIsExpanded] = useState(false);
     return (
-        <div className={styles.cardContainer} key={id} style={{backgroundImage: isExpanded ? `url(${expandedBackground})` : `url(/images/about/backgrounds/mobile/${name}Mobile.png)` }}>
+        <div className={styles.cardContainer} key={id} style={{backgroundImage: isExpanded ? `url(${expandedBackground})` : `url(/images/about/backgrounds/mobile/${name.toLowerCase()}Mobile.png)` }}>
 
             <div className={styles.cardContent} >
                 <div className={styles.topHalf}>
