@@ -76,6 +76,10 @@
         gap: 1.5rem; /* 24px */
         align-self: stretch;
     }
+
+    @include mixins.sm-desktop{
+        gap: 1.375rem;
+    }
 }
  
 .navHeading{
