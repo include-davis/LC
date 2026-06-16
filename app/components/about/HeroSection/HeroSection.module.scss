@@ -2,12 +2,12 @@
 
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 
-    height: 455px;
+    height: clamp(375px, 32vw, 455px);
     
-    padding: 0px 120px;
-    gap: 188px;
+    padding: 0px clamp(20px, 8.33vw, 120px);
+    gap: clamp(40px, 13vw, 188px);
 
     @include mixins.phone {
         height: fit-content;
@@ -61,13 +61,13 @@
     font-size: 7.75rem;
     font-weight: 400;
 
+    text-wrap: nowrap;
     color: #6563DE;
 
     @include mixins.phone {
         margin-top: 30.82px;
 
         width: fit-content;
-        text-wrap: nowrap;
         
         font-size: 4rem;
     }
@@ -76,7 +76,6 @@
         margin-top: 30.82px;
 
         width: fit-content;
-        text-wrap: nowrap;
         
         font-size: 6rem;
     }
@@ -125,7 +124,7 @@
 
         margin-top: 5px;
 
-        font-size: 0.1.3125rem;
+        font-size: 1.3125rem;
 
         text-align: center;
         text-wrap: nowrap;
@@ -135,6 +134,14 @@
 .starContainerDesktop {        
     position: relative;
     display: block;
+
+    flex-shrink: 0;
+    
+    // The minimum width is 250px and scales up to 500px as the viewport reaches 1440px
+    width: clamp(250px, 35vw, 500px);
+
+    // 
+    aspect-ratio: 500 / 455;
     
     @include mixins.phone {
         display: none;
@@ -148,20 +155,23 @@
 .starIcon1 {
     position: absolute;
 
-    top: 80px;
-    right: 305px;
+    // Original: top: 80px, right: 305px on a ~500px wide container
+    top: 17.6%;
+    right: 61%;
 }
 
 .starIcon2 {
     position: absolute;
 
-    top: 15px;
-    right: 159px;
+    // Original: top: 80px, right: 305px on a ~500px wide container
+    top: 3.3%;
+    right: 31.8%;
 }
 
 .starIcon3 {
     position: absolute;
 
-    top: 141px;
-    right: 97px;
+    // Original: top: 80px, right: 305px on a ~500px wide container
+    top: 31%;
+    right: 19.4%;
 }
