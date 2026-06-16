@@ -1,6 +1,6 @@
 import styles from "./HeaderItemDropdown.module.scss";
 
-import HeaderItemDropdownItem from "../HeaderItemDropdownItem/HeaderItemDropdownItem";
+import HeaderItemDropdownItem from "../HeaderItemDropdown/HeaderItemDropdownItem";
 
 export default function HeaderItemDropdown({ subitems }) {
     return (

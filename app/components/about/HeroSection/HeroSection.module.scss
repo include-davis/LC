@@ -57,6 +57,13 @@
     }
 }
 
+.textContainer {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
 .header {
     font-size: 7.75rem;
     font-weight: 400;
@@ -105,6 +112,7 @@
     font-size: 1.25rem;
     line-height: 1.25;
     font-weight: 500;
+    line-height: 1.25;
 
     color: #A3A1EB;
 
