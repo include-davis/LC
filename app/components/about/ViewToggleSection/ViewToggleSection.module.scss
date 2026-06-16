@@ -10,4 +10,8 @@
     @include mixins.phone {
         display: none;
     }
+
+    @include mixins.tablet {
+        display: none;
+    }
 }

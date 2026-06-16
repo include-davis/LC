@@ -19,6 +19,16 @@
         padding: 0px 1.25rem;
         gap: 2.875rem;
     }
+
+    @include mixins.tablet {
+        flex-direction: column;
+
+        margin-top: 2.875rem;
+        margin-bottom: 3rem;
+
+        padding: 0px 1.25rem;
+        gap: 2.875rem;
+    }
 }
 
 .imageContainer {
@@ -29,6 +39,10 @@
     @include mixins.phone {
         padding: 0px 2.25rem;
     }
+
+    @include mixins.tablet {
+        padding: 0px 2.25rem;
+    }
 }
 
 .image {
@@ -37,6 +51,10 @@
     height: auto;
 
     @include mixins.phone {
+        width: 100%;
+    }
+
+    @include mixins.tablet {
         width: 100%;
     }
 }
@@ -59,6 +77,15 @@
         background: linear-gradient(to bottom, #8482E5, #C1C1F2);
         border-radius: 40px;
     }
+
+    @include mixins.tablet {
+        padding: 3.25rem 1.75rem;
+
+        color: #FFF;
+
+        background: linear-gradient(to bottom, #8482E5, #C1C1F2);
+        border-radius: 40px;
+    }
 }
 
 .title {
@@ -68,6 +95,10 @@
     text-align: center;
 
     @include mixins.phone {
+        font-size: 2rem;
+    }
+
+    @include mixins.tablet {
         font-size: 2rem;
     }
 }
@@ -82,6 +113,11 @@
     line-height: 1.2;
 
     @include mixins.phone {
+        font-size: 0.875rem;
+        line-height: 1.3;
+    }
+
+    @include mixins.tablet {
         font-size: 0.875rem;
         line-height: 1.3;
     }
