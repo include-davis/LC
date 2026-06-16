@@ -13,11 +13,11 @@
     
     gap: 36px;
 
-    @include mixins.phone {
+    @include mixins.tablet {
         margin: 0px;
         
         padding: 14px 16px;
 
-        gap: 35px;
+        gap: 35px;  
     }
 }

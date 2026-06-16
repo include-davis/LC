@@ -13,8 +13,9 @@
     
     background-color: #E0E0F8;
 
-    @include mixins.phone {
-        width: 370px;
+    @include mixins.sm-desktop {
+        min-width: 370px;
+        width: calc(100% - 40px);
 
         padding: 16px 20px;
     }
@@ -38,7 +39,7 @@
 
     color: #434343;
 
-    @include mixins.phone {
+    @include mixins.tablet {
         font-size: 16px;
     }
 }
@@ -107,7 +108,7 @@
 
     color: #434343;
 
-    @include mixins.phone {
+    @include mixins.tablet {
         font-size: 0.75rem;
     }
 }
