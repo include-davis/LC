@@ -14,6 +14,12 @@
 
         padding: 0px;
     }
+
+    @include mixins.tablet {
+        height: fit-content;
+
+        padding: 0px;
+    }
 }
 
 .textContainerMobile {
@@ -30,17 +36,11 @@
     @include mixins.tablet {
         display: block;
     }
-
-    @include mixins.sm-desktop {
-        display: block;
-    }
 }
 
 .starAndHeaderContainer {
     display: flex;
     justify-content: center;
-
-    // padding: 0px 30px;
 }
 
 .textContainerDesktop {
@@ -53,10 +53,6 @@
     }
 
     @include mixins.tablet {
-        display: none;
-    }
-
-    @include mixins.sm-desktop {
         display: none;
     }
 }
@@ -75,11 +71,33 @@
         
         font-size: 4rem;
     }
+
+    @include mixins.tablet {
+        margin-top: 30.82px;
+
+        width: fit-content;
+        text-wrap: nowrap;
+        
+        font-size: 6rem;
+    }
 }
 
 .starIconMobile {
-    width: 53px;
-    height: 63px;
+    display: none;
+
+    @include mixins.phone {
+        display: block;
+
+        width: 53px;
+        height: 63px;
+    }
+
+    @include mixins.tablet {
+        display: block;
+
+        width: 63px;
+        height: 73px;
+    }
 }
 
 .description {
@@ -101,6 +119,17 @@
         text-align: center;
         text-wrap: nowrap;
     }
+
+    @include mixins.tablet {
+        width: 100%;
+
+        margin-top: 5px;
+
+        font-size: 0.1.3125rem;
+
+        text-align: center;
+        text-wrap: nowrap;
+    }
 }
 
 .starContainerDesktop {        
@@ -112,10 +141,6 @@
     }
 
     @include mixins.tablet {
-        display: none;
-    }
-
-    @include mixins.sm-desktop {
         display: none;
     }
 }
