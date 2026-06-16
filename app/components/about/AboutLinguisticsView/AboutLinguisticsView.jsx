@@ -1,17 +1,12 @@
-"use client"
-
 import styles from "./AboutLinguisticsView.module.scss"
 
 import ClubMissionSection from "../ClubMissionSection/ClubMissionSection";
 import MeetBoardSection from "../MeetBoardSection/MeetBoardSection";
+import MobileFAQSection from "../MobileFAQSection/MobileFAQSection";
 
 import { CLUB_MISSION_DATA } from "../../../../data/ClubMissionData";
 
-import { useState } from "react";
-
 export default function AboutLinguisticsView() {
-    const [selectedIndex, setSelectedIndex] = useState(null);
-
     return (
         <>
             <ClubMissionSection 
@@ -22,6 +17,8 @@ export default function AboutLinguisticsView() {
             />
 
             <MeetBoardSection />    
+
+            <MobileFAQSection />
         </>
     )
 }
