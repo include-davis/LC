@@ -9,13 +9,13 @@
     padding: 0px clamp(20px, 8.33vw, 120px);
     gap: clamp(40px, 13vw, 188px);
 
-    @include mixins.phone {
+    @include mixins.tablet {
         height: fit-content;
 
         padding: 0px;
     }
-
-    @include mixins.tablet {
+    
+    @include mixins.phone {
         height: fit-content;
 
         padding: 0px;
@@ -29,11 +29,11 @@
 
     margin-top: 96.18px;
 
-    @include mixins.phone {
+    @include mixins.tablet {
         display: block;
     }
 
-    @include mixins.tablet {
+    @include mixins.phone {
         display: block;
     }
 }
@@ -48,11 +48,11 @@
 
     margin-top: 96px;
 
-    @include mixins.phone {
+    @include mixins.tablet {
         display: none;
     }
 
-    @include mixins.tablet {
+    @include mixins.phone {
         display: none;
     }
 }
@@ -64,20 +64,20 @@
     text-wrap: nowrap;
     color: #6563DE;
 
-    @include mixins.phone {
-        margin-top: 30.82px;
-
-        width: fit-content;
-        
-        font-size: 4rem;
-    }
-
     @include mixins.tablet {
         margin-top: 30.82px;
 
         width: fit-content;
         
         font-size: 6rem;
+    }
+
+    @include mixins.phone {
+        margin-top: 30.82px;
+
+        width: fit-content;
+        
+        font-size: 4rem;
     }
 }
 
@@ -108,23 +108,23 @@
 
     color: #A3A1EB;
 
-    @include mixins.phone {
-        width: 100%;
-
-        margin-top: 5px;
-
-        font-size: 0.875rem;
-
-        text-align: center;
-        text-wrap: nowrap;
-    }
-
     @include mixins.tablet {
         width: 100%;
 
         margin-top: 5px;
 
         font-size: 1.3125rem;
+
+        text-align: center;
+        text-wrap: nowrap;
+    }
+
+    @include mixins.phone {
+        width: 100%;
+
+        margin-top: 5px;
+
+        font-size: 0.875rem;
 
         text-align: center;
         text-wrap: nowrap;
@@ -143,11 +143,11 @@
     // 
     aspect-ratio: 500 / 455;
     
-    @include mixins.phone {
+    @include mixins.tablet {
         display: none;
     }
 
-    @include mixins.tablet {
+    @include mixins.phone {
         display: none;
     }
 }
