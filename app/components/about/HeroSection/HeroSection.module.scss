@@ -27,7 +27,7 @@
 
     width: 100%;
 
-    margin-top: 96.18px;
+    margin-top: 6.011rem;
 
     @include mixins.tablet {
         display: block;
@@ -46,7 +46,7 @@
 .textContainerDesktop {
     display: block;
 
-    margin-top: 96px;
+    margin-top: 6rem;
 
     @include mixins.tablet {
         display: none;
@@ -72,7 +72,7 @@
     color: #6563DE;
 
     @include mixins.tablet {
-        margin-top: 30.82px;
+        margin-top: 1.926rem;
 
         width: fit-content;
         
@@ -80,7 +80,7 @@
     }
 
     @include mixins.phone {
-        margin-top: 30.82px;
+        margin-top: 1.926rem;
 
         width: fit-content;
         
@@ -94,20 +94,20 @@
     @include mixins.phone {
         display: block;
 
-        width: 53px;
-        height: 63px;
+        width: 3.313rem;
+        height: 3.938rem;
     }
 
     @include mixins.tablet {
         display: block;
 
-        width: 63px;
-        height: 73px;
+        width: 3.938rem;
+        height: 3.938rem;
     }
 }
 
 .description {
-    width: 434px;
+    width: 27.125rem;
     
     font-size: 1.25rem;
     line-height: 1.25;
@@ -119,7 +119,7 @@
     @include mixins.tablet {
         width: 100%;
 
-        margin-top: 5px;
+        margin-top: 0.313rem;
 
         font-size: 1.3125rem;
 
@@ -130,7 +130,7 @@
     @include mixins.phone {
         width: 100%;
 
-        margin-top: 5px;
+        margin-top: 0.313rem;
 
         font-size: 0.875rem;
 
@@ -146,7 +146,7 @@
     flex-shrink: 0;
     
     // The minimum width is 250px and scales up to 500px as the viewport reaches 1440px
-    width: clamp(250px, 35vw, 500px);
+    width: clamp(15.625rem, 35vw, 31.25rem);
 
     // 
     aspect-ratio: 500 / 455;
