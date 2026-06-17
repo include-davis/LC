@@ -1,6 +1,9 @@
 // Styles for the ArchiveHeader section.
-// Pixel-locked to the 1440 Figma layout, expressed in rem (1rem = 16px at default root font-size).
-// Stars are absolutely positioned within the section.
+// Pixel-locked to the 1440 Figma layout (desktop) with phone overrides inline per class
+// via mixins.phone (max-width: 720). Mobile design (Figma node 4766:2244, 402x297) drops
+// the decorative stars and centers a compact title block.
+
+@use "../../_globals/mixins.scss" as mixins;
 
 // Section frame — fills the viewport width; padding/gap in rem, content left-aligned.
 .header {
@@ -12,12 +15,24 @@
   padding: 12.5rem 7.5rem 8.75rem; // 200px top, 120px sides, 140px bottom
   gap: 0.625rem;                   // 10px
   overflow: hidden;                // clips any star spill at edges
+
+  @include mixins.phone {
+    justify-content: center;
+    padding: 5rem 1.5rem 1.5rem;   // 80 top, 24 sides, 24 bottom — compact mobile spacing
+  }
 }
 
 .titleBlock {
   display: flex;
   flex-direction: column;
   width: 27.125rem; // 434px
+
+  @include mixins.phone {
+    width: 100%;
+    max-width: 22rem;              // ≈ Figma's 247px block but a bit roomier for wider phones
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .title {
@@ -28,6 +43,11 @@
   font-weight: 400;
   line-height: normal;
   white-space: nowrap;
+
+  @include mixins.phone {
+    font-size: 4.5rem;             // 72px — matches mobile "Archive" height
+    text-align: center;
+  }
 }
 
 .subtitle {
@@ -37,13 +57,23 @@
   font-size: 1.25rem; // 20px
   font-weight: 500;
   line-height: normal;
+
+  @include mixins.phone {
+    width: 100%;
+    font-size: 1rem;               // 16px — readable on phones, wraps to 2 lines per Figma
+    text-align: center;
+  }
 }
 
-// Star cluster — sizes and positions taken directly from Figma.
+// Star cluster — sizes and positions taken directly from Figma. HIDDEN on phone.
 .starLarge,
 .starMedium,
 .starSmall {
   position: absolute;
+
+  @include mixins.phone {
+    display: none;                 // mobile Figma has no decorative stars
+  }
 }
 
 // Stars are anchored from the LEFT so they stay near the title at the x-coordinates
