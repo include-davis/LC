@@ -113,6 +113,57 @@
   height: 11.493rem; /* 183.89px */
 }
 
+/* Mobile-only speech bubble (hero_speech_bubble_mobile.png) — hidden on desktop */
+.heroSpeechBubbleMobile {
+  display: none;
+}
+
+/* Mobile-only star cluster (hero_stars_top_left_mobile.png, flattened from Figma "Star 4" x2) — hidden on desktop */
+.heroStarsMobile {
+  display: none;
+}
+
+/* Mobile-only sparkle clusters (flattened from Figma) — hidden on desktop */
+.heroSparkleTopRight {
+  display: none;
+}
+
+.heroSparkleBottomLeft {
+  display: none;
+}
+
+/* Mobile-only Wug mascot (hero_wug_mascot_mobile.png, flattened/pre-rotated from Figma) — hidden on desktop */
+.heroMascotMobile {
+  display: none;
+}
+
+/* Mobile-only Discord button graphic — hidden on desktop */
+.heroDiscordImgMobile {
+  display: none;
+}
+
+/* Mobile-only Wug Graphic Banner (hero_banner_mobile.png) — hidden on desktop */
+.heroBannerMobile {
+  display: none;
+}
+
+/* Mobile-only intro photo (intro_photo_mobile.png) — hidden on desktop */
+.introPhotoMobile {
+  display: none;
+}
+
+/* 4th event card — only needed for the mobile 2×2 grid, hidden on desktop.
+   Uses doubled specificity (.recentEventItem.recentEventItemMobile4) so it
+   wins over the single-class .recentEventItem { display: flex } defined later. */
+.recentEventItem.recentEventItemMobile4 {
+  display: none;
+}
+
+/* Tape image swap — desktop shows desktop PNG, mobile shows mobile PNG */
+.recentEventDecoMobile {
+  display: none;
+}
+
 /* Join our Discord — outer clip frame (275×92px) */
 .heroDiscordOuter {
   position: absolute;
@@ -210,24 +261,6 @@
   }
 }
 
-@include mixins.phone {
-  .heroBody {
-    padding: 2rem 1.5rem 0;
-  }
-
-  .heroTextFrame {
-    max-width: 100%;
-  }
-
-  .heroBanner {
-    height: 11rem;
-  }
-
-  .decoTopRight {
-    width: 14rem;
-    height: 2.85rem;
-  }
-}
 
 /* ============================================================
    INTRO — 768px
@@ -965,4 +998,573 @@
 .galleryArrowIcon {
   width: 3.864rem;  /* 61.83px */
   height: 3.864rem; /* 61.83px */
+}
+
+/* ============================================================
+   RESPONSIVE — PHONE (≤720px)
+   All overrides here, AFTER all desktop styles, so they win.
+   ============================================================ */
+@include mixins.phone {
+
+  /* ======================================================
+     HERO — 833.4px tall, 402px viewport
+     Reuses existing desktop assets (resized/repositioned),
+     except the speech bubble which needs a new mobile export:
+       hero_speech_bubble_mobile.png (362×247.09px)
+     ====================================================== */
+  .page {
+    overflow-x: hidden; /* prevent any element from causing horizontal scroll on mobile */
+  }
+
+  .hero {
+    min-height: 48.0625rem; /* 769px — Intro section begins here in the Figma artboard */
+  }
+
+  /* Hide desktop decorative images — replaced on mobile by flattened exports from /public/home/hero/mobile/ */
+  .decoStar2 { display: none; }
+  .decoStar3 { display: none; }
+  .decoTopRight { display: none; }
+  .decoBottomLeft { display: none; }
+  .wugMascot { display: none; }
+  .heroBanner { display: none; }
+  .heroDiscordImg { display: none; }
+
+  /* Star cluster — hero_stars_top_left_mobile.png (459×508 @2x -> 229.5×254px) */
+  .heroStarsMobile {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 14.34375rem;  /* 229.5px */
+    height: 15.875rem;   /* 254px */
+    z-index: 4;
+  }
+
+  /* Sparkle cluster, top-right ("Frame 371") — hero_stars_top_right_mobile.png (378×78 @2x -> 189×39px) */
+  /* Figma left:319 is Frame 408-relative → screen: 319 − 130 = 189px */
+  .heroSparkleTopRight {
+    display: block;
+    position: absolute;
+    top: 7.5625rem;     /* 121px */
+    left: 14.8125rem;   /* 189px (319 − 130) */
+    width: 11.8125rem;  /* 189px */
+    height: 2.4375rem;  /* 39px */
+    z-index: 1;
+  }
+
+  /* Sparkle cluster, bottom-left ("Frame 312") — hero_stars_bottom_left_mobile.png (387×78 @2x -> 193.5×39px) */
+  /* Figma left:107 is Frame 408-relative → screen: 107 − 130 = −23px */
+  /* Negative left bleeds off the left edge (by design); overflow:hidden clips it */
+  .heroSparkleBottomLeft {
+    display: block;
+    position: absolute;
+    top: 41.8125rem;     /* 669px */
+    width: 12.09375rem;  /* 193.5px */
+    height: 2.4375rem;   /* 39px */
+    z-index: 2;
+  }
+
+  /* Wug mascot — hero_wug_mascot_mobile.png (406×671 @2x -> 203×335.5px), rotation baked in by Figma */
+  /* Figma left:303 Frame 408-relative → screen pre-rotation: 303 − 130 = 173px            */
+  /* Post-rotation the right edge aligns to ~402px (artboard right); left = 402 − 203 = 199px */
+  .heroMascotMobile {
+    display: block;
+    position: absolute;
+    top: 31.125rem;      /* ~474px */
+    left: 12.4375rem;    /* ~199px (right-edge-aligned: 402 − 203px export width) */
+    width: 12.6875rem;   /* 203px */
+    height: 20.96875rem; /* 335.5px */
+    z-index: 2;
+  }
+
+  /* "Welcome to..." + speech bubble/discord group */
+  /* Figma left:127 is Frame 408-relative → screen: 127 − 130 = −3px                       */
+  .heroTextFrame {
+    left: 1.25rem;   /* −3px (127 − 130) */
+    top: 10.8125rem;    /* 173px */
+    width: 22.625rem;   /* 362px */
+    height: 19.068125rem;
+  }
+
+  /* Speech bubble + Discord button container ("Frame 405") — sized to the new flattened bubble export */
+  .heroContentFrame {
+    top: 3.625rem;       /* 58px (231px - 173px) */
+    left: 0rem;
+    right: auto;
+    width: 22.90625rem;  /* 366.5px (hero_speech_bubble_mobile.png @1x) */
+    height: 15.75rem;    /* 252px */
+  }
+
+  /* Desktop speech bubble graphic — hidden, mobile uses a different bubble */
+  .heroSpeechBubble {
+    display: none;
+  }
+
+  /* Mobile-only speech bubble graphic — hero_speech_bubble_mobile.png (733×504 @2x -> 366.5×252px) */
+  .heroSpeechBubbleMobile {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Join Discord button — sized to the new flattened mobile export */
+  .heroDiscordOuter {
+    width: 15.25rem;     /* 244px (hero_discord_button_mobile.png 488×161 @2x -> 244×80.5px) */
+    height: 5.03125rem;  /* 80.5px */
+    top: 15.5rem;   /* 182.845px */
+    left: 0rem;   /* 10.33px */
+  }
+
+  .heroDiscordInner {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  /* Mobile-only Discord button graphic */
+  .heroDiscordImgMobile {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Wug Graphic Banner — hero_banner_mobile.png (804×250 @2x -> 402×125px) */
+  /* Figma: top:689px, height:125px → bottom at 814px, but hero section ends at 769px */
+  /* The bottom 45px bleeds below hero and is clipped by overflow:hidden (by design) */
+  .heroBannerMobile {
+    display: block;
+    position: absolute;
+    top: 43.0625rem;  /* 689px */
+    left: 0;
+    width: 100%;
+    height: 7.8125rem; /* 125px */
+    z-index: 4;
+  }
+
+  /* =====================================================
+     INTRO — 402×891.5px, top:769px in Figma artboard
+     Mobile layout: single column, text on top, image below
+     ===================================================== */
+
+  .intro {
+    min-height: 55.71875rem; /* 891.5px */
+    padding: 3.75rem 1.25rem; /* 60px 20px */
+    gap: 0.625rem;            /* 10px */
+  }
+
+  /* Frame 319 — gradient card, column layout */
+  .introCard {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3.25rem 1.84375rem; /* 52px 29.5px */
+    gap: 2.625rem;               /* 42px */
+    width: 22.625rem;            /* 362px */
+    min-height: 48.21875rem;     /* 771.5px */
+  }
+
+  /* Frame 319 inner — reuse as column wrapper for image + text */
+  .introContent {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.625rem; /* 42px */
+    width: 100%;
+    height: auto;
+  }
+
+  /* Text block — order 0 (comes first on mobile) */
+  .introText {
+    order: 0;
+    align-items: center;
+    width: 18.9375rem; /* 303px */
+    height: auto;
+    gap: 1.25rem;      /* 20px */
+  }
+
+  /* Heading + body wrapper */
+  .introTextBlock {
+    gap: 1rem;            /* 16px */
+    width: 18.9375rem;    /* 303px */
+    height: auto;
+  }
+
+  /* Frame 209 — heading wrapper */
+  .introHeadingWrap {
+    width: 18.9375rem;  /* 303px */
+    height: auto;
+  }
+
+  /* "Hello! We are UC Davis's Linguistics Club!" */
+  .introHeading {
+    width: 18.9375rem;   /* 303px */
+    height: auto;
+    font-size: 2rem;     /* 32px */
+    line-height: 2.625rem; /* 42px */
+  }
+
+  /* Frame 12 — body text wrapper */
+  .introBodyWrap {
+    width: 18.9375rem;  /* 303px */
+    height: auto;
+  }
+
+  /* Body copy */
+  .introBody {
+    width: 18.9375rem;    /* 303px */
+    height: auto;
+    font-size: 1rem;      /* 16px */
+    line-height: 1.3125rem; /* 21px */
+  }
+
+  /* Learn more button — smaller on mobile */
+  .introButton {
+    width: 10rem;         /* 160px */
+    height: 3.375rem;     /* 54px */
+    padding: 0.75rem 1.5rem; /* 12px 24px */
+    border-radius: 2.332rem; /* 37.31px */
+    gap: 0.0625rem;       /* 1px */
+  }
+
+  .introButtonText {
+    font-size: 1.25rem;   /* 20px */
+    line-height: 1.625rem; /* 26px */
+  }
+
+  /* Arrow icon hidden on mobile (Figma: display:none) */
+  .introButtonIcon {
+    display: none;
+  }
+
+  /* Image + squiggles container — order 1 (comes second on mobile) */
+  .introImageWrap {
+    order: 1;
+    width: 18.940625rem;  /* 303.05px */
+    height: 19.03125rem;  /* 304.5px */
+  }
+
+  /* Desktop photo hidden on mobile */
+  .introPhoto {
+    display: none;
+  }
+
+  /* Mobile photo — intro_photo_mobile.png */
+  /* Border is baked into the Figma export; remove the CSS border if it doubles */
+  .introPhotoMobile {
+    display: block;
+    position: absolute;
+    width: 15.964375rem;  /* 255.43px */
+    height: 15.513125rem; /* 248.21px */
+    left: 1.459375rem;    /* 23.35px */
+    top: 1.7025rem;       /* 27.24px */
+  }
+
+  /* Bottom-left squiggles — repositioned for mobile */
+  .introSquigglesBottomLeft {
+    width: 10.09rem;      /* 161.44px */
+    height: 11.06688rem;  /* 177.07px */
+    top: 7.75rem;        /* 96.56px */
+  }
+
+  /* Top-right squiggles — repositioned for mobile */
+  .introSquigglesTopRight {
+    width: 9.92125rem;    /* 158.74px */
+    height: 11.07375rem;  /* 177.18px */
+    left: 8.999375rem;    /* 143.99px */
+    top: 0.040625rem;     /* 0.65px */
+  }
+
+  /* =====================================================
+     SCHEDULE — 402×749px, top:1660.5px in Figma artboard
+     Same Google Calendar iframe, resized for mobile
+     ===================================================== */
+
+  .schedule {
+    align-items: center;
+    justify-content: center;
+    min-height: 46.8125rem; /* 749px */
+    padding: 0 1.25rem 3.75rem; /* 0 20px 60px */
+    gap: 2rem;              /* 32px */
+  }
+
+  .scheduleCard {
+    align-items: center;
+    gap: 2rem;              /* 32px */
+    min-height: auto;
+  }
+
+  /* "Schedule" title wrapper */
+  .scheduleTitle {
+    width: 8.375rem;        /* 134px */
+    height: 2.625rem;       /* 42px */
+  }
+
+  /* "Schedule" heading — smaller on mobile */
+  .scheduleHeading {
+    font-size: 2rem;        /* 32px */
+    line-height: 2.625rem;  /* 42px */
+    text-align: center;
+  }
+
+  /* Calendar iframe wrapper — 362×615px on mobile */
+  .scheduleCalendarWrap {
+    width: 22.625rem;       /* 362px */
+    height: 38.4375rem;     /* 615px */
+  }
+
+  /* iframe fills wrapper (width/height already 100% from desktop rule) */
+  .scheduleCalendar {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* =====================================================
+     RECENT EVENTS — 402×586px, top:2409.5px in Figma
+     2×2 card grid on mobile
+     ===================================================== */
+
+  .recentEvents {
+    min-height: 36.625rem;  /* 586px */
+    padding: 0 1.25rem;     /* 0 20px */
+  }
+
+  .recentEventsCard {
+    padding: 3.25rem 1.75rem; /* 52px 28px */
+    gap: 2.625rem;             /* 42px */
+    width: 22.625rem;          /* 362px */
+    min-height: 36.625rem;     /* 586px */
+  }
+
+  .recentEventsContent {
+    gap: 2.625rem;             /* 42px */
+    width: 18.17125rem;        /* 290.74px */
+    min-height: auto;
+  }
+
+  /* Wug mascot — hidden on mobile */
+  .recentEventsWug {
+    display: none;
+  }
+
+  /* "Recent Events" title */
+  .recentEventsTitleWrap {
+    width: 12.8125rem;   /* 205px */
+    height: 2.625rem;    /* 42px */
+  }
+
+  .recentEventsHeading {
+    width: 12.8125rem;      /* 205px */
+    height: 2.625rem;       /* 42px */
+    font-size: 2rem;        /* 32px */
+    line-height: 2.625rem;  /* 42px */
+  }
+
+  /* Frame 382 — cards + button column */
+  .recentEventsBottom {
+    align-items: center;
+    gap: 2rem;              /* 32px */
+    width: 18.17125rem;     /* 290.74px */
+    min-height: 24.875rem;  /* 398px */
+  }
+
+  /* Frame 381 — 2×2 grid via flex-wrap */
+  .recentEventsItems {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 1.27313rem;    /* 20.37px */
+    column-gap: 0.69438rem; /* 11.11px */
+    width: 18.17125rem;     /* 290.74px */
+    height: auto;
+  }
+
+  /* Mobile event card — 139.81×148.15px */
+  /* gap: 9.26px — matches Frame 414 spacing (title top: 30.26px − date height: 21px = 9.26px) */
+  .recentEventItem {
+    width: 8.738rem;         /* 139.81px */
+    height: 9.259rem;        /* 148.15px */
+    padding: 1.625rem 1rem;  /* 26px 16px */
+    gap: 0.579rem;           /* 9.26px */
+    box-shadow: 0 0.448rem 0.703rem rgba(0, 0, 0, 0.1);
+  }
+
+  /* 4th card hidden on desktop, shown on mobile — double-class matches desktop rule specificity */
+  .recentEventItem.recentEventItemMobile4 {
+    display: flex;
+  }
+
+  /* Tape container — mobile export (185×54 @2x → 92.5×27px display) */
+  .recentEventDeco {
+    display: block;
+    width: 5.78125rem;  /* 92.5px */
+    height: 1.6875rem;  /* 27px */
+    left: 1.512rem;     /* 24.19px — horizontally centered on card */
+    top: -0.84375rem;   /* -13.5px — half tape height, straddles card top edge */
+  }
+
+  /* Swap tape images: hide desktop PNG, show mobile PNG */
+  .recentEventDecoDesktop {
+    display: none;
+  }
+
+  .recentEventDecoMobile {
+    display: block;
+  }
+
+  /* Date — Hanken Grotesk Bold on mobile (Figma: not Gochi Hand) */
+  .recentEventDate {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;        /* 16px */
+    line-height: 1.3125rem; /* 21px */
+  }
+
+  /* Title wrap — narrower on mobile */
+  .recentEventTitleWrap {
+    width: 6.5625rem;  /* 105px */
+  }
+
+  /* Event title — smaller, grey on mobile */
+  .recentEventTitle {
+    font-size: 0.875rem;   /* 14px */
+    line-height: 1.125rem; /* 18px */
+    color: #515151;
+    width: 6.5625rem;      /* 105px */
+  }
+
+  /* See More button */
+  .recentEventsMoreBtn {
+    width: 9.428rem;          /* 150.85px */
+    height: 3.083rem;         /* 49.33px */
+    border-radius: 2.1875rem; /* 35px */
+    padding: 0.729rem 1.021rem 0.729rem 1.458rem;
+    gap: 0.045rem;
+    align-self: center;
+  }
+
+  .recentEventsMoreBtnInner {
+    width: auto;
+    gap: 0.449rem; /* 7.19px */
+  }
+
+  .recentEventsMoreBtnText {
+    font-size: 1.25rem;    /* 20px */
+    line-height: 1.625rem; /* 26px */
+  }
+
+  .recentEventsMoreBtnIcon {
+    width: 1.529rem;  /* 24.46px */
+    height: 1.529rem; /* 24.46px */
+  }
+
+  /* =====================================================
+     GALLERY — mobile (401×626.28px)
+     Native touch-scroll carousel; JS arrows hidden.
+     Figma ref: Frame 384 / artboard top: 2995.49px
+     ===================================================== */
+
+  /* Section wrapper */
+  .gallery {
+    min-height: 39.1425rem; /* 626.28px */
+    padding: 3.75rem 1.25rem; /* 60px 20px */
+    gap: 2rem;               /* 32px between title and carousel */
+    align-items: center;
+  }
+
+  /* Inner card — collapses to section width */
+  .galleryCard {
+    padding: 0;
+    gap: 2rem; /* 32px */
+    min-height: auto;
+    width: 100%;
+    align-items: center;
+  }
+
+  /* Gallery heading */
+  .galleryTitle {
+    width: 6.6875rem;    /* 107px */
+    height: 2.625rem;    /* 42px */
+  }
+
+  .galleryHeading {
+    font-size: 2rem;        /* 32px — down from 56px desktop */
+    line-height: 2.625rem;  /* 42px */
+    width: 6.6875rem;
+    height: 2.625rem;
+  }
+
+  /* ── Carousel viewport ──────────────────────────────── */
+  .galleryCarousel {
+    width: 100%;            /* ~361px inside 401px section w/ 20px side padding */
+    height: 27.0175rem;     /* 432.28px */
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    /* Remove clipping-only styles set on desktop */
+    position: relative;
+  }
+
+  /* Track — disable the JS translateX; native scroll takes over */
+  .galleryTrack {
+    height: 27.0175rem;      /* 432.28px — all columns share this height */
+    gap: 0.284375rem;        /* 4.55px between columns */
+    transform: none !important; /* override JS inline transform on mobile */
+    transition: none !important;
+  }
+
+  /* ── Column widths (mobile — all narrower than desktop) ── */
+  /* Desktop: bigMedia 548px, colWide 658px, colMid 406px, colNarrow 382px */
+
+  .galleryBigMedia {
+    width: 19.48125rem;  /* 311.7px */
+    height: 27.0175rem;  /* 432.28px */
+    flex-shrink: 0;
+  }
+
+  .galleryColStack {
+    height: 27.0175rem;  /* 432.28px — all stacked columns match */
+    gap: 0.284375rem;    /* 4.55px */
+    flex-shrink: 0;
+  }
+
+  .galleryColWide    { width: 23.39125rem; } /* 374.26px */
+  .galleryColMid     { width: 14.43313rem; } /* 230.93px */
+  .galleryColNarrow  { width: 13.58rem;    } /* 217.28px */
+
+  /* ── Quote cards ─────────────────────────────────────── */
+  .galleryQuoteBlue {
+    padding: 1.5rem 1.671rem; /* 24px 26.73px */
+    height: auto;
+    flex: none;                /* don't grow/shrink — quote is fixed-content height */
+  }
+
+  .galleryQuoteLavender {
+    padding: 1.5rem 1.5997rem; /* 24px 25.6px */
+    height: auto;
+    flex: 1;                   /* fill remaining height in narrow column */
+  }
+
+  /* Quote text — 16px/21px on mobile (vs 31px/40px on desktop) */
+  .galleryQuoteText {
+    font-size: 1rem;        /* 16px */
+    line-height: 1.3125rem; /* 21px */
+  }
+
+  /* ── Media cells ─────────────────────────────────────── */
+  /* galleryMediaRow: flex-row of two halves inside wide column — unchanged, flex: 1 fills remaining height */
+
+  /* Mid column: stacked tall + short */
+  .galleryMediaTall  { height: 15.535rem;    } /* 248.56px */
+  .galleryMediaShort { height: 11.19813rem;  } /* 179.17px */
+
+  /* Narrow column: top image */
+  .galleryMediaTop   { height: 17.17063rem;  } /* 274.73px */
+
+  /* ── Arrow buttons — hidden on mobile ─────────────────── */
+  .galleryArrow {
+    display: none;
+  }
 }

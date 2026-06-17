@@ -80,6 +80,13 @@ body {
   @include mixins.body-text;
 }
 
+@include mixins.phone {
+  html,
+  body {
+    overflow-x: hidden; /* prevent horizontal scroll caused by oversized elements on mobile */
+  }
+}
+
 h1 {
   @include mixins.heading;
 }
