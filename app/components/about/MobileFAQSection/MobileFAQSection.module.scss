@@ -1,0 +1,21 @@
+@use "app/(pages)/_globals/mixins.scss" as mixins;
+
+.container {
+    display: none;
+
+    margin-top: 4.5rem;
+    margin-bottom: 1.313rem;
+
+    @include mixins.tablet {
+        display: block;
+    }
+}
+
+.header {
+    margin-bottom: 1.938rem;
+
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1;
+    text-align: center;
+}

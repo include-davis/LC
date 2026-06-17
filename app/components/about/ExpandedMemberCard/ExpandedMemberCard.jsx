@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './ExpandedMemberCard.module.scss';
 import { LCboard } from '../../../../data/teamMembers';
@@ -10,6 +10,14 @@ export default function ExpandedMemberCard({ initialIndex = 0, onClose }) {
     const [activeIndex, setActiveIndex] = useState(initialIndex);
     const current = LCboard[activeIndex];
 
+    useEffect(() => {
+        document.body.style.overflow = 'hidden';
+        return ()=> {
+            document.body.style.overflow = '';
+        };
+    },[]);
+
+
     return (
         <div className={styles.overlay} onClick={onClose}>
             <div
@@ -17,11 +25,14 @@ export default function ExpandedMemberCard({ initialIndex = 0, onClose }) {
                 style={{ backgroundImage: `url(/images/about/backgrounds/${current.name}_Background.svg)` }}
                 onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
             >
-                <button className={styles.closeBtn} onClick={onClose}>
+                {/* <button className={styles.closeBtn} onClick={onClose}>
                     <Image src='/images/about/icons/x.png' alt='x icon' width={25} height={25} />
-                </button>
+                </button> */}
 
                 <div className={styles.card}>
+                    <button className={styles.closeBtn} onClick={onClose}>
+                        <Image src='/images/about/icons/x.png' alt='x icon' width={25} height={25} />
+                    </button>
                     <Image className={styles.memberIMG} src={current.noBorderImage} alt={current.name} width={174} height={315} />
 
                     <div className={styles.memberInfo}>
