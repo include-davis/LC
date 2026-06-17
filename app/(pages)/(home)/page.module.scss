@@ -152,8 +152,10 @@
   display: none;
 }
 
-/* 4th event card — only needed for the mobile 2×2 grid, hidden on desktop */
-.recentEventItemMobile4 {
+/* 4th event card — only needed for the mobile 2×2 grid, hidden on desktop.
+   Uses doubled specificity (.recentEventItem.recentEventItemMobile4) so it
+   wins over the single-class .recentEventItem { display: flex } defined later. */
+.recentEventItem.recentEventItemMobile4 {
   display: none;
 }
 
@@ -1389,8 +1391,8 @@
     box-shadow: 0 0.448rem 0.703rem rgba(0, 0, 0, 0.1);
   }
 
-  /* 4th card hidden on desktop, shown on mobile */
-  .recentEventItemMobile4 {
+  /* 4th card hidden on desktop, shown on mobile — double-class matches desktop rule specificity */
+  .recentEventItem.recentEventItemMobile4 {
     display: flex;
   }
 
