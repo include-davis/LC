@@ -7,6 +7,7 @@ import HeroSection from "../../components/about/HeroSection/HeroSection";
 import ViewToggleSection from "../../components/about/ViewToggleSection/ViewToggleSection";
 
 import { VIEW_TOGGLE_BUTTONS } from "../../../data/ViewToggleButtonData";
+import { HERO_SECTION_DATA } from "../../../data/AboutHeroSectionData";
 
 export default function AboutPage() {
     const [selectedIndex, setSelected] = useState(0);
@@ -15,18 +16,18 @@ export default function AboutPage() {
 
     return (
         <>
-            <HeroSection />
+            <HeroSection 
+                title={HERO_SECTION_DATA.title}
+                description={HERO_SECTION_DATA.description}
+            />
+    
             <ViewToggleSection 
                 buttonsData={VIEW_TOGGLE_BUTTONS} 
                 selectedIndex={selectedIndex}
                 setSelected={setSelected}
             />
             
-            <div>
-                <ActiveView />
-            </div>
-
-
+            <ActiveView />
         </>
     )
 }

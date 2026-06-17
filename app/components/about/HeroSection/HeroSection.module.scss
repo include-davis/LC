@@ -1,11 +1,60 @@
+@use "../../../../app/(pages)/_globals/mixins.scss" as mixins;
+
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 
-    height: 455px;
+    height: clamp(375px, 32vw, 455px);
+    
+    padding: 0px clamp(20px, 8.33vw, 120px);
+    gap: clamp(40px, 13vw, 188px);
 
-    padding: 0px 120px;
-    gap: 188px;
+    @include mixins.tablet {
+        height: fit-content;
+
+        padding: 0px;
+    }
+    
+    @include mixins.phone {
+        height: fit-content;
+
+        padding: 0px;
+    }
+}
+
+.textContainerMobile {
+    display: none;
+
+    width: 100%;
+
+    margin-top: 96.18px;
+
+    @include mixins.tablet {
+        display: block;
+    }
+
+    @include mixins.phone {
+        display: block;
+    }
+}
+
+.starAndHeaderContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.textContainerDesktop {
+    display: block;
+
+    margin-top: 96px;
+
+    @include mixins.tablet {
+        display: none;
+    }
+
+    @include mixins.phone {
+        display: none;
+    }
 }
 
 .textContainer {
@@ -16,43 +65,121 @@
 }
 
 .header {
-    margin-top: 96px;
-
     font-size: 7.75rem;
     font-weight: 400;
 
+    text-wrap: nowrap;
     color: #6563DE;
+
+    @include mixins.tablet {
+        margin-top: 30.82px;
+
+        width: fit-content;
+        
+        font-size: 6rem;
+    }
+
+    @include mixins.phone {
+        margin-top: 30.82px;
+
+        width: fit-content;
+        
+        font-size: 4rem;
+    }
+}
+
+.starIconMobile {
+    display: none;
+
+    @include mixins.phone {
+        display: block;
+
+        width: 53px;
+        height: 63px;
+    }
+
+    @include mixins.tablet {
+        display: block;
+
+        width: 63px;
+        height: 73px;
+    }
 }
 
 .description {
+    width: 434px;
+    
     font-size: 1.25rem;
+    line-height: 1.25;
     font-weight: 500;
     line-height: 1.25;
 
     color: #A3A1EB;
+
+    @include mixins.tablet {
+        width: 100%;
+
+        margin-top: 5px;
+
+        font-size: 1.3125rem;
+
+        text-align: center;
+        text-wrap: nowrap;
+    }
+
+    @include mixins.phone {
+        width: 100%;
+
+        margin-top: 5px;
+
+        font-size: 0.875rem;
+
+        text-align: center;
+        text-wrap: nowrap;
+    }
 }
 
-.starContainer {
+.starContainerDesktop {        
     position: relative;
+    display: block;
+
+    flex-shrink: 0;
+    
+    // The minimum width is 250px and scales up to 500px as the viewport reaches 1440px
+    width: clamp(250px, 35vw, 500px);
+
+    // 
+    aspect-ratio: 500 / 455;
+    
+    @include mixins.tablet {
+        display: none;
+    }
+
+    @include mixins.phone {
+        display: none;
+    }
 }
 
 .starIcon1 {
     position: absolute;
 
-    top: 80px;
-    right: 305px;
+    // Original: top: 80px, right: 305px on a ~500px wide container
+    top: 17.6%;
+    right: 61%;
 }
 
 .starIcon2 {
     position: absolute;
 
-    top: 15px;
-    right: 159px;
+    // Original: top: 80px, right: 305px on a ~500px wide container
+    top: 3.3%;
+    right: 31.8%;
 }
 
 .starIcon3 {
     position: absolute;
 
-    top: 141px;
-    right: 97px;
+    // Original: top: 80px, right: 305px on a ~500px wide container
+    top: 31%;
+    right: 19.4%;
 }

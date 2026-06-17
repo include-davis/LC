@@ -1,16 +1,63 @@
+@use "app/(pages)/_globals/mixins.scss" as mixins;
+
 .container {
     display: flex;
     justify-content: center;
 
-    margin-top: 27px;
-    margin-bottom: 84px;
+    margin-top: 2.875rem;
+    margin-bottom: 5.25rem;
 
-    padding: 0px 111px;
-    gap: 61px;
+    padding: 0px clamp(20px, 7.7vw, 111px);
+    gap: 3.813rem;
+
+    @include mixins.tablet {
+        flex-direction: column;
+
+        margin-top: 2.875rem;
+        margin-bottom: 3rem;
+
+        padding: 0px 1.25rem;
+        gap: 2.875rem;
+    }
+
+    @include mixins.phone {
+        flex-direction: column;
+
+        margin-top: 2.875rem;
+        margin-bottom: 1.313rem;
+
+        padding: 0px 1.25rem;
+        gap: 2.875rem;
+    }
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    align-self: center;
+
+    @include mixins.tablet {
+        padding: 0px 2.25rem;
+    }
+
+    @include mixins.phone {
+        padding: 0px 2.25rem;
+    }
 }
 
 .image {
-    flex: 1;
+    width: 100%;
+    max-width: 579px;
+    height: auto;
+
+    @include mixins.tablet {
+        width: 100%;
+    }
+
+    @include mixins.phone {
+        width: 100%;
+    }
 }
 
 .textContainer {
@@ -19,8 +66,27 @@
     flex: 1;
     flex-direction: column;
 
+    padding: 1.875rem 0px;
 
-    padding: 30px 0px;
+    color: #000;
+
+    @include mixins.tablet {
+        padding: 3.25rem 1.75rem;
+
+        color: #FFF;
+
+        background: linear-gradient(to bottom, #8482E5, #C1C1F2);
+        border-radius: 40px;
+    }
+
+    @include mixins.phone {
+        padding: 3.25rem 1.75rem;
+
+        color: #FFF;
+
+        background: linear-gradient(to bottom, #8482E5, #C1C1F2);
+        border-radius: 40px;
+    }
 }
 
 .title {
@@ -29,11 +95,17 @@
 
     text-align: center;
 
-    color: #000000;
+    @include mixins.tablet {
+        font-size: 2rem;
+    }
+
+    @include mixins.phone {
+        font-size: 2rem;
+    }
 }
 
 .descriptionContainer {
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 
 .descriptionContainer > * {
@@ -41,5 +113,13 @@
     font-weight: 500;
     line-height: 1.2;
 
-    color: #000000;
+    @include mixins.tablet {
+        font-size: 0.875rem;
+        line-height: 1.3;
+    }
+
+    @include mixins.phone {
+        font-size: 0.875rem;
+        line-height: 1.3;
+    }
 }
