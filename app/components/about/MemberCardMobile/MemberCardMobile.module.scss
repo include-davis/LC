@@ -1,0 +1,142 @@
+.hidden {
+    display: none;
+
+}
+
+.showing {
+    display: flex;
+
+}
+
+.cardContainer {
+    display: flex;
+    width: 98%;
+    padding: 14px 0.3125rem; /* 7px 5px */
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.625rem; /* 10px */
+
+    justify-content: center;
+
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cardContent {
+    display: flex;
+    padding: 1.25rem 0rem; //20px
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+    gap: 0.4375rem; /* 7px */
+    align-self: center;
+    border-radius: 2.375rem; /* 38px */
+}
+
+.topHalf {
+    display: flex;
+    gap: 0.5rem; /* 8px */
+    align-items: center;
+    width: 19.25rem;
+}
+
+.memberStarImg {
+    position: relative;
+}
+
+.memberIMG {
+    display: block;
+}
+
+.diamondSVG {
+    position: absolute;
+    top: 2.125rem; /* 34px */
+    left: -0.875rem; /* -14px */
+}
+
+.memberInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem; /* 4px */
+
+    h3 {
+        font-size: 1.25rem; /* 20px */
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+    }
+}
+
+.standing {
+    display: flex;
+    gap: 0.25rem; /* 4px */
+    flex-wrap: nowrap;
+}
+
+.position {
+    list-style: none;
+    font-size: 0.6875rem; /* 11px */
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 0.25rem 0.375rem; /* 4px 6px */
+    border-radius: 1.25rem; /* 20px */
+    background: #6563DE;
+    color: white;
+    white-space: nowrap;
+}
+
+.standingLi {
+    list-style: none;
+    font-size: 0.6875rem; /* 11px */
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    padding: 0.25rem 0.375rem; /* 4px 6px */
+    border-radius: 1.25rem; /* 20px */
+    background: #FFF;
+    display: flex;
+    align-items: center;
+
+    white-space: nowrap;
+}
+
+.memberIMG {
+    border-radius: 0.5rem; /* 8px */
+    object-fit: cover;
+    object-position: center;
+}
+
+.expandCard {
+    display: flex;
+    justify-content: center;
+}
+
+.arrowExpandBtn {
+    width: 1.25rem; /* 20px */
+    height: 0.5625rem; /* 9px */
+    stroke-width: 0.25rem; /* 4px */
+    stroke: #000;
+    display: flex;
+    justify-content: center;
+    width: -webkit-fill-available;
+}
+
+.arrow {
+    transition: transform 0.4s ease-in-out;
+}
+
+.rotatedArrow {
+    transform: rotate(180deg);
+}
+
+.memberDetails {
+    width: 19.25rem; /* 308px */
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; /* 20px */
+    list-style: none;
+    
+}

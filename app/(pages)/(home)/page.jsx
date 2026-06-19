@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './page.module.scss';
 // Shared arrow asset: /public/shared/arrow_right.svg — used in intro + recent events buttons
-import GallerySection from '../components/GallerySection';
+import GallerySection from '../../components/GallerySection';
 
 export default function Home() {
   return (
@@ -39,6 +39,36 @@ export default function Home() {
           />
         </div>
 
+        {/* Mobile-only — flattened star cluster (both "Star 4" shapes, exported as one PNG) */}
+        <div className={styles.heroStarsMobile} aria-hidden="true">
+          <Image
+            src="/home/hero/mobile/hero_stars_top_left_mobile.png"
+            alt=""
+            fill
+            style={{ objectFit: 'contain' }}
+          />
+        </div>
+
+        {/* Mobile-only — sparkle cluster, top-right ("Frame 371") */}
+        <div className={styles.heroSparkleTopRight} aria-hidden="true">
+          <Image
+            src="/home/hero/mobile/hero_stars_top_right_mobile.png"
+            alt=""
+            fill
+            style={{ objectFit: 'contain' }}
+          />
+        </div>
+
+        {/* Mobile-only — sparkle cluster, bottom-left ("Frame 312") */}
+        <div className={styles.heroSparkleBottomLeft} aria-hidden="true">
+          <Image
+            src="/home/hero/mobile/hero_stars_bottom_left_mobile.png"
+            alt=""
+            fill
+            style={{ objectFit: 'contain' }}
+          />
+        </div>
+
         {/* Decorative — star strip (253×129px) */}
         <div className={styles.wugMascot} aria-hidden="true">
             <Image
@@ -47,6 +77,16 @@ export default function Home() {
               fill
               style={{ objectFit: 'contain'}}
             />
+        </div>
+
+        {/* Mobile-only — flattened Wug mascot (rotation/flip baked in by Figma export) */}
+        <div className={styles.heroMascotMobile} aria-hidden="true">
+          <Image
+            src="/home/hero/mobile/hero_wug_mascot_mobile.png"
+            alt="Wug, the Linguistics Club mascot"
+            fill
+            style={{ objectFit: 'contain' }}
+          />
         </div>
 
         {/* Frame 311 — hero text group (734.49×305px, left: 90px, top: 137px) */}
@@ -58,10 +98,20 @@ export default function Home() {
           {/* Frame 310 — speech bubble + discord button (left: 69px, top: 72px) */}
           <div className={styles.heroContentFrame}>
 
-            {/* Frame 301 — speech bubble PNG with "Linguistics Club" baked in */}
+            {/* Frame 301 — speech bubble PNG with "Linguistics Club" baked in (desktop) */}
             <div className={styles.heroSpeechBubble}>
               <Image
                 src="/home/hero/hero_speech_bubble.png"
+                alt="Linguistics Club"
+                fill
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
+
+            {/* Frame 405 — mobile-only speech bubble PNG with "Linguistics Club" baked in */}
+            <div className={styles.heroSpeechBubbleMobile}>
+              <Image
+                src="/home/hero/mobile/hero_speech_bubble_mobile.png"
                 alt="Linguistics Club"
                 fill
                 style={{ objectFit: 'contain' }}
@@ -81,6 +131,15 @@ export default function Home() {
                 <div className={styles.heroDiscordImg}>
                   <Image
                     src="/home/hero/hero_discord_button.png"
+                    alt="Join our Discord"
+                    fill
+                    style={{ objectFit: 'contain' }}
+                  />
+                </div>
+                {/* Mobile-only — flattened Discord button export */}
+                <div className={styles.heroDiscordImgMobile}>
+                  <Image
+                    src="/home/hero/mobile/hero_discord_button_mobile.png"
                     alt="Join our Discord"
                     fill
                     style={{ objectFit: 'contain' }}
@@ -113,6 +172,16 @@ export default function Home() {
           />
         </div>
 
+        {/* Mobile-only — flattened Wug Graphic Banner, full viewport width */}
+        <div className={styles.heroBannerMobile} aria-hidden="true">
+          <Image
+            src="/home/hero/mobile/hero_banner_mobile.png"
+            alt=""
+            fill
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+          />
+        </div>
+
       </section>
 
       <section className={styles.intro}>
@@ -126,7 +195,7 @@ export default function Home() {
             {/* Left column — photo + squiggle decorations (420×548) */}
             <div className={styles.introImageWrap}>
 
-              {/* introPhoto — Frame 211: photo with purple border */}
+              {/* introPhoto — Frame 211: photo with purple border (desktop) */}
               {/* Frame 211 — 353.73×471.94px, border: 10.23px solid #A3A1EB, crop */}
               <div className={styles.introPhoto}>
                 <Image
@@ -134,6 +203,16 @@ export default function Home() {
                   alt="Linguistics Club members"
                   fill
                   style={{ objectFit: 'contain' }}
+                />
+              </div>
+
+              {/* Mobile-only intro photo — intro_photo_mobile.png (255.43×248.21px, border baked in) */}
+              <div className={styles.introPhotoMobile}>
+                <Image
+                  src="/home/intro/mobile/intro_photo_mobile.png"
+                  alt="Linguistics Club members"
+                  fill
+                  style={{ objectFit: 'cover' }}
                 />
               </div>
 
@@ -266,7 +345,20 @@ export default function Home() {
                 <div className={styles.recentEventItem}>
                   {/* Vector 19 — highlight decoration (165.36×46.67, absolute, z-index: 2) */}
                   <div className={styles.recentEventDeco} aria-hidden="true">
-                    <Image src="/home/recent/recent_tape.png" alt="" fill style={{ objectFit: 'contain' }} />
+                    <Image
+                      src="/home/recent/recent_tape.png"
+                      alt=""
+                      fill
+                      style={{ objectFit: 'contain' }}
+                      className={styles.recentEventDecoDesktop}
+                    />
+                    <Image
+                      src="/home/recent/mobile/recent_tape_mobile.png"
+                      alt=""
+                      fill
+                      style={{ objectFit: 'contain' }}
+                      className={styles.recentEventDecoMobile}
+                    />
                   </div>
                   {/* Frame 326 — date wrapper (86×35, z-index: 0) */}
                   <div className={styles.recentEventDateWrap}>
@@ -281,7 +373,20 @@ export default function Home() {
                 {/* Frame 328 — Event Card 2 (308×312) */}
                 <div className={styles.recentEventItem}>
                   <div className={styles.recentEventDeco} aria-hidden="true">
-                    <Image src="/home/recent/recent_tape.png" alt="" fill style={{ objectFit: 'contain' }} />
+                    <Image
+                      src="/home/recent/recent_tape.png"
+                      alt=""
+                      fill
+                      style={{ objectFit: 'contain' }}
+                      className={styles.recentEventDecoDesktop}
+                    />
+                    <Image
+                      src="/home/recent/mobile/recent_tape_mobile.png"
+                      alt=""
+                      fill
+                      style={{ objectFit: 'contain' }}
+                      className={styles.recentEventDecoMobile}
+                    />
                   </div>
                   {/* Frame 326 — date wrapper (45×35, z-index: 0) */}
                   <div className={styles.recentEventDateWrap}>
@@ -296,13 +401,52 @@ export default function Home() {
                 {/* Frame 329 — Event Card 3 (308×312) */}
                 <div className={styles.recentEventItem}>
                   <div className={styles.recentEventDeco} aria-hidden="true">
-                    <Image src="/home/recent/recent_tape.png" alt="" fill style={{ objectFit: 'contain' }} />
+                    <Image
+                      src="/home/recent/recent_tape.png"
+                      alt=""
+                      fill
+                      style={{ objectFit: 'contain' }}
+                      className={styles.recentEventDecoDesktop}
+                    />
+                    <Image
+                      src="/home/recent/mobile/recent_tape_mobile.png"
+                      alt=""
+                      fill
+                      style={{ objectFit: 'contain' }}
+                      className={styles.recentEventDecoMobile}
+                    />
                   </div>
                   {/* Frame 326 — date wrapper (45×35, z-index: 0) */}
                   <div className={styles.recentEventDateWrap}>
                     <span className={styles.recentEventDate}>TBA</span>
                   </div>
                   {/* Frame 325 — title wrapper (236×28, z-index: 1) */}
+                  <div className={styles.recentEventTitleWrap}>
+                    <p className={styles.recentEventTitle}>...</p>
+                  </div>
+                </div>
+
+                {/* Event Card 4 — mobile 2×2 grid needs 4 cards; hidden on desktop via CSS */}
+                <div className={`${styles.recentEventItem} ${styles.recentEventItemMobile4}`}>
+                  <div className={styles.recentEventDeco} aria-hidden="true">
+                    <Image
+                      src="/home/recent/recent_tape.png"
+                      alt=""
+                      fill
+                      style={{ objectFit: 'contain' }}
+                      className={styles.recentEventDecoDesktop}
+                    />
+                    <Image
+                      src="/home/recent/mobile/recent_tape_mobile.png"
+                      alt=""
+                      fill
+                      style={{ objectFit: 'contain' }}
+                      className={styles.recentEventDecoMobile}
+                    />
+                  </div>
+                  <div className={styles.recentEventDateWrap}>
+                    <span className={styles.recentEventDate}>TBA</span>
+                  </div>
                   <div className={styles.recentEventTitleWrap}>
                     <p className={styles.recentEventTitle}>...</p>
                   </div>

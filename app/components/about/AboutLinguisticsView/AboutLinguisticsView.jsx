@@ -2,6 +2,7 @@ import styles from "./AboutLinguisticsView.module.scss"
 
 import ClubMissionSection from "../ClubMissionSection/ClubMissionSection";
 import MeetBoardSection from "../MeetBoardSection/MeetBoardSection";
+import MobileFAQSection from "../MobileFAQSection/MobileFAQSection";
 
 import { CLUB_MISSION_DATA } from "../../../../data/ClubMissionData";
 
@@ -16,6 +17,8 @@ export default function AboutLinguisticsView() {
             />
 
             <MeetBoardSection />    
+
+            <MobileFAQSection />
         </>
     )
 }

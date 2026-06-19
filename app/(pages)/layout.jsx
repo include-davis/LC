@@ -5,7 +5,7 @@ import Footer from "../components/footer/Footer.jsx";
 
 import Header from "../components/Header/Header";
 
-import { HEADER_ITEMS } from "../../data/HeaderItems";
+import { HEADER_ITEMS } from "../../data/HeaderItemsData";
 
 export const metadata = {
   title: "Create Next App",
@@ -29,15 +29,14 @@ const hankenGrotesk = Hanken_Grotesk({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${gochiHand.variable} ${hankenGrotesk.variable}`}>
-      <header>
+      <body>
+        <header>
           <Header itemsData={HEADER_ITEMS} />
         </header>
-      <body>
 
         {children}
-
+        <Footer></Footer>
       </body>
-      <Footer></Footer>
     </html>
   );
 }
