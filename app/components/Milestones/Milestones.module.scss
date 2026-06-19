@@ -1,5 +1,9 @@
 // Styles for the Milestones section. Pixel-locked to the 1440 Figma layout; px → rem
 // (1rem = 16px). Fixed-rem sizing (this section does not use vw).
+// Mobile overrides live inline per class via mixins.phone — the panel rotates from
+// a wide horizontal row of 3 badges to a tall vertical stack to match the iPhone mock.
+
+@use "../../_globals/mixins.scss" as mixins;
 
 // Outer section — Figma "Frame 288" (1440x668). The purple panel is inset 40px horizontally
 // and 20px vertically, so this frame just provides that margin around the panel.
@@ -7,6 +11,11 @@
   width: 90rem;            // 1440px
   padding: 1.25rem 2.5rem; // 20px top/bottom, 40px left/right
   display: flex;
+
+  @include mixins.phone {
+    width: 100%;
+    padding: 1rem;         // 16px even margin around the panel
+  }
 }
 
 // The big rounded purple panel — Figma "SECTION2" (1360x628).
@@ -23,11 +32,19 @@
   align-items: center;
   justify-content: center;
   padding: 5.25rem 6.5rem; // 84px top/bottom, 104px left/right
+
+  @include mixins.phone {
+    height: auto;          // let stacked badges drive the height
+    padding: 2rem 1.25rem; // 32 top/bottom, 20 sides — tighter for a phone-width panel
+    border-radius: 1.5rem; // 24px — softer corners scale better at narrow widths
+  }
 }
 
 // Decorative motion-blur streak — Figma rectangles 72–76. Rounded only on the left
 // (top-left 48px, bottom-left 59px), right side square; blurred. Position, width,
 // gradient, and flip transform are supplied per-streak via inline style.
+// Mobile keeps the streaks; overflow:hidden on .panel crops the ones that overshoot,
+// which gives the same "bleeding in from the edges" look you see in the mock.
 .streak {
   position: absolute;
   height: 1.5rem;                    // 24px
@@ -46,6 +63,11 @@
   align-items: center;
   gap: 5.75rem;            // 92px
   width: 59rem;            // 944px
+
+  @include mixins.phone {
+    width: 100%;
+    gap: 2rem;             // 32px — tighter on phones
+  }
 }
 
 // Section title — Hanken Grotesk Bold 56px, #FFFCF9.
@@ -57,15 +79,32 @@
   color: #FFFCF9;
   text-align: center;
   white-space: nowrap;
+
+  @include mixins.phone {
+    font-size: 1.75rem;    // 28px
+  }
 }
 
 // Medals row — Figma "MEDALS". 3 badges, 112px gap, bottom-aligned (center badge is taller).
+// On phone the row rotates to a tall column and the badges are reordered (18 → 1 → 6) so
+// the largest medal sits at the top, matching the iPhone reference.
 .medals {
   display: flex;
   align-items: flex-end;
   justify-content: center;
   gap: 7rem;               // 112px
   width: 100%;
+
+  @include mixins.phone {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;           // 40px between badges
+
+    // Source order is [6, 18, 1]; mobile order is [18, 1, 6] top-to-bottom.
+    > :nth-child(1) { order: 3; } // "6 Events Hosted!"   → bottom
+    > :nth-child(2) { order: 1; } // "18 Total Members!"  → top
+    > :nth-child(3) { order: 2; } // "1 Year Running!"    → middle
+  }
 }
 
 // Single badge column — star + label, 24px gap, centered. Width set inline (220 / 280).
@@ -76,6 +115,11 @@
   align-items: center;
   gap: 1.5rem;             // 24px
   transition: transform 300ms ease;
+
+  @include mixins.phone {
+    width: auto !important; // overrides MilestoneBadge's inline 220/280 px column width
+    gap: 1rem;             // 16px between star and label
+  }
 }
 
 .badge:hover {
@@ -89,6 +133,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include mixins.phone {
+    width: 9rem !important;  // 144px — overrides inline 220/240
+    height: 9rem !important;
+  }
 }
 
 // The star artwork fills the .star box (already white #FFFCF9 in the SVG).
@@ -121,6 +170,10 @@
   font-size: 5.75rem;      // 92px
   line-height: normal;
   color: #8482E5;
+
+  @include mixins.phone {
+    font-size: 3.5rem;     // 56px — scales with the 144px star
+  }
 }
 
 // Label below the star — Hanken Grotesk Bold 24px, white.
@@ -132,4 +185,8 @@
   color: #FFFFFF;
   text-align: center;
   white-space: nowrap;
+
+  @include mixins.phone {
+    font-size: 1rem;       // 16px
+  }
 }

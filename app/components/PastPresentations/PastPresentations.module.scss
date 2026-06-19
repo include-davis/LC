@@ -1,6 +1,10 @@
 // Styles for the Past Presentations section — Figma "SECTION 4" (1440x609).
 // Fixed-rem sizing. Title + a centered row of cards (the cards themselves are styled
 // by the shared EventCard.module.scss).
+// Mobile (max-width 720) converts the static row into a CSS scroll-snap carousel,
+// mirroring the Past Events mobile pattern: one card centered, others swipe in.
+
+@use "../../_globals/mixins.scss" as mixins;
 
 .section {
   width: 90rem;            // 1440px
@@ -9,6 +13,12 @@
   flex-direction: column;
   align-items: center;
   gap: 3rem;               // 48px — title → cards (Figma Frame 199 gap)
+
+  @include mixins.phone {
+    width: 100%;
+    padding: 2.5rem 0;     // 40 top/bottom, 0 sides — scroller goes edge-to-edge
+    gap: 1.5rem;           // 24px between title and row
+  }
 }
 
 // Title — Hanken Grotesk Bold 56px, #6563DE (same as Past Events).
@@ -20,13 +30,40 @@
   color: var(--blueish-purple500); // #6563DE
   text-align: center;
   white-space: nowrap;
+
+  @include mixins.phone {
+    font-size: 2.5rem;     // 40px
+  }
 }
 
 // Row of presentation cards — centered, 40px gap (4 cards × 240 + 3 × 40 = 1080px).
+// On phone the row becomes a horizontal scroll-snap container: each card snaps to the
+// viewport center, scrollbar is hidden, and side padding lets the first / last card
+// center when scrolled to. Touch-swipe replaces the static layout.
 .row {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2.5rem;             // 40px
   padding: 0.5rem;         // 8px (Figma CARD STACK px-8)
+
+  @include mixins.phone {
+    width: 100%;
+    justify-content: flex-start;     // let scroll position drive what's visible
+    gap: 1.25rem;                    // 20px between cards
+    // Card is 15rem (240px) wide → half = 7.5rem; pad each side by (50vw - 7.5rem)
+    // so the first and last card can sit centered when snapped to.
+    padding: 0 calc(50vw - 7.5rem);
+    overflow-x: auto;                // swipe-scrolls horizontally
+    overflow-y: visible;             // keeps card title/date visible below
+    scroll-snap-type: x mandatory;   // each scroll settles on a card
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;           // hide native scrollbar (Firefox)
+    &::-webkit-scrollbar { display: none; } // hide on Webkit/Chromium
+
+    > * {
+      scroll-snap-align: center;     // each card snaps to viewport center
+      flex-shrink: 0;
+    }
+  }
 }
