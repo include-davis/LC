@@ -28,7 +28,25 @@ import styles from '../(pages)/(home)/page.module.scss';
 const FLUSH_POSITIONS = [0, 76.375, 161.375]; /* rem — fixed flush-left column offsets */
 const TRACK_WIDTH_REM = 252.75;               /* rem — total track width (4044px at 16px base) */
 
-export default function GallerySection() {
+/* Quote cards render in curly quotes; empty slots stay as styled placeholders. */
+const quoteText = (item) => (item?.quote ? `\u201C${item.quote}\u201D` : '');
+
+function GalleryMedia({ item }) {
+  if (!item) return null;
+  const fill = { width: '100%', height: '100%', objectFit: 'cover', display: 'block' };
+  if (item.video) {
+    return <video src={item.video} style={fill} autoPlay muted loop playsInline />;
+  }
+  if (item.image) {
+    return <img src={item.image} alt="" style={fill} />;
+  }
+  return null;
+}
+
+export default function GallerySection({ items }) {
+  const quotes = items.filter((item) => item.type === 'quote');
+  const media = items.filter((item) => item.type !== 'quote');
+
   const [slide, setSlide] = useState(0);
   const carouselRef = useRef(null);
 
@@ -77,7 +95,7 @@ export default function GallerySection() {
 
             {/* Big Video 1 — 548×760 */}
             <div className={styles.galleryBigMedia}>
-              {/* TODO: <Image> or <video> */}
+              <GalleryMedia item={media[0]} />
             </div>
 
             {/* Frame 284 — wide column (658×760): blue quote card + two images */}
@@ -86,21 +104,17 @@ export default function GallerySection() {
               {/* Member Quote 1 — 658×306, #E0E0F8 */}
               <div className={styles.galleryQuoteBlue}>
                 <div className={styles.galleryQuoteInner}>
-                  <p className={styles.galleryQuoteText}>
-                    &ldquo;Linguistics club is so friendly and has really interesting
-                    presentations about niche stuff we don&apos;t talk about in class.
-                    I didn&apos;t know anything about Assyrian before!&rdquo;
-                  </p>
+                  <p className={styles.galleryQuoteText}>{quoteText(quotes[0])}</p>
                 </div>
               </div>
 
               {/* Frame 283 — 658×446: two image placeholders side by side */}
               <div className={styles.galleryMediaRow}>
                 <div className={styles.galleryMediaHalf}>
-                  {/* TODO: <Image> — Rectangle 79 (325×446) */}
+                  <GalleryMedia item={media[1]} />
                 </div>
                 <div className={styles.galleryMediaHalf}>
-                  {/* TODO: <Image> — Rectangle 80 (325×446) */}
+                  <GalleryMedia item={media[2]} />
                 </div>
               </div>
 
@@ -109,24 +123,21 @@ export default function GallerySection() {
             {/* Frame 285 — mid column (406×760): stacked media */}
             <div className={`${styles.galleryColStack} ${styles.galleryColMid}`}>
               <div className={styles.galleryMediaTall}>
-                {/* TODO: <Image> or <video> — Big Video 2 (406×437) */}
+                <GalleryMedia item={media[3]} />
               </div>
               <div className={styles.galleryMediaShort}>
-                {/* TODO: <Image> — Frame 42 (406×315) */}
+                <GalleryMedia item={media[4]} />
               </div>
             </div>
 
             {/* Frame 286 — narrow column (382×760): image + lavender quote */}
             <div className={`${styles.galleryColStack} ${styles.galleryColNarrow}`}>
               <div className={styles.galleryMediaTop}>
-                {/* TODO: <Image> — Frame 46 (382×384) */}
+                <GalleryMedia item={media[5]} />
               </div>
               <div className={styles.galleryQuoteLavender}>
                 <div className={styles.galleryQuoteInner}>
-                  <p className={styles.galleryQuoteText}>
-                    &ldquo;I love the community it creates amongst students with a
-                    shared interest in linguistics and language!!&rdquo;
-                  </p>
+                  <p className={styles.galleryQuoteText}>{quoteText(quotes[1])}</p>
                 </div>
               </div>
             </div>
@@ -135,26 +146,22 @@ export default function GallerySection() {
 
             {/* Big Video 2 — 548×760 */}
             <div className={styles.galleryBigMedia}>
-              {/* TODO: <Image> or <video> */}
+              <GalleryMedia item={media[6]} />
             </div>
 
             {/* Frame 287 — wide column (658×760) */}
             <div className={`${styles.galleryColStack} ${styles.galleryColWide}`}>
               <div className={styles.galleryQuoteBlue}>
                 <div className={styles.galleryQuoteInner}>
-                  <p className={styles.galleryQuoteText}>
-                    &ldquo;This club is not just for linguistic majors!! The best part
-                    is that everyone can find their place here and get the opportunity
-                    to do research in language or a topic that they enjoy!&rdquo;
-                  </p>
+                  <p className={styles.galleryQuoteText}>{quoteText(quotes[2])}</p>
                 </div>
               </div>
               <div className={styles.galleryMediaRow}>
                 <div className={styles.galleryMediaHalf}>
-                  {/* TODO: <Image> — Rectangle 79 (325×446) */}
+                  <GalleryMedia item={media[7]} />
                 </div>
                 <div className={styles.galleryMediaHalf}>
-                  {/* TODO: <Image> — Rectangle 80 (325×446) */}
+                  <GalleryMedia item={media[8]} />
                 </div>
               </div>
             </div>
@@ -162,24 +169,21 @@ export default function GallerySection() {
             {/* Frame 288 — mid column (406×760) */}
             <div className={`${styles.galleryColStack} ${styles.galleryColMid}`}>
               <div className={styles.galleryMediaTall}>
-                {/* TODO: <Image> or <video> */}
+                <GalleryMedia item={media[9]} />
               </div>
               <div className={styles.galleryMediaShort}>
-                {/* TODO: <Image> */}
+                <GalleryMedia item={media[10]} />
               </div>
             </div>
 
             {/* Frame 289 — narrow column (382×760) */}
             <div className={`${styles.galleryColStack} ${styles.galleryColNarrow}`}>
               <div className={styles.galleryMediaTop}>
-                {/* TODO: <Image> */}
+                <GalleryMedia item={media[11]} />
               </div>
               <div className={styles.galleryQuoteLavender}>
                 <div className={styles.galleryQuoteInner}>
-                  <p className={styles.galleryQuoteText}>
-                    &ldquo;Love the Lin Club movie nights! It&apos;s so fun to meet
-                    others in the major, for chatting and having a good time :)&rdquo;
-                  </p>
+                  <p className={styles.galleryQuoteText}>{quoteText(quotes[3])}</p>
                 </div>
               </div>
             </div>

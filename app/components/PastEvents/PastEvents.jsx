@@ -6,11 +6,11 @@ import PastEventsTitle from "./PastEventsTitle";
 import PastEventsCarousel from "./PastEventsCarousel";
 import styles from "./PastEvents.module.scss";
 
-export default function PastEvents() {
+export default function PastEvents({ events }) {
   return (
     <section className={styles.section}>
       <PastEventsTitle />
-      <PastEventsCarousel />
+      <PastEventsCarousel events={events} />
     </section>
   );
 }

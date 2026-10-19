@@ -2,8 +2,81 @@ import Image from 'next/image';
 import styles from './page.module.scss';
 // Shared arrow asset: /public/shared/arrow_right.svg — used in intro + recent events buttons
 import GallerySection from '../../components/GallerySection';
+import { RECENT_EVENTS } from '../../../data/RecentEventsData';
+import { GALLERY_ITEMS } from '../../../data/GalleryData';
 
-export default function Home() {
+export const dynamic = 'force-dynamic';
+
+const RECENT_EVENT_SLOTS = 4;
+
+async function getRecentEvents() {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_CMS_BASE_URL}/api/content/past_events?_published=true`,
+      { next: { tags: ['cms'] } }
+    );
+    const data = await res.json();
+    if (!data.ok || !data.body) {
+      throw new Error(data.error);
+    }
+    if (data.body.length === 0) {
+      return RECENT_EVENTS;
+    }
+    const parsedData = data.body.map((event) => {
+      return {
+        id: event._id,
+        date: event.date,
+        name: event.event_name,
+      };
+    });
+    return parsedData;
+  } catch (e) {
+    console.error(`Failed to fetch past_events: ${e.message}`);
+    return RECENT_EVENTS;
+  }
+}
+
+async function getGalleryItems() {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_CMS_BASE_URL}/api/content/gallery_items?_published=true`,
+      { next: { tags: ['cms'] } }
+    );
+    const data = await res.json();
+    if (!data.ok || !data.body) {
+      throw new Error(data.error);
+    }
+    if (data.body.length === 0) {
+      return GALLERY_ITEMS;
+    }
+    const parsedData = data.body
+      .map((item) => {
+        return {
+          id: item._id,
+          type: item.type?.trim().toLowerCase(),
+          quote: item.quote,
+          image: item.images?.[0]?.src,
+          video: item.video,
+          order: Number(item.order) || 0,
+        };
+      })
+      .sort((a, b) => a.order - b.order);
+    return parsedData;
+  } catch (e) {
+    console.error(`Failed to fetch gallery_items: ${e.message}`);
+    return GALLERY_ITEMS;
+  }
+}
+
+export default async function Home() {
+  const [events, galleryItems] = await Promise.all([getRecentEvents(), getGalleryItems()]);
+
+  // Always render exactly 4 cards — pad with TBA placeholders if the CMS has fewer.
+  const recentEvents = [
+    ...events.slice(0, RECENT_EVENT_SLOTS),
+    ...Array(Math.max(0, RECENT_EVENT_SLOTS - events.length)).fill({ date: 'TBA', name: '...' }),
+  ];
+
   return (
     <main className={styles.page}>
 
@@ -341,116 +414,40 @@ export default function Home() {
               {/* Frame 329 — event cards row (1084×312, gap: 80px, justify: center) */}
               <div className={styles.recentEventsItems}>
 
-                {/* Frame 327 — Event Card 1 (308×312) */}
-                <div className={styles.recentEventItem}>
-                  {/* Vector 19 — highlight decoration (165.36×46.67, absolute, z-index: 2) */}
-                  <div className={styles.recentEventDeco} aria-hidden="true">
-                    <Image
-                      src="/home/recent/recent_tape.png"
-                      alt=""
-                      fill
-                      style={{ objectFit: 'contain' }}
-                      className={styles.recentEventDecoDesktop}
-                    />
-                    <Image
-                      src="/home/recent/mobile/recent_tape_mobile.png"
-                      alt=""
-                      fill
-                      style={{ objectFit: 'contain' }}
-                      className={styles.recentEventDecoMobile}
-                    />
+                {/* Frame 327 — Event Cards (308×312). The 4th card fills the mobile
+                    2×2 grid and is hidden on desktop via CSS. */}
+                {recentEvents.map((event, i) => (
+                  <div
+                    key={event.id ?? i}
+                    className={`${styles.recentEventItem} ${i === 3 ? styles.recentEventItemMobile4 : ''}`}
+                  >
+                    {/* Vector 19 — highlight decoration (165.36×46.67, absolute, z-index: 2) */}
+                    <div className={styles.recentEventDeco} aria-hidden="true">
+                      <Image
+                        src="/home/recent/recent_tape.png"
+                        alt=""
+                        fill
+                        style={{ objectFit: 'contain' }}
+                        className={styles.recentEventDecoDesktop}
+                      />
+                      <Image
+                        src="/home/recent/mobile/recent_tape_mobile.png"
+                        alt=""
+                        fill
+                        style={{ objectFit: 'contain' }}
+                        className={styles.recentEventDecoMobile}
+                      />
+                    </div>
+                    {/* Frame 326 — date wrapper (z-index: 0) */}
+                    <div className={styles.recentEventDateWrap}>
+                      <span className={styles.recentEventDate}>{event.date}</span>
+                    </div>
+                    {/* Frame 325 — title wrapper (236 wide, z-index: 1) */}
+                    <div className={styles.recentEventTitleWrap}>
+                      <p className={styles.recentEventTitle}>{event.name}</p>
+                    </div>
                   </div>
-                  {/* Frame 326 — date wrapper (86×35, z-index: 0) */}
-                  <div className={styles.recentEventDateWrap}>
-                    <span className={styles.recentEventDate}>1/22/26</span>
-                  </div>
-                  {/* Frame 325 — title wrapper (236×56, z-index: 1) */}
-                  <div className={styles.recentEventTitleWrap}>
-                    <p className={styles.recentEventTitle}>Assyrian Language Presentation</p>
-                  </div>
-                </div>
-
-                {/* Frame 328 — Event Card 2 (308×312) */}
-                <div className={styles.recentEventItem}>
-                  <div className={styles.recentEventDeco} aria-hidden="true">
-                    <Image
-                      src="/home/recent/recent_tape.png"
-                      alt=""
-                      fill
-                      style={{ objectFit: 'contain' }}
-                      className={styles.recentEventDecoDesktop}
-                    />
-                    <Image
-                      src="/home/recent/mobile/recent_tape_mobile.png"
-                      alt=""
-                      fill
-                      style={{ objectFit: 'contain' }}
-                      className={styles.recentEventDecoMobile}
-                    />
-                  </div>
-                  {/* Frame 326 — date wrapper (45×35, z-index: 0) */}
-                  <div className={styles.recentEventDateWrap}>
-                    <span className={styles.recentEventDate}>TBA</span>
-                  </div>
-                  {/* Frame 325 — title wrapper (236×28, z-index: 1) */}
-                  <div className={styles.recentEventTitleWrap}>
-                    <p className={styles.recentEventTitle}>...</p>
-                  </div>
-                </div>
-
-                {/* Frame 329 — Event Card 3 (308×312) */}
-                <div className={styles.recentEventItem}>
-                  <div className={styles.recentEventDeco} aria-hidden="true">
-                    <Image
-                      src="/home/recent/recent_tape.png"
-                      alt=""
-                      fill
-                      style={{ objectFit: 'contain' }}
-                      className={styles.recentEventDecoDesktop}
-                    />
-                    <Image
-                      src="/home/recent/mobile/recent_tape_mobile.png"
-                      alt=""
-                      fill
-                      style={{ objectFit: 'contain' }}
-                      className={styles.recentEventDecoMobile}
-                    />
-                  </div>
-                  {/* Frame 326 — date wrapper (45×35, z-index: 0) */}
-                  <div className={styles.recentEventDateWrap}>
-                    <span className={styles.recentEventDate}>TBA</span>
-                  </div>
-                  {/* Frame 325 — title wrapper (236×28, z-index: 1) */}
-                  <div className={styles.recentEventTitleWrap}>
-                    <p className={styles.recentEventTitle}>...</p>
-                  </div>
-                </div>
-
-                {/* Event Card 4 — mobile 2×2 grid needs 4 cards; hidden on desktop via CSS */}
-                <div className={`${styles.recentEventItem} ${styles.recentEventItemMobile4}`}>
-                  <div className={styles.recentEventDeco} aria-hidden="true">
-                    <Image
-                      src="/home/recent/recent_tape.png"
-                      alt=""
-                      fill
-                      style={{ objectFit: 'contain' }}
-                      className={styles.recentEventDecoDesktop}
-                    />
-                    <Image
-                      src="/home/recent/mobile/recent_tape_mobile.png"
-                      alt=""
-                      fill
-                      style={{ objectFit: 'contain' }}
-                      className={styles.recentEventDecoMobile}
-                    />
-                  </div>
-                  <div className={styles.recentEventDateWrap}>
-                    <span className={styles.recentEventDate}>TBA</span>
-                  </div>
-                  <div className={styles.recentEventTitleWrap}>
-                    <p className={styles.recentEventTitle}>...</p>
-                  </div>
-                </div>
+                ))}
 
               </div>
 
@@ -478,7 +475,7 @@ export default function Home() {
 
       </section>
 
-      <GallerySection />
+      <GallerySection items={galleryItems} />
 
     </main>
   );

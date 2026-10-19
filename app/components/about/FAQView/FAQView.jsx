@@ -1,9 +1,7 @@
 import FAQCardContainer from "../FAQCardContainer/FAQCardContainer";
 
-import { FAQ_CARDS } from "../../../../data/FAQCardData";
-
-export default function FAQView() {
+export default function FAQView({ faqs }) {
     return (
-        <FAQCardContainer cards={FAQ_CARDS} />
+        <FAQCardContainer cards={faqs} />
     )
 }

@@ -9,9 +9,7 @@ import ExpandedMemberCard from "../../../components/about/ExpandedMemberCard/Exp
 
 import MemberCardMobile from "../../../components/about/MemberCardMobile/MemberCardMobile";
 
-import { LCboard } from "../../../../data/teamMembers";
-
-export default function MeetBoardSection() {
+export default function MeetBoardSection({ boardMembers }) {
 
     // logic for closing the expanded member cards when user resizes their screen :P
     const [selectedIndex, setSelectedIndex] = useState(null);
@@ -30,6 +28,7 @@ export default function MeetBoardSection() {
         <>
             {selectedIndex !== null && (
                 <ExpandedMemberCard
+                    members={boardMembers}
                     initialIndex={selectedIndex}
                     onClose={() => setSelectedIndex(null)}
                 />
@@ -38,7 +37,7 @@ export default function MeetBoardSection() {
             <div className={styles.meetTheBoard}>
                 <h2>Meet the Board!</h2>
                 <div className={styles.memberCards}>
-                    {LCboard.map((member, i) => (
+                    {boardMembers.map((member, i) => (
                         <MemberCard
                             key={member.id}
                             name={member.name}
@@ -57,7 +56,7 @@ export default function MeetBoardSection() {
                 </div>
 
                 <div className={styles.mobileMemberCards}>
-                    {LCboard.map((member, i) => (
+                    {boardMembers.map((member, i) => (
                         <MemberCardMobile
                             key={member.id}
                             name={member.name}
