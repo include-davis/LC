@@ -1,9 +1,13 @@
 // Styles for the Past Events section.
-// Pixel-locked to the 1440 Figma layout. Values from Figma px → rem (1rem = 16px).
+// Pixel-locked to the 1440 Figma layout (desktop). Phone overrides are inline per class
+// via mixins.phone (max-width: 720). Mobile uses a CSS scroll-snap carousel — arrows go
+// away, the user swipes horizontally, and each card snaps to the center of the screen.
+
+@use "../../_globals/mixins.scss" as mixins;
 
 // Outer section frame — Figma "SECTION 3" (Frame with auto layout).
-// Fixed 1440 wide, Hug height (≈681px with current content), vertical flow,
-// padding 84/104/84/104, 10px gap between children, background #FFFCF9.
+// Fixed 1440 wide on desktop; full-width with no horizontal padding on phone so the
+// scroller can run edge-to-edge.
 .section {
   width: 90rem;            // 1440px
   display: flex;
@@ -12,6 +16,12 @@
   gap: 3rem;               // 48px — Figma gap between title and carousel (Frame 199)
   padding: 5.25rem 6.5rem; // 84px top/bottom, 104px left/right
   background-color: #FFFCF9; // matches Figma frame fill
+
+  @include mixins.phone {
+    width: 100%;
+    padding: 2.5rem 0;     // 40 top/bottom, 0 sides — scroller goes edge-to-edge
+    gap: 1.5rem;           // 24px between title and carousel
+  }
 }
 
 // "Past Events!" title — Figma node 4253:1102.
@@ -27,6 +37,12 @@
   letter-spacing: 0;
   text-align: center;
   color: var(--blueish-purple500); // #6563DE
+
+  @include mixins.phone {
+    width: auto;
+    height: auto;
+    font-size: 2.5rem;     // 40px — fits comfortably on phones
+  }
 }
 
 // Carousel wrapper — Figma "ALL" (node 4253:1103). Holds [left arrow] [viewport] [right arrow].
@@ -37,28 +53,63 @@
   justify-content: center;
   gap: 2.5rem;             // 40px
   padding: 2.5rem 1.25rem; // 40px top/bottom, 20px left/right
+
+  @include mixins.phone {
+    width: 100%;
+    gap: 0;
+    padding: 1rem 0;       // small vertical breathing room, no horizontal padding
+  }
 }
 
 // Viewport — Figma "CARD STACK SWITCH". Fixed 1080px window that clips the track.
 // 4 cards (240) + 3 gaps (40) = 1080 → exactly 4 cards visible; the rest slide in.
+// On phone the viewport becomes the full screen-width scroller with snap behaviour.
 .viewport {
   display: flex;
   align-items: center;
   width: 68.5rem;          // 1096px → 1080px content (4 cards) + 8px padding each side
   padding: 0.5rem;         // 8px (border-box, so content stays exactly 1080px)
   overflow: hidden;        // clips cards beyond the 4 visible — the carousel window
+
+  @include mixins.phone {
+    width: 100%;
+    padding: 0;
+    overflow-x: auto;                 // swipe-scrolls horizontally
+    overflow-y: visible;              // card title/date below stays visible
+    scroll-snap-type: x mandatory;    // each scroll settles on a card
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;            // hide native scrollbar (Firefox)
+    &::-webkit-scrollbar { display: none; } // hide on Webkit/Chromium
+  }
 }
 
 // Track — Figma "CARD STACK". The full row of cards that slides left/right.
-// translateX is set inline per page; the transition makes the page jump animate smoothly.
+// translateX is set inline per page (desktop); the transition animates the page jump.
+// On phone the JS transform is cleared (user scrolls instead) and side padding lets
+// the first / last cards sit centered when snapped to.
 .track {
   display: flex;
   align-items: center;
   gap: 2.5rem;             // 40px between cards
   transition: transform 400ms ease;
+
+  @include mixins.phone {
+    transform: none !important; // override desktop carousel state — scroll position drives it
+    transition: none;
+    gap: 1.25rem;          // 20px between cards
+    // Side padding = half viewport - half card so the first / last card centers on snap.
+    // Card is 15rem (240px) wide → half = 7.5rem; pad each side by (50vw - 7.5rem).
+    padding: 0 calc(50vw - 7.5rem);
+
+    > * {
+      scroll-snap-align: center; // each card snaps to viewport center
+      flex-shrink: 0;
+    }
+  }
 }
 
 // Navigation arrow button — Figma "Switch". 40px #6563DE circle (20px radius), 10px padding.
+// Hidden on phone — touch-swipe replaces the arrows.
 .arrow {
   flex: none;
   display: flex;
@@ -71,6 +122,10 @@
   border-radius: 1.25rem;  // 20px → fully rounded at 40px
   background-color: var(--blueish-purple500); // #6563DE
   cursor: pointer;
+
+  @include mixins.phone {
+    display: none;
+  }
 }
 
 // Inactive state (Figma "Variant2") — dimmed, e.g. when there's nothing more to scroll.

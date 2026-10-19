@@ -4,4 +4,6 @@
   display: flex;
   flex-direction: column;
   align-items: center; // center fixed-width sections; full-width sections (100%) are unaffected
+  overflow-x: hidden;  // clip horizontal overflow from desktop-only fixed-width sections
+                       // (sections 3–6 still need mobile conversion); prevents page-wide horizontal scroll
 }
