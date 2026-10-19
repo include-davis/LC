@@ -3,12 +3,11 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './ExpandedMemberCard.module.scss';
-import { LCboard } from '../../../../data/teamMembers';
 
-export default function ExpandedMemberCard({ initialIndex = 0, onClose }) {
+export default function ExpandedMemberCard({ members, initialIndex = 0, onClose }) {
 
     const [activeIndex, setActiveIndex] = useState(initialIndex);
-    const current = LCboard[activeIndex];
+    const current = members[activeIndex];
 
     useEffect(() => {
         document.body.style.overflow = 'hidden';
@@ -39,8 +38,8 @@ export default function ExpandedMemberCard({ initialIndex = 0, onClose }) {
                         <section className={styles.header}>
                             <h2 className={styles.headerTitle}>{current.name} {current.lastName} {current.pronouns}</h2>
                             <div className={styles.socials}>
-                                <a className={styles.socialLink} href='#' rel='linkedin'><Image src={'/images/about/icons/linkedin.svg'} width={14} height={14} /></a>
-                                <a className={styles.socialLink} href='#' rel='instagram'><Image src={'/images/about/icons/instagram.svg'} width={22} height={22} /></a>
+                                <a className={styles.socialLink} href={current.linkedin || '#'} rel='linkedin'><Image src={'/images/about/icons/linkedin.svg'} width={14} height={14} /></a>
+                                <a className={styles.socialLink} href={current.instagram || '#'} rel='instagram'><Image src={'/images/about/icons/instagram.svg'} width={22} height={22} /></a>
                             </div>
                         </section>
 
@@ -64,7 +63,7 @@ export default function ExpandedMemberCard({ initialIndex = 0, onClose }) {
                     </div>
 
                     <div className={styles.otherMembers}>
-                        {LCboard.map((member, i) => (
+                        {members.map((member, i) => (
                             <button
                                 key={i}
                                 onClick={() => setActiveIndex(i)}

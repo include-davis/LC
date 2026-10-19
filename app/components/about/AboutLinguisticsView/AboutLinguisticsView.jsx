@@ -6,7 +6,7 @@ import MobileFAQSection from "../MobileFAQSection/MobileFAQSection";
 
 import { CLUB_MISSION_DATA } from "../../../../data/ClubMissionData";
 
-export default function AboutLinguisticsView() {
+export default function AboutLinguisticsView({ boardMembers, faqs }) {
     return (
         <>
             <ClubMissionSection 
@@ -16,9 +16,9 @@ export default function AboutLinguisticsView() {
                 image_alt={CLUB_MISSION_DATA.image_alt}
             />
 
-            <MeetBoardSection />    
+            <MeetBoardSection boardMembers={boardMembers} />    
 
-            <MobileFAQSection />
+            <MobileFAQSection faqs={faqs} />
         </>
     )
 }
