@@ -3,7 +3,7 @@
 // Mobile overrides live inline per class via mixins.phone — the panel rotates from
 // a wide horizontal row of 3 badges to a tall vertical stack to match the iPhone mock.
 
-@use "../../_globals/mixins.scss" as mixins;
+@use "../../(pages)/_globals/mixins.scss" as mixins;
 
 // Outer section — Figma "Frame 288" (1440x668). The purple panel is inset 40px horizontally
 // and 20px vertically, so this frame just provides that margin around the panel.

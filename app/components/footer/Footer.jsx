@@ -45,10 +45,10 @@ export default function Footer(){
                         </section>
 
                             <section className={styles.navSection}>
-                                <a className={styles.navHeading} href='/opportunties' >Opportunities</a>
+                                <a className={styles.navHeading} href='/opportunities' >Opportunities</a>
                                 <div>
-                                    <a className={styles.link} href='/opportunties#graduate'>Graduate Programs</a>
-                                    <a className={styles.link} href='/opportunties#undergraduate'>Undergraduate Programs</a> 
+                                    <a className={styles.link} href='/grad-programs'>Graduate Programs</a>
+                                    <a className={styles.link} href='/undergrad-programs'>Undergraduate Programs</a> 
                                 </div>
                             </section>
 

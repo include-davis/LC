@@ -3,7 +3,7 @@
 // via mixins.phone (max-width: 720). Mobile design (Figma node 4766:2244, 402x297) drops
 // the decorative stars and centers a compact title block.
 
-@use "../../_globals/mixins.scss" as mixins;
+@use "../../(pages)/_globals/mixins.scss" as mixins;
 
 // Section frame — fills the viewport width; padding/gap in rem, content left-aligned.
 .header {

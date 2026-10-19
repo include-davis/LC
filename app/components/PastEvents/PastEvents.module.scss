@@ -3,7 +3,7 @@
 // via mixins.phone (max-width: 720). Mobile uses a CSS scroll-snap carousel — arrows go
 // away, the user swipes horizontally, and each card snaps to the center of the screen.
 
-@use "../../_globals/mixins.scss" as mixins;
+@use "../../(pages)/_globals/mixins.scss" as mixins;
 
 // Outer section frame — Figma "SECTION 3" (Frame with auto layout).
 // Fixed 1440 wide on desktop; full-width with no horizontal padding on phone so the

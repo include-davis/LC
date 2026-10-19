@@ -4,7 +4,7 @@
 // Mobile (max-width 720) converts the static row into a CSS scroll-snap carousel,
 // mirroring the Past Events mobile pattern: one card centered, others swipe in.
 
-@use "../../_globals/mixins.scss" as mixins;
+@use "../../(pages)/_globals/mixins.scss" as mixins;
 
 .section {
   width: 90rem;            // 1440px

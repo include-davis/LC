@@ -4,7 +4,7 @@
 // horizontal scroll-snap row — same swipe pattern as Past Events / Past Presentations.
 // Each polaroid keeps its individual width / height / rotation; only the layout changes.
 
-@use "../../_globals/mixins.scss" as mixins;
+@use "../../(pages)/_globals/mixins.scss" as mixins;
 
 // Outer section — Figma "Frame 289" (1440x1194). The purple panel is inset 40px on all
 // sides, so this frame just provides that margin around the panel.
